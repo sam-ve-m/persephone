@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 
-import { run } from "./src";
+import { QueueController } from "./src/controllers/queue-controller";
 const chalk = require("chalk");
 const figlet = require("figlet");
 
-console.log(
-  chalk.red(figlet.textSync("Persephone", { horizontalLayout: "full" }))
-);
+const main = function (): void {
+  console.log(
+    chalk.red(figlet.textSync("Persephone", { horizontalLayout: "full" }))
+  );
 
-run();
+  const queueController = new QueueController();
+  queueController.runQueueConsumerService();
+};
+
+main();
