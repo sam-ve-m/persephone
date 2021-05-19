@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./bin",
+    "module": "commonjs",
+    "target": "es2020",
+    "lib": ["es2020"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@core/*": ["src/core/*"],
+      "@domain/*": ["src/domain/*"],
+      "@infraestructure/*": ["src/infraestructure/*"],
+      "@repository/*": ["src/repository/*"],
+      "@service/*": ["src/service/*"],
+
+      "@testCore/*": ["test/core/*"],
+      "@testDomain/*": ["test/domain/*"],
+      "@testInfraestructure/*": ["test/infraestructure/*"],
+      "@testRepository/*": ["test/repository/*"],
+      "@testService/*": ["test/service/*"]
+    }
+  }
+}

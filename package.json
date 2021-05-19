@@ -1,0 +1,42 @@
+{
+  "name": "persephone.lionx.com.br",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "run-prod": "node ./bin/persephone.js",
+    "start": "NODE_ENV=development ts-node -r dotenv/config ./persephone.ts dotenv_config_path=./.env",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && yarn install",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test-verbose": "jest --passWithNoTests --runInBand",
+    "test-unit": "yarn test -- --watch -c jest-unit-config.js",
+    "test-integration": "yarn test -- --watch -c jest-integration-config.js",
+    "test-ci": "npm test -- --coverage"
+  },
+  "repository": {
+    "url": "add_repo_url",
+    "type": "git"
+  },
+  "author": "LionX",
+  "license": "MIT",
+  "dependencies": {
+    "@types/figlet": "^1.5.1",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0",
+    "dotenv": "^9.0.2",
+    "eslint": "^7.26.0",
+    "figlet": "^1.5.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.3.0",
+    "redis": "^3.1.2",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1"
+  }
+}
