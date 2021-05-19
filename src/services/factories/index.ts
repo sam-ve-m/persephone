@@ -1,1 +1,1 @@
-export * from "./ihandle-queue-strategy-factory";
+export * from "./handle-queue-strategy-factory";

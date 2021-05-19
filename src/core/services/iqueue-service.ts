@@ -1,1 +1,3 @@
-export interface IQueueService {}
+export interface IQueueService {
+  consumeQueueMessages(): void;
+}
