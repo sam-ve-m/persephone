@@ -1,1 +1,5 @@
-export interface IRedisClientFactory {}
+import { Redis } from "ioredis";
+
+export interface IRedisClientFactory {
+  createClient(): Redis;
+}

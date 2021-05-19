@@ -1,16 +1,17 @@
+import { Redis } from "ioredis";
+
 import { IRedisClientFactory } from "@core/infraestructure/redis";
 
-export class RedisClientFactory implements IRedisClientFactory {
-  public constructor() {}
+import { Env } from "@root/env";
 
-  static create(): void {
-    // const client = redis.createClient({
-    //   host: env.redis_metadata.redis_host,
-    //   port: env.redis_metadata.redis_port,
-    // });
-    // client.send_command("AUTH", [
-    //   env.redis_metadata.redis_user,
-    //   env.redis_metadata.password,
-    // ]);
+export class RedisClientFactory implements IRedisClientFactory {
+  createClient(): Redis {
+    const redisClient = new Redis({
+      host: env.redis_metadata.redis_host,
+      port: env.redis_metadata.redis_port,
+      family: 4,
+      username: env.redis_metadata.redis_user,
+      password: env.redis_metadata.password,
+    });
   }
 }

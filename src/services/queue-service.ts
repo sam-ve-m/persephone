@@ -15,6 +15,7 @@ export class QueueService implements IQueueService {
   }
 
   public consumeQueueMessages(): void {
-    //TODO: Implement consume queue message
+    const redisClient = this._redisClientFactory.createClient();
+    console.log(redisClient);
   }
 }
