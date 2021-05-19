@@ -1,4 +1,4 @@
-import { IRedisClientFactory } from "../../core/infraestructure/iredis-client-factory";
+import { IRedisClientFactory } from "@core/infraestructure/redis";
 
 export class RedisClientFactory implements IRedisClientFactory {
   public constructor() {}

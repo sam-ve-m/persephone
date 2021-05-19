@@ -3,10 +3,10 @@
 const chalk = require("chalk");
 const figlet = require("figlet");
 
-import { HandleQueueStrategyFactory } from "@/services/factories";
-import { QueueController } from "@/controllers/queue-controller";
-import { RedisClientFactory } from "@/infraestructure/redis";
-import { QueueService } from "@/services/queue-service";
+import { HandleQueueStrategyFactory } from "./src/services/factories";
+import { QueueController } from "./src/controllers/queue-controller";
+import { RedisClientFactory } from "./src/infraestructure/redis";
+import { QueueService } from "./src/services/queue-service";
 
 const main = function (): void {
   console.log(
