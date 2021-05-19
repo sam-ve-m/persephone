@@ -1,5 +1,3 @@
-import { IQueueServiceDependencyFactory } from "@/core/services/factories";
-
 import env from "@root/env";
 import { POINT_CONVERSION_COMPRESSED } from "constants";
 
