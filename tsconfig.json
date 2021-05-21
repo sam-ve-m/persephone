@@ -10,8 +10,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "@root/*": ["./*"],
+      "@/*": ["src/*"],
       "@core/*": ["src/core/*"],
       "@domain/*": ["src/domain/*"],
       "@infraestructure/*": ["src/infraestructure/*"],

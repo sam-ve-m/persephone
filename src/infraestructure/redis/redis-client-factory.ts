@@ -2,7 +2,8 @@ import { Redis } from "ioredis";
 
 import { IRedisClientFactory } from "@core/infraestructure/redis";
 
-import { Env } from "@root/env";
+//TODO: Resolve this problem
+import { env } from "@root/../../enviroment";
 
 export class RedisClientFactory implements IRedisClientFactory {
   createClient(): Redis {
@@ -13,5 +14,6 @@ export class RedisClientFactory implements IRedisClientFactory {
       username: env.redis_metadata.redis_user,
       password: env.redis_metadata.password,
     });
+    return redisClient;
   }
 }

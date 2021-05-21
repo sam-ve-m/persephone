@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "run-prod": "node ./bin/persephone.js",
-    "start": "NODE_ENV=development ts-node -r dotenv/config ./persephone.ts dotenv_config_path=./.env",
+    "start": "NODE_ENV=development ts-node ./persephone.ts",
     "refresh": "rm -rf ./node_modules ./package-lock.json && yarn install",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test-verbose": "jest --passWithNoTests --runInBand",

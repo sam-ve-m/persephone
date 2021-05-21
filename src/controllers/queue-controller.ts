@@ -1,11 +1,14 @@
-import { IQueueService } from "@core/services/iqueue-service";
+// import { IQueueService } from "@core/services/iqueue-service";
+import { IRedisClientFactory } from "@core/infraestructure/redis/iredis-client-factory";
 
 export class QueueController {
-  private readonly _queueService: IQueueService;
+  private readonly _redisClietFactory: IRedisClientFactory;
 
-  public constructor(_queueService: IQueueService) {
-    this._queueService = _queueService;
+  public constructor(_redisClientFactory: IRedisClientFactory) {
+    this._redisClietFactory = _redisClientFactory;
   }
 
-  public runQueueConsumerService(): void {}
+  public runQueueConsumerService(): void {
+    //consume queues
+  }
 }
