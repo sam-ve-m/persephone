@@ -1,10 +1,9 @@
 import { Kafka, Consumer } from "kafkajs";
 
+import { env } from "@root/../../enviroment";
 import { IKafkaConnectionFactory } from "@core/infraestructure/queue";
 
 //TODO: Resolve this problem
-import { env } from "@root/../../enviroment";
-import { resolve } from "path";
 
 export class KafkaConnectionFactory implements IKafkaConnectionFactory {
   private static kafkaInstance: Kafka;

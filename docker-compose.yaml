@@ -21,7 +21,7 @@ services:
     ports:
       - "5431:5432"
     environment:
-      POSTGRES_PASSWORD: "ea3ca9a9-568b-4c85-9419-778c335ca232"
+      POSTGRES_PASWSORD: "ea3ca9a9-568b-4c85-9419-778c335ca232"
   keydb:
     image: "eqalpha/keydb"
     ports:
