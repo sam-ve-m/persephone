@@ -7,56 +7,34 @@ let { development, uat, production, ...global } = {
       db_pass: "password",
     },
     redis_metadata: {
-      redis_host: "127.0.0.1",
-      redis_port: 6379,
-      redis_user: "",
-      redis_password: "",
-      redis_db: null,
-      redis_timeout: 3,
-      redis_reconncet_times: 3,
-      redis_serialize: "",
+      host: "127.0.0.1",
+      port: 6379,
+      user: "",
+      password: "",
+      db: null,
+      timeout: 3,
+      reconncet_times: 3,
+      serialize: "",
     },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
-      brokers: [],
-    },
-  },
-
-  // UAT
-  uat: {
-    database_metadata: {
-      db_host: "localhost",
-      db_user: "root",
-      db_pass: "password",
-    },
-    redis_metadata: {
-      redis_host: "127.0.0.1",
-      redis_port: 6379,
-      redis_user: "",
-      redis_password: "",
-      redis_db: null,
-      redis_timeout: 3,
-      redis_reconncet_times: 3,
-      redis_serialize: "",
-    },
-  },
-
-  // Prod
-  production: {
-    database_metadata: {
-      db_host: "localhost",
-      db_user: "root",
-      db_pass: "password",
-    },
-    redis_metadata: {
-      redis_host: "127.0.0.1",
-      redis_port: 6379,
-      redis_user: "",
-      redis_password: "",
-      redis_db: null,
-      redis_timeout: 3,
-      redis_reconncet_times: 3,
-      redis_serialize: "",
+      brokers: ["127.0.0.1:9092"],
+      // brokers: ["10.42.0.1:9092"],
+      // brokers: ["10.42.0.95:9092"],
+      topics_properties: [
+        {
+          topic: "thebes.sphinx.topic",
+          numPartitions: 7,
+          numberOfConsumers: 7,
+          consumerGroup: "thebes.sphinx.group",
+        },
+        {
+          topic: "gaia.topic",
+          numPartitions: 4,
+          numberOfConsumers: 8,
+          consumerGroup: "gaia.group",
+        },
+      ],
     },
   },
 };

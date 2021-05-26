@@ -1,66 +1,65 @@
-const redis = require("redis");
+const { Kafka } = require("kafkajs");
+const { Partitioners } = require("kafkajs");
 
-async function pushElementsOnRedisQueue(redisClient, element) {
-  const promise = new Promise((resolve, reject) => {
-    let i;
-    for (i = 0; i < 5; i++) {
-      const teste = element + i + "TESTE TESTE TESTE";
-      let arr: Array<string> = new Array(10);
-      arr.fill(teste);
-      const key = element + ":" + i;
-
-      console.log(key);
-      console.log(element);
-
-      redisClient.rpush([key, ...arr], function (err, reply) {
-        console.log("Queue Length", reply);
-        resolve(element);
-      });
-    }
+const configureKafkaProducerConnection = function () {
+  const kafka = new Kafka({
+    clientId: "auth-microservice",
+    brokers: ["127.0.0.1:9092"],
   });
 
-  return promise;
-}
+  return kafka;
+};
 
-const main = function () {
-  console.log("Entrou");
-  let redisNotReady = true;
-  let redisClient = redis.createClient({
-    host: "127.0.0.1",
-    port: 6379,
+const main = async () => {
+  const kafka = configureKafkaProducerConnection();
+  const producer = kafka.producer({
+    createPartitioner: Partitioners.JavaCompatiblePartitioner,
+  });
+  await producer.connect();
+
+  const gaiaMessages0 = new Array(1000).fill({
+    value: "GAIA.0!",
+    partition: 0,
+  });
+  const gaiaMessages1 = new Array(1000).fill({
+    value: "GAIA.1!",
+    partition: 1,
+  });
+  const gaiaMessages2 = new Array(1000).fill({
+    value: "GAIA.2!",
+    partition: 2,
+  });
+  const gaiaMessages3 = new Array(1000).fill({
+    value: "GAIA.3!",
+    partition: 3,
   });
 
-  redisClient.on("error", (err) => {
-    console.log("error", err);
-  });
+  const gaiaMessages = [
+    ...gaiaMessages0,
+    ...gaiaMessages1,
+    ...gaiaMessages2,
+    ...gaiaMessages3,
+  ];
 
-  redisClient.on("connect", (err) => {
-    console.log("connect");
-  });
+  const shuffled = gaiaMessages.sort(() => Math.random() - 0.5);
 
-  redisClient.on("ready", (err) => {
-    redisNotReady = false;
-    console.log("ready");
+  let i = 0;
 
-    let rootQueues = {
-      a: [],
-      b: [],
-      c: [],
-    };
-
-    Object.keys(rootQueues).forEach((element) => {
-      pushElementsOnRedisQueue(redisClient, element).then((data) => {
-        redisClient.keys("a:*", function (err, keys) {
-          console.log(data);
-          console.log(keys);
-        });
-
-        redisClient.lrange("a:*", 0, -1, function (err, reply) {
-          console.log(reply);
-        });
-      });
+  while (i < 30000) {
+    producer.send({
+      topic: "gaia.topic",
+      messages: [
+        { value: "GAIA.0!", partition: 0 },
+        { value: "GAIA.1!", partition: 1 },
+        { value: "GAIA.2!", partition: 2 },
+        { value: "GAIA.3!", partition: 3 },
+      ],
     });
-  });
+    console.log("Iteration", i);
+    i++;
+  }
+
+  console.log("Finalizou");
 };
 
 main();

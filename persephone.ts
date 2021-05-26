@@ -1,28 +1,46 @@
 #!/usr/bin/env node
 
-const chalk = require("chalk");
-const figlet = require("figlet");
+import chalk from "chalk";
+import figlet from "figlet";
 
-import { HandleQueueStrategyFactory } from "./src/services/factories";
-import { QueueController } from "./src/controllers/queue-controller";
-import { RedisClientFactory } from "./src/infraestructure/redis";
-import { QueueService } from "./src/services/queue-service";
+import { KafkaConnectionFactory } from "./src/infraestructure/queue";
 
-const main = function (): void {
+const main = async () => {
   console.log(
     chalk.red(figlet.textSync("Persephone", { horizontalLayout: "full" }))
   );
 
-  const handleQueueStrategyFactory = new HandleQueueStrategyFactory();
-  const redisClientFactory = new RedisClientFactory();
+  let time = 0;
+  let size = 0;
 
-  const queueService = new QueueService(
-    redisClientFactory,
-    handleQueueStrategyFactory
-  );
+  const kafkaConnectionFactory = new KafkaConnectionFactory();
+  await kafkaConnectionFactory.registerKafkaTopicsIfNotExists();
 
-  const queueController = new QueueController(queueService);
-  queueController.runQueueConsumerService();
+  kafkaConnectionFactory.getConsumers().then((consumers) => {
+    consumers.forEach(async (consumer) => {
+      await consumer.run({
+        eachBatchAutoResolve: true,
+        partitionsConsumedConcurrently: 4,
+        eachBatch: async ({ batch, heartbeat }) => {
+          console.log(batch.messages.length);
+          console.log(batch.topic);
+          console.log(batch.partition);
+
+          await heartbeat();
+        },
+      });
+
+      consumer.on(consumer.events.END_BATCH_PROCESS, async ({ payload }) => {
+        const { duration, batchSize } = payload;
+
+        time += duration;
+        size += batchSize;
+
+        console.log("duration:", duration, " - batchSize:", batchSize);
+        console.log("total duration:", time, " - total size:", size);
+      });
+    });
+  });
 };
 
-main();
+main().catch(console.error);
