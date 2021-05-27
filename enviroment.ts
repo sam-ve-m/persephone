@@ -2,9 +2,17 @@ let { development, ...global } = {
   // Dev
   development: {
     database_metadata: {
-      connection_string:
-        // "mongodb://root:ea3ca9a9-568b-4c85-9419-778c335ca232@localhost:27017/persephone?poolSize=20&retryWrites=true&w=majority",
-        "mongodb://root:ea3ca9a9-568b-4c85-9419-778c335ca232@localhost:27017persephone?poolSize=20&retryWrites=true&w=majority",
+      connection_object: {
+        uri: "mongodb://localhost:27017",
+        options: {
+          dbName: "persephone",
+          user: "root",
+          pass: "ea3ca9a9-568b-4c85-9419-778c335ca232",
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          autoCreate: true,
+        },
+      },
     },
     redis_metadata: {
       host: "127.0.0.1",
@@ -18,9 +26,9 @@ let { development, ...global } = {
     },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
-      // brokers: ["127.0.0.1:9092"],
+      brokers: ["localhost:9092"],
       // brokers: ["10.42.0.1:9092"],
-      brokers: ["10.42.0.95:9092"],
+      // brokers: ["10.42.0.95:9092"],
       topics_properties: [
         {
           topic: "thebes.sphinx.topic",

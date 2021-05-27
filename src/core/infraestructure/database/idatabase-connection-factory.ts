@@ -1,6 +1,6 @@
 import { Connection } from "mongoose";
 
 export interface IDatabaseConnectionFactory {
-  getOrCreateDatabaseContext(): Connection;
+  getOrCreateDatabaseContext(): Promise<Connection>;
   disconnect(): void;
 }

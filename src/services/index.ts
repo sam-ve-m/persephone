@@ -1,1 +1,1 @@
-export * from "./queue-service";
+export * from "./thebas-sphinx-service";

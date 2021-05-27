@@ -1,1 +1,1 @@
-export * from "./iqueue-service";
+export * from "./ithebas-sphinx-service";

@@ -6,30 +6,29 @@ import { IDatabaseConnectionFactory } from "@core/infraestructure/database";
 export class MongoConectionFactory implements IDatabaseConnectionFactory {
   private static databaseConnection: Connection;
 
-  getOrCreateDatabaseContext(): Connection {
-    if (!MongoConectionFactory.databaseConnection) {
-      connect(env.database_metadata.connection_string, {
-        useNewUrlParser: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-      });
+  getOrCreateDatabaseContext(): Promise<Connection> {
+    let connectionIsOpen: Promise<Connection> = new Promise(
+      (resolve, reject) => {
+        if (!MongoConectionFactory.databaseConnection) {
+          connect(
+            env.database_metadata.connection_object.uri,
+            env.database_metadata.connection_object.options
+          );
 
-      MongoConectionFactory.databaseConnection = connection;
+          MongoConectionFactory.databaseConnection = connection;
 
-      console.log("MONGO");
+          MongoConectionFactory.databaseConnection.once("open", () => {
+            resolve(MongoConectionFactory.databaseConnection);
+          });
 
-      MongoConectionFactory.databaseConnection.once("open", async () => {
-        console.info("CONNECTED TO DATABASE");
-        return MongoConectionFactory.databaseConnection;
-      });
+          MongoConectionFactory.databaseConnection.on("error", (error) => {
+            reject(error);
+          });
+        }
+      }
+    );
 
-      MongoConectionFactory.databaseConnection.on("error", (data) => {
-        console.error("ERROR CONNECTED TO DATABASE", data);
-      });
-    }
-
-    return MongoConectionFactory.databaseConnection;
+    return connectionIsOpen;
   }
 
   disconnect(): void {

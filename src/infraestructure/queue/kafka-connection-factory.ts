@@ -1,9 +1,9 @@
 import { Kafka, Consumer } from "kafkajs";
 
+//TODO: @root path doesnt work
 import { env } from "@root/../../enviroment";
 import { IKafkaConnectionFactory } from "@core/infraestructure/queue";
-
-//TODO: Resolve this problem
+import { ConsumerWrapper } from "@domain/queue/consumer-wrapper";
 
 export class KafkaConnectionFactory implements IKafkaConnectionFactory {
   private static kafkaInstance: Kafka;
@@ -31,10 +31,10 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
     });
   }
 
-  async getConsumers(): Promise<Consumer[]> {
+  async getConsumers(): Promise<ConsumerWrapper[]> {
     const kafka = this.getOrCreateKafkaInstance();
 
-    let consumers: Consumer[] = new Array();
+    let consumers: ConsumerWrapper[] = new Array();
     let connectSubscribrePromisses: Promise<any>[] = new Array();
 
     env.kafka_metadata.topics_properties.forEach(async (topicProperties) => {
@@ -52,7 +52,13 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
 
         connectSubscribrePromisses.push(connect);
         connectSubscribrePromisses.push(subscribe);
-        consumers.push(consumer);
+
+        const consumerWrapper = {
+          queueConsumer: consumer,
+          topic: topicProperties.topic,
+        };
+
+        consumers.push(consumerWrapper);
       }
     });
 
