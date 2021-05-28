@@ -3,6 +3,6 @@ import { IProspectUser, ProspectUserModel } from "@domain/thebes_sphinx";
 
 export class ThebasSphinxRepository implements IThebasSphinxRepository {
   saveProspectUsers(prospectUsers: IProspectUser[]): void {
-    ProspectUserModel.insertMany(prospectUsers).then((data) => {});
+    //ProspectUserModel.insertMany(prospectUsers).then((data) => {});
   }
 }

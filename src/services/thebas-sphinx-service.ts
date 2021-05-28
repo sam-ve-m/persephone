@@ -10,5 +10,9 @@ export class ThebasSphinxService implements IThebasSphinxService {
     this._thebasSphinxRepository = thebasSphinxRepository;
   }
 
-  handleProspectUsersQueue(messageBatch: KafkaMessage[]): void {}
+  handleProspectUsersQueue(prospectUsersMessages: KafkaMessage[]): void {
+    prospectUsersMessages.forEach((prospectUserMessage) => {
+      const prospectUser = prospectUserMessage.value;
+    });
+  }
 }
