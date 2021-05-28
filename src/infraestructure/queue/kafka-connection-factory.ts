@@ -1,7 +1,6 @@
 import { Kafka, Consumer } from "kafkajs";
 
-//TODO: @root path doesnt work
-import { env } from "@root/../../enviroment";
+import { env } from "@root/enviroment";
 import { IKafkaConnectionFactory } from "@core/infraestructure/queue";
 import { ConsumerWrapper } from "@domain/queue/consumer-wrapper";
 

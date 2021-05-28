@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "run-prod": "node ./bin/persephone.js",
-    "start": "NODE_ENV=development ts-node ./persephone.ts",
+    "start": "NODE_ENV=development ts-node -r tsconfig-paths/register ./persephone.ts",
     "refresh": "rm -rf ./node_modules ./package-lock.json && yarn install",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test-verbose": "jest --passWithNoTests --runInBand",
@@ -40,6 +40,7 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "ts-node": "^9.1.1"
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0"
   }
 }

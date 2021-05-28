@@ -15,8 +15,8 @@
       "@core/*": ["src/core/*"],
       "@domain/*": ["src/domain/*"],
       "@infraestructure/*": ["src/infraestructure/*"],
-      "@repository/*": ["src/repository/*"],
-      "@service/*": ["src/service/*"],
+      "@repository/*": ["src/repositories/*"],
+      "@service/*": ["src/services/*"],
 
       "@testCore/*": ["test/core/*"],
       "@testDomain/*": ["test/domain/*"],
