@@ -12,6 +12,18 @@ export module PartitionHandlers {
         ) => {
           thebasSphinxService.handleProspectUsersQueue(messageBatch);
         },
+        "terms.queue": (
+          thebasSphinxService: IThebasSphinxService,
+          messageBatch: KafkaMessage[]
+        ) => {
+          thebasSphinxService.handleTermsQueue(messageBatch);
+        },
+        "suitability.queue": (
+          thebasSphinxService: IThebasSphinxService,
+          messageBatch: KafkaMessage[]
+        ) => {
+          thebasSphinxService.handleSuitabilitiesQueue(messageBatch);
+        },
       },
     };
 
@@ -21,6 +33,8 @@ export module PartitionHandlers {
   const topicsPartitionsEnum = {
     "thebes.sphinx.topic": {
       0: "prospect.users.queue",
+      1: "terms.queue",
+      2: "suitability.queue",
     },
   };
 

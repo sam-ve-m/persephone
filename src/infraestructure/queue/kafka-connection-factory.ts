@@ -54,7 +54,8 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
 
         const consumerWrapper = {
           queueConsumer: consumer,
-          topic: topicProperties.topic,
+          partitionsConsumedConcurrently:
+            topicProperties.partitionsConsumedConcurrently,
         };
 
         consumers.push(consumerWrapper);

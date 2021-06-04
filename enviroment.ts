@@ -1,5 +1,5 @@
 let { development, ...global } = {
-  // Dev
+  // Dev:
   development: {
     database_metadata: {
       connection_object: {
@@ -26,22 +26,24 @@ let { development, ...global } = {
     },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
-      brokers: ["localhost:9092"],
+      // brokers: ["localhost:9092"],
       // brokers: ["10.42.0.1:9092"],
-      // brokers: ["10.42.0.95:9092"],
+      brokers: ["10.42.0.95:9092"],
       topics_properties: [
         {
           topic: "thebes.sphinx.topic",
-          numPartitions: 7,
-          numberOfConsumers: 7,
+          numPartitions: 5,
+          partitionsConsumedConcurrently: 4,
+          numberOfConsumers: 5,
           consumerGroup: "thebes.sphinx.group",
         },
-        {
-          topic: "gaia.topic",
-          numPartitions: 4,
-          numberOfConsumers: 8,
-          consumerGroup: "gaia.group",
-        },
+        // {
+        //   topic: "gaia.topic",
+        //   numPartitions: 4,
+        //   partitionsConsumedConcurrently: 4,
+        //   numberOfConsumers: 8,
+        //   consumerGroup: "gaia.group",
+        // },
       ],
     },
   },

@@ -28,10 +28,12 @@ const main = async () => {
   kafkaConnectionFactory.getConsumers().then((consumerWrapperList) => {
     consumerWrapperList.forEach(async (consumerWrapper) => {
       const consumer = consumerWrapper.queueConsumer;
+      const partitionsConsumedConcurrently =
+        consumerWrapper.partitionsConsumedConcurrently;
 
       await consumer.run({
         eachBatchAutoResolve: true,
-        partitionsConsumedConcurrently: 4,
+        partitionsConsumedConcurrently: partitionsConsumedConcurrently,
         eachBatch: async ({ batch, heartbeat }) => {
           const topicService =
             TopicServiceFactory.getServiceToHandleParitionMessage(
