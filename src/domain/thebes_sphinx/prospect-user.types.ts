@@ -1,11 +1,11 @@
 import { Document, Model } from "mongoose";
 
 export interface IProspectUser {
-  displayName: String;
-  userEmail: String;
-  createUserTimeStamp: Number;
-  dateOfEntry?: Date;
-  lastUpdated?: Date;
+  user_email: String;
+  display_name: String;
+  create_user_time_stamp: Number;
+  date_of_entry?: Date;
+  last_updated?: Date;
 }
 
 export interface IProspectUserDocument extends IProspectUser, Document {}
