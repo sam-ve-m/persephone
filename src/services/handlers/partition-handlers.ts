@@ -6,23 +6,35 @@ export module PartitionHandlers {
   export const registerPartitionsHandleCallbacks = () => {
     const topicPartitionToService = {
       "thebes.sphinx.topic": {
-        "prospect.users.queue": (
+        "prospect.user.queue": (
           thebasSphinxService: IThebasSphinxService,
           messageBatch: KafkaMessage[]
         ) => {
-          thebasSphinxService.handleProspectUsersQueue(messageBatch);
+          thebasSphinxService.handleProspectUserQueue(messageBatch);
         },
-        "terms.queue": (
+        "term.queue": (
           thebasSphinxService: IThebasSphinxService,
           messageBatch: KafkaMessage[]
         ) => {
-          thebasSphinxService.handleTermsQueue(messageBatch);
+          thebasSphinxService.handleTermQueue(messageBatch);
         },
         "suitability.queue": (
           thebasSphinxService: IThebasSphinxService,
           messageBatch: KafkaMessage[]
         ) => {
-          thebasSphinxService.handleSuitabilitiesQueue(messageBatch);
+          thebasSphinxService.handleSuitabilityQueue(messageBatch);
+        },
+        "dtvm.user.queue": (
+          thebasSphinxService: IThebasSphinxService,
+          messageBatch: KafkaMessage[]
+        ) => {
+          thebasSphinxService.handleDtvmUserQueue(messageBatch);
+        },
+        "dtvm.update.user.queue": (
+          thebasSphinxService: IThebasSphinxService,
+          messageBatch: KafkaMessage[]
+        ) => {
+          thebasSphinxService.handleDtvmUpdateUserQueue(messageBatch);
         },
       },
     };
@@ -32,9 +44,11 @@ export module PartitionHandlers {
 
   const topicsPartitionsEnum = {
     "thebes.sphinx.topic": {
-      0: "prospect.users.queue",
-      1: "terms.queue",
+      0: "prospect.user.queue",
+      1: "term.queue",
       2: "suitability.queue",
+      3: "dtvm.user.queue",
+      4: "dtvm.update.user.queue",
     },
   };
 

@@ -14,16 +14,6 @@ let { development, ...global } = {
         },
       },
     },
-    redis_metadata: {
-      host: "127.0.0.1",
-      port: 6379,
-      user: "",
-      password: "",
-      db: null,
-      timeout: 3,
-      reconncet_times: 3,
-      serialize: "",
-    },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
       // brokers: ["localhost:9092"],
@@ -33,7 +23,7 @@ let { development, ...global } = {
         {
           topic: "thebes.sphinx.topic",
           numPartitions: 5,
-          partitionsConsumedConcurrently: 4,
+          partitionsConsumedConcurrently: 5,
           numberOfConsumers: 5,
           consumerGroup: "thebes.sphinx.group",
         },

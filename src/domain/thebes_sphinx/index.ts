@@ -15,3 +15,15 @@ export * from "./suitability.schema";
 export * from "./suitability.types";
 export * from "./suitability.methods";
 export * from "./suitability.statics";
+
+export * from "./dtvm-user.model";
+export * from "./dtvm-user.schema";
+export * from "./dtvm-user.types";
+export * from "./dtvm-user.methods";
+export * from "./dtvm-user.statics";
+
+export * from "./dtvm-update-user.model";
+export * from "./dtvm-update-user.schema";
+export * from "./dtvm-update-user.types";
+export * from "./dtvm-update-user.methods";
+export * from "./dtvm-update-user.statics";

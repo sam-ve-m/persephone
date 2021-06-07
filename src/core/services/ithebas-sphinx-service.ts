@@ -1,8 +1,9 @@
 import { KafkaMessage } from "kafkajs";
 
 export interface IThebasSphinxService {
-  handleProspectUsersQueue(prospectUsersMessages: KafkaMessage[]): void;
-  handleTermsQueue(termsMessages: KafkaMessage[]): void;
-  handleSuitabilitiesQueue(suitabilitiesMessages: KafkaMessage[]): void;
-  handleDtvmUsersQueue(dtvmUsersMessages: KafkaMessage[]): void;
+  handleProspectUserQueue(prospectUsersMessages: KafkaMessage[]): void;
+  handleTermQueue(termsMessages: KafkaMessage[]): void;
+  handleSuitabilityQueue(suitabilitiesMessages: KafkaMessage[]): void;
+  handleDtvmUserQueue(dtvmUsersMessages: KafkaMessage[]): void;
+  handleDtvmUpdateUserQueue(dtvmUsersMessages: KafkaMessage[]): void;
 }

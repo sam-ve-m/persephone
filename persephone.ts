@@ -14,6 +14,9 @@ const main = async () => {
     chalk.red(figlet.textSync("Persephone", { horizontalLayout: "full" }))
   );
 
+  let time = 0;
+  let size = 0;
+
   const kafkaConnectionFactory = new KafkaConnectionFactory();
   await kafkaConnectionFactory.registerKafkaTopicsIfNotExists();
 
@@ -30,6 +33,34 @@ const main = async () => {
       const consumer = consumerWrapper.queueConsumer;
       const partitionsConsumedConcurrently =
         consumerWrapper.partitionsConsumedConcurrently;
+
+      consumer.on(consumer.events.START_BATCH_PROCESS, async ({ payload }) => {
+        const { topic, partition, batchSize } = payload;
+
+        size += batchSize;
+
+        console.log("Start batch - batchSize:", batchSize, topic, partition);
+      });
+
+      consumer.on(consumer.events.END_BATCH_PROCESS, async ({ payload }) => {
+        const { duration, batchSize } = payload;
+
+        time += duration;
+        size += batchSize;
+
+        console.log(
+          "End Batch - duration:",
+          duration,
+          " - batchSize:",
+          batchSize
+        );
+        console.log(
+          "End Batch - total duration:",
+          time,
+          " - total size:",
+          size
+        );
+      });
 
       await consumer.run({
         eachBatchAutoResolve: true,
@@ -58,16 +89,3 @@ const main = async () => {
 };
 
 main().catch(console.error);
-
-// let time = 0;
-// let size = 0;
-
-// consumer.on(consumer.events.END_BATCH_PROCESS, async ({ payload }) => {
-//   const { duration, batchSize } = payload;
-
-//   time += duration;
-//   size += batchSize;
-
-//   console.log("duration:", duration, " - batchSize:", batchSize);
-//   console.log("total duration:", time, " - total size:", size);
-// });
