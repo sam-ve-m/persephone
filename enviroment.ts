@@ -27,13 +27,6 @@ let { development, ...global } = {
           numberOfConsumers: 5,
           consumerGroup: "thebes.sphinx.group",
         },
-        // {
-        //   topic: "gaia.topic",
-        //   numPartitions: 4,
-        //   partitionsConsumedConcurrently: 4,
-        //   numberOfConsumers: 8,
-        //   consumerGroup: "gaia.group",
-        // },
       ],
     },
   },
