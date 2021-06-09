@@ -1,7 +1,10 @@
 import { Connection, connect, connection, disconnect } from "mongoose";
 
-import { env } from "@root/../../enviroment";
+import { env } from "@root/enviroment";
+
 import { IDatabaseConnectionFactory } from "@core/infraestructure/database";
+
+import { MongoConnectionHandlers } from "@infraestructure/database/mongo-connection-handlers";
 
 export class MongoConectionFactory implements IDatabaseConnectionFactory {
   private static databaseConnection: Connection;
@@ -17,17 +20,18 @@ export class MongoConectionFactory implements IDatabaseConnectionFactory {
 
           MongoConectionFactory.databaseConnection = connection;
 
-          MongoConectionFactory.databaseConnection.once("open", () => {
+          MongoConectionFactory.databaseConnection.once("open", (data) => {
+            MongoConnectionHandlers.handleConnectionOpenWithSuccess(data);
             resolve(MongoConectionFactory.databaseConnection);
           });
 
           MongoConectionFactory.databaseConnection.on("error", (error) => {
+            MongoConnectionHandlers.handleConnectionOpenError(error);
             reject(error);
           });
         }
       }
     );
-
     return connectionIsOpen;
   }
 

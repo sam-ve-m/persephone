@@ -3,7 +3,10 @@
 import chalk from "chalk";
 import figlet from "figlet";
 
-import { KafkaConnectionFactory } from "@infraestructure/queue";
+import {
+  KafkaConnectionFactory,
+  KafkaRegisterConsumerEvents,
+} from "@infraestructure/queue";
 import { MongoConectionFactory } from "@infraestructure/database";
 
 import { TopicServiceFactory } from "@service/factories/topic-service-factory";
@@ -13,9 +16,6 @@ const main = async () => {
   console.log(
     chalk.red(figlet.textSync("Persephone", { horizontalLayout: "full" }))
   );
-
-  let time = 0;
-  let size = 0;
 
   const kafkaConnectionFactory = new KafkaConnectionFactory();
   await kafkaConnectionFactory.registerKafkaTopicsIfNotExists();
@@ -34,33 +34,7 @@ const main = async () => {
       const partitionsConsumedConcurrently =
         consumerWrapper.partitionsConsumedConcurrently;
 
-      consumer.on(consumer.events.START_BATCH_PROCESS, async ({ payload }) => {
-        const { topic, partition, batchSize } = payload;
-
-        size += batchSize;
-
-        console.log("Start batch - batchSize:", batchSize, topic, partition);
-      });
-
-      consumer.on(consumer.events.END_BATCH_PROCESS, async ({ payload }) => {
-        const { duration, batchSize } = payload;
-
-        time += duration;
-        size += batchSize;
-
-        console.log(
-          "End Batch - duration:",
-          duration,
-          " - batchSize:",
-          batchSize
-        );
-        console.log(
-          "End Batch - total duration:",
-          time,
-          " - total size:",
-          size
-        );
-      });
+      KafkaRegisterConsumerEvents.registerIntoConsumerEvents(consumer);
 
       await consumer.run({
         eachBatchAutoResolve: true,

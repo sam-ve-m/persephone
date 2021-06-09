@@ -63,7 +63,6 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
     });
 
     await Promise.all(connectSubscribrePromisses);
-
     return Promise.resolve(consumers);
   }
 }

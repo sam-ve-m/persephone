@@ -16,9 +16,9 @@ let { development, ...global } = {
     },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
-      // brokers: ["localhost:9092"],
+      brokers: ["localhost:9092"],
       // brokers: ["10.42.0.1:9092"],
-      brokers: ["10.42.0.95:9092"],
+      // brokers: ["10.42.0.95:9092"],
       topics_properties: [
         {
           topic: "thebes.sphinx.topic",
