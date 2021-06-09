@@ -27,3 +27,9 @@ export * from "./dtvm-update-user.schema";
 export * from "./dtvm-update-user.types";
 export * from "./dtvm-update-user.methods";
 export * from "./dtvm-update-user.statics";
+
+export * from "./kyc-table.model";
+export * from "./kyc-table.schema";
+export * from "./kyc-table.types";
+export * from "./kyc-table.methods";
+export * from "./kyc-table.statics";

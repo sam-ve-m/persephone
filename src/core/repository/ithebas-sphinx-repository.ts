@@ -4,6 +4,7 @@ import {
   ITerm,
   IDtvmUser,
   IDtvmUpdateUser,
+  IKycTable,
 } from "@domain/thebes_sphinx";
 
 export interface IThebasSphinxRepository {
@@ -12,4 +13,5 @@ export interface IThebasSphinxRepository {
   saveSuitabilities(suitabilities: ISuitability[]): Promise<any>;
   saveDtvmUsers(dtvmUsers: IDtvmUser[]): Promise<any>;
   saveDtvmUpdateUsers(dtvmUsers: IDtvmUpdateUser[]): Promise<any>;
+  saveKycTables(kycTables: IKycTable[]): Promise<any>;
 }

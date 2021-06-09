@@ -4,7 +4,7 @@ import { ThebasSphinxService } from "@service/thebas-sphinx-service";
 export module TopicServiceFactory {
   export const registerTopicFactoriesService = () => {
     const topicPartitionToService = {
-      "thebes.sphinx.topic": () => {
+      "thebes.sphinx_persephone.topic": () => {
         const thebasSphinxRepository = new ThebasSphinxRepository();
         const thebasSphinxService = new ThebasSphinxService(
           thebasSphinxRepository

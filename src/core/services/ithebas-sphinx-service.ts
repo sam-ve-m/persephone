@@ -6,4 +6,5 @@ export interface IThebasSphinxService {
   handleSuitabilityQueue(suitabilitiesMessages: KafkaMessage[]): void;
   handleDtvmUserQueue(dtvmUsersMessages: KafkaMessage[]): void;
   handleDtvmUpdateUserQueue(dtvmUsersMessages: KafkaMessage[]): void;
+  handleKycTableQueue(kycTableMessages: KafkaMessage[]): void;
 }

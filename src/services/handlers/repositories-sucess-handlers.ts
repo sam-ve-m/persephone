@@ -25,4 +25,9 @@ export module RepositoriesSucessHandlers {
     const message = `ProspectedUsers: Inserted with sucess. Number of insetions: ${data.length}`;
     Logger.info(message);
   };
+
+  export const handleKycTableSucess = (data: Array<any>) => {
+    const message = `KycTableSucess: Inserted with sucess. Number of insetions: ${data.length}`;
+    Logger.info(message);
+  };
 }

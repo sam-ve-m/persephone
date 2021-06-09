@@ -4,6 +4,7 @@ let { development, ...global } = {
     database_metadata: {
       connection_object: {
         uri: "mongodb://localhost:27017",
+        // uri: "mongodb://10.42.0.129:27017",
         options: {
           dbName: "persephone",
           user: "root",
@@ -16,15 +17,15 @@ let { development, ...global } = {
     },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
-      brokers: ["localhost:9092"],
+      // brokers: ["localhost:9092"],
       // brokers: ["10.42.0.1:9092"],
-      // brokers: ["10.42.0.95:9092"],
+      brokers: ["10.42.0.95:9092"],
       topics_properties: [
         {
-          topic: "thebes.sphinx.topic",
-          numPartitions: 5,
-          partitionsConsumedConcurrently: 5,
-          numberOfConsumers: 5,
+          topic: "thebes.sphinx_persephone.topic",
+          numPartitions: 6,
+          partitionsConsumedConcurrently: 3,
+          numberOfConsumers: 6,
           consumerGroup: "thebes.sphinx.group",
         },
       ],

@@ -5,7 +5,7 @@ import { IThebasSphinxService } from "@core/services/ithebas-sphinx-service";
 export module PartitionHandlers {
   export const registerPartitionsHandleCallbacks = () => {
     const topicPartitionToService = {
-      "thebes.sphinx.topic": {
+      "thebes.sphinx_persephone.topic": {
         "prospect.user.queue": (
           thebasSphinxService: IThebasSphinxService,
           messageBatch: KafkaMessage[]
@@ -36,6 +36,13 @@ export module PartitionHandlers {
         ) => {
           thebasSphinxService.handleDtvmUpdateUserQueue(messageBatch);
         },
+
+        "kyc.table.queue": (
+          thebasSphinxService: IThebasSphinxService,
+          messageBatch: KafkaMessage[]
+        ) => {
+          thebasSphinxService.handleKycTableQueue(messageBatch);
+        },
       },
     };
 
@@ -43,12 +50,13 @@ export module PartitionHandlers {
   };
 
   const topicsPartitionsEnum = {
-    "thebes.sphinx.topic": {
+    "thebes.sphinx_persephone.topic": {
       0: "prospect.user.queue",
       1: "term.queue",
       2: "suitability.queue",
       3: "dtvm.user.queue",
       4: "dtvm.update.user.queue",
+      5: "kyc.table.queue",
     },
   };
 

@@ -3,6 +3,7 @@ import { IDtvmUser, DtvmUserModel } from "@domain/thebes_sphinx";
 import { IProspectUser, ProspectUserModel } from "@domain/thebes_sphinx";
 import { ISuitability, SuitabilityModel } from "@domain/thebes_sphinx";
 import { ITerm, TermModel } from "@domain/thebes_sphinx";
+import { IKycTable, KycTableModel } from "@domain/thebes_sphinx";
 
 import { IThebasSphinxRepository } from "@core/repository";
 
@@ -25,5 +26,9 @@ export class ThebasSphinxRepository implements IThebasSphinxRepository {
 
   saveDtvmUpdateUsers(dtvmUpdateUsers: IDtvmUpdateUser[]): Promise<any> {
     return DtvmUpdateUserModel.insertMany(dtvmUpdateUsers);
+  }
+
+  saveKycTables(kycTables: IKycTable[]): Promise<any> {
+    return KycTableModel.insertMany(kycTables);
   }
 }

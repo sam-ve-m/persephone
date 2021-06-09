@@ -102,4 +102,21 @@ export class ThebasSphinxService implements IThebasSphinxService {
         RepositoriesErrorsHandlers.handleDtvmUpdateUserErrors(error);
       });
   }
+
+  handleKycTableQueue(kycTableMessages: KafkaMessage[]): void {
+    const kycTables = kycTableMessages.map((kycTableMessage) => {
+      const kycTableString = kycTableMessage.value.toString();
+      const kycTable = JSON.parse(kycTableString);
+      return kycTable;
+    });
+
+    this._thebasSphinxRepository
+      .saveKycTables(kycTables)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleKycTableSucess(data);
+      })
+      .catch((error) => {
+        RepositoriesErrorsHandlers.handleKycTableErrors(error);
+      });
+  }
 }
