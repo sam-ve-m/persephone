@@ -21,7 +21,7 @@ const level = () => {
       log_level: "error",
     },
     yaba: {
-      log_level: "warn",
+      log_level: "debug",
     },
   };
 

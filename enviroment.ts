@@ -118,7 +118,12 @@ function getEnv() {
 
   const propsByEnv = {
     development,
+    uat,
+    production,
+    yaba,
   };
+
+  const teste = { env: envName, ...global, ...propsByEnv[envName] };
   return { env: envName, ...global, ...propsByEnv[envName] };
 }
 

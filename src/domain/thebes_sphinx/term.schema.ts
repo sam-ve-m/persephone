@@ -8,7 +8,6 @@ const TermSchema = new Schema({
   term_version: String,
   user_accept: Boolean,
   term_answer_time_stamp: Number,
-  term_link: String,
 });
 
 export default TermSchema;

@@ -8,7 +8,6 @@ export interface ITerm {
   term_version: String;
   user_accept: Boolean;
   term_answer_time_stamp: Number;
-  term_link: String;
 }
 
 export interface ITermDocument extends ITerm, Document {}
