@@ -20,6 +20,9 @@ const level = () => {
     production: {
       log_level: "error",
     },
+    yaba: {
+      log_level: "warn",
+    },
   };
 
   const logLevel = logLevelByEnviroment[env];

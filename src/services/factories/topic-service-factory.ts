@@ -1,5 +1,6 @@
-import { ThebasSphinxRepository } from "@root/src/repositories";
 import { ThebasSphinxService } from "@service/thebas-sphinx-service";
+
+import { ThebasSphinxRepository } from "@repository/thebas-sphinx-repository";
 
 export module TopicServiceFactory {
   export const registerTopicFactoriesService = () => {
