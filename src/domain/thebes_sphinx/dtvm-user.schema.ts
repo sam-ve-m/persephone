@@ -18,12 +18,12 @@ const DtvmUserSchema = new Schema(
         },
         cpf: Number,
         email: String,
-        suitability: {
-          score: Number,
-          profile: String,
-          version: Number,
-          done_time_stamp: Number,
-        },
+        // suitability: {
+        //   score: Number,
+        //   profile: String,
+        //   version: Number,
+        //   done_time_stamp: Number,
+        // },
         can_be_managed_by_third_party_operator: Boolean,
         is_managed_by_third_party_operator: Boolean,
         third_party_operator: {
@@ -86,7 +86,7 @@ const DtvmUserSchema = new Schema(
       },
     },
     create_user_time_stamp: Number,
-    create_digital_signature_time_stamp: String,
+    create_digital_signature_time_stamp: Number,
   },
   { typeKey: "$type" }
 );
