@@ -1,4 +1,4 @@
-import { Kafka, Consumer } from "kafkajs";
+import { Kafka } from "kafkajs";
 
 import { env } from "@root/enviroment";
 import { IKafkaConnectionFactory } from "@core/infraestructure/queue";
