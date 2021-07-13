@@ -32,11 +32,10 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
 
   async getConsumers(): Promise<ConsumerWrapper[]> {
     const kafka = this.getOrCreateKafkaInstance();
+    const consumers: ConsumerWrapper[] = [];
+    const connectSubscribePromises: Promise<any>[] = [];
 
-    let consumers: ConsumerWrapper[] = new Array();
-    let connectSubscribrePromisses: Promise<any>[] = new Array();
-
-    env.kafka_metadata.topics_properties.forEach(async (topicProperties) => {
+    for (const topicProperties of env.kafka_metadata.topics_properties) {
       let i;
       for (i = 0; i <= topicProperties.numberOfConsumers; i++) {
         const consumer = kafka.consumer({
@@ -49,8 +48,8 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
           fromBeginning: true,
         });
 
-        connectSubscribrePromisses.push(connect);
-        connectSubscribrePromisses.push(subscribe);
+        connectSubscribePromises.push(connect);
+        connectSubscribePromises.push(subscribe);
 
         const consumerWrapper = {
           queueConsumer: consumer,
@@ -60,9 +59,9 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
 
         consumers.push(consumerWrapper);
       }
-    });
+    }
 
-    await Promise.all(connectSubscribrePromisses);
+    await Promise.all(connectSubscribePromises);
     return Promise.resolve(consumers);
   }
 }

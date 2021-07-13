@@ -10,7 +10,7 @@ export class MongoConectionFactory implements IDatabaseConnectionFactory {
   private static databaseConnection: Connection;
 
   getOrCreateDatabaseContext(): Promise<Connection> {
-    let connectionIsOpen: Promise<Connection> = new Promise(
+    const connectionIsOpen: Promise<Connection> = new Promise(
       (resolve, reject) => {
         if (!MongoConectionFactory.databaseConnection) {
           connect(

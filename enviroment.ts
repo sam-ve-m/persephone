@@ -86,7 +86,7 @@ let { development, uat, production, yaba, ...global } = {
   yaba: {
     database_metadata: {
       connection_object: {
-        uri: "mongodb://10.42.0.129:27017",
+        uri: "mongodb://10.42.0.35:27017",
         options: {
           dbName: "persephone",
           user: "root",
@@ -99,7 +99,7 @@ let { development, uat, production, yaba, ...global } = {
     },
     kafka_metadata: {
       clientId: "persephone.lionx.com.br",
-      brokers: ["10.42.0.129:9092"],
+      brokers: ["10.42.0.35:9092"],
       topics_properties: [
         {
           topic: "thebes.sphinx_persephone.topic",
