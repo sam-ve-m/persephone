@@ -6,26 +6,26 @@ import { IDatabaseConnectionFactory } from "@core/infraestructure/database";
 
 import { MongoConnectionHandlers } from "@infraestructure/database/mongo-connection-handlers";
 
-export class MongoConectionFactory implements IDatabaseConnectionFactory {
+export class MongoConnectionFactory implements IDatabaseConnectionFactory {
   private static databaseConnection: Connection;
 
   getOrCreateDatabaseContext(): Promise<Connection> {
     const connectionIsOpen: Promise<Connection> = new Promise(
       (resolve, reject) => {
-        if (!MongoConectionFactory.databaseConnection) {
+        if (!MongoConnectionFactory.databaseConnection) {
           connect(
             env.database_metadata.connection_object.uri,
             env.database_metadata.connection_object.options
           );
 
-          MongoConectionFactory.databaseConnection = connection;
+          MongoConnectionFactory.databaseConnection = connection;
 
-          MongoConectionFactory.databaseConnection.once("open", (data) => {
+          MongoConnectionFactory.databaseConnection.once("open", (data) => {
             MongoConnectionHandlers.handleConnectionOpenWithSuccess(data);
-            resolve(MongoConectionFactory.databaseConnection);
+            resolve(MongoConnectionFactory.databaseConnection);
           });
 
-          MongoConectionFactory.databaseConnection.on("error", (error) => {
+          MongoConnectionFactory.databaseConnection.on("error", (error) => {
             MongoConnectionHandlers.handleConnectionOpenError(error);
             reject(error);
           });
@@ -36,7 +36,8 @@ export class MongoConectionFactory implements IDatabaseConnectionFactory {
   }
 
   disconnect(): void {
-    if (!MongoConectionFactory.databaseConnection) {
+    if (!MongoConnectionFactory.databaseConnection) {
+      // TODO Check if method is executed
       disconnect();
     }
   }

@@ -7,7 +7,7 @@ import {
   KafkaConnectionFactory,
   KafkaRegisterConsumerEvents,
 } from "@infraestructure/queue";
-import { MongoConectionFactory } from "@infraestructure/database";
+import { MongoConnectionFactory } from "@infraestructure/database";
 
 import { TopicServiceFactory } from "@service/factories/topic-service-factory";
 import { PartitionHandlers } from "@service/handlers/partition-handlers";
@@ -20,7 +20,7 @@ const main = async () => {
   const kafkaConnectionFactory = new KafkaConnectionFactory();
   await kafkaConnectionFactory.registerKafkaTopicsIfNotExists();
 
-  const mongoConnectionFactory = new MongoConectionFactory();
+  const mongoConnectionFactory = new MongoConnectionFactory();
   await mongoConnectionFactory.getOrCreateDatabaseContext();
 
   const topicPartitionToService =
