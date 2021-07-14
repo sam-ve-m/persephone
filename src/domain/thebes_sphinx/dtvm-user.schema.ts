@@ -27,7 +27,7 @@ const DtvmUserSchema = new Schema(
         can_be_managed_by_third_party_operator: Boolean,
         is_managed_by_third_party_operator: Boolean,
         third_party_operator: {
-          isThird_party_operator: Boolean,
+          is_third_party_operator: Boolean,
           details: {},
           third_party_operator_email: String,
         },
@@ -85,8 +85,8 @@ const DtvmUserSchema = new Schema(
         date_of_acquisition: { value: Number, source: String },
       },
     },
-    create_user_time_stamp: Number,
-    create_digital_signature_time_stamp: Number,
+    create_user_timestamp: Number,
+    create_digital_signature_timestamp: Number,
   },
   { typeKey: "$type" }
 );

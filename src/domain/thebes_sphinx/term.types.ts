@@ -2,12 +2,12 @@ import { Document, Model } from "mongoose";
 
 export interface ITerm {
   metadata: {
-    user_email: String;
+    user_email: string;
   };
-  term_type: String;
-  term_version: String;
-  user_accept: Boolean;
-  term_answer_time_stamp: Number;
+  term_type: string;
+  term_version: string;
+  user_accept: boolean;
+  term_answer_timestamp: number;
 }
 
 export interface ITermDocument extends ITerm, Document {}

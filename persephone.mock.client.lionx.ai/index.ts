@@ -3,8 +3,8 @@ const { Partitioners } = require("kafkajs");
 
 const configureKafkaProducerConnection = function () {
   const kafka = new Kafka({
-    clientId: "auth-microservice",
-    brokers: ["127.0.0.1:9092"],
+    clientId: "persephone.lionx.com.br",
+    brokers: ["10.42.0.35:9092"],
   });
 
   return kafka;
@@ -46,9 +46,9 @@ const main = async () => {
   let i = 0;
 
   const prospectUser = JSON.stringify({
-    userEmail: "iggormagro8@gmail.com",
+    user_email: "iggormagro8@gmail.com",
     name: "Igor Luciano Magro",
-    createUserTimeStamp: 56416545,
+    create_user_timestamp: 56416545,
   });
 
   while (i < 30000) {
@@ -63,7 +63,7 @@ const main = async () => {
     // });
 
     producer.send({
-      topic: "thebes.sphinx.topic",
+      topic: "thebes.sphinx_persephone.topic",
       messages: [
         { value: prospectUser, partition: 0 },
         { value: prospectUser, partition: 0 },

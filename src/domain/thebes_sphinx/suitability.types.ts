@@ -2,19 +2,18 @@ import { Document, Model } from "mongoose";
 
 export interface ISuitability {
   metadata: {
-    user_email: String;
+    user_email: string;
   };
   form: [
     {
-      question_id: Number;
-      answer: String;
+      question_id: number;
+      answer: string;
     }
   ];
-  version: Number;
-  score: Number;
-  profile: String;
-  create_suitability_time_stamp: Number;
-  digital_signature_time_stamp: Number;
+  version: number;
+  score: number;
+  profile: string;
+  create_suitability_timestamp: number;
 }
 
 export interface ISuitabilityDocument extends ISuitability, Document {}

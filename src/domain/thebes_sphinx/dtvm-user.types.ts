@@ -2,90 +2,90 @@ import { Document, Model } from "mongoose";
 
 export interface IDtvmUser {
   metadata: {
-    user_email: String;
+    user_email: string;
   };
   user_registry_data: {
     provided_by_user: {
-      name: String;
+      name: string;
       marital: {
-        status: String;
+        status: string;
         spouse: {
-          spouse_name: String;
-          nationality: String;
-          cpf: Number;
+          spouse_name: string;
+          nationality: string;
+          cpf: number;
         };
       };
-      cpf: Number;
-      email: String;
+      cpf: number;
+      email: string;
       // suitability: {
-      //   score: Number;
-      //   profile: String;
-      //   version: Number;
-      //   done_time_stamp: Number;
+      //   score: number;
+      //   profile: string;
+      //   version: number;
+      //   done_time_stamp: number;
       // };
-      can_be_managed_by_third_party_operator: Boolean;
-      is_managed_by_third_party_operator: Boolean;
+      can_be_managed_by_third_party_operator: boolean;
+      is_managed_by_third_party_operator: boolean;
       third_party_operator: {
-        isThird_party_operator: Boolean;
+        isThird_party_operator: boolean;
         details: {};
-        third_party_operator_email: String;
+        third_party_operator_email: string;
       };
-      is_cvm_qualified_investor: Boolean;
+      is_cvm_qualified_investor: boolean;
       us_person: {
-        is_us_person: Boolean;
-        us_tin: String;
+        is_us_person: boolean;
+        us_tin: string;
       };
     };
     provided_by_bureaux: {
-      gender: { value: String; source: String };
-      birthDate: { value: Number; source: String };
-      naturalness: { value: String; source: String };
-      nationality: { value: String; source: String };
-      mother_name: { value: String; source: String };
+      gender: { value: string; source: string };
+      birthDate: { value: number; source: string };
+      naturalness: { value: string; source: string };
+      nationality: { value: string; source: string };
+      mother_name: { value: string; source: string };
       identifier_document: {
-        type: { value: String; source: String };
+        type: { value: string; source: string };
         document_data: {
-          number: { value: String; source: String };
-          date: { value: Number; source: String };
-          state: { value: String; source: String };
-          issuer: { value: String; source: String };
+          number: { value: string; source: string };
+          date: { value: number; source: string };
+          state: { value: string; source: string };
+          issuer: { value: string; source: string };
         };
       };
       address: {
-        street_name: { value: String; source: String };
-        number: { value: Number; source: String };
-        state: { value: String; source: String };
-        city: { value: String; source: String };
-        zipCode: { value: String; source: String };
-        phone_number: { value: String; source: String };
+        street_name: { value: string; source: string };
+        number: { value: number; source: string };
+        state: { value: string; source: string };
+        city: { value: string; source: string };
+        zipCode: { value: string; source: string };
+        phone_number: { value: string; source: string };
       };
       occupation: {
-        status: { value: String; source: String };
+        status: { value: string; source: string };
         company: {
-          name: { value: String; source: String };
-          cpnj: { value: Number; source: String };
+          name: { value: string; source: string };
+          cpnj: { value: number; source: string };
         };
       };
       assets: {
-        patrimony: { value: Number; source: String };
-        income: { value: Number; source: String };
+        patrimony: { value: number; source: string };
+        income: { value: number; source: string };
       };
       education: {
-        level: { value: String; source: String };
-        course: { value: String; source: String };
+        level: { value: string; source: string };
+        course: { value: string; source: string };
       };
       documents_photos: {
-        identifier_document: { value: String; source: String };
-        address_document: { value: String; source: String };
+        identifier_document: { value: string; source: string };
+        address_document: { value: string; source: string };
       };
       politically_exposed_person: {
-        is_politically_exposed_person: { value: Boolean; source: String };
+        is_politically_exposed_person: { value: boolean; source: string };
       };
-      date_of_acquisition: { value: Number; source: String };
+      date_of_acquisition: { value: number; source: string };
     };
   };
-  create_user_time_stamp: Number;
-  create_digital_signature_time_stamp: Number;
+  create_user_time_stamp: number;
+  create_digital_signature_time_stamp: number;
 }
 
 export interface IDtvmUserDocument extends IDtvmUser, Document {}

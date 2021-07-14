@@ -13,8 +13,7 @@ const SuitabilitySchema = new Schema({
   version: Number,
   score: Number,
   profile: String,
-  create_suitability_time_stamp: Number,
-  digital_signature_time_stamp: Number,
+  create_suitability_timestamp: Number,
 });
 
 export default SuitabilitySchema;

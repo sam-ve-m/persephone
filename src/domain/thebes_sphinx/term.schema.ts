@@ -7,7 +7,7 @@ const TermSchema = new Schema({
   term_type: String,
   term_version: String,
   user_accept: Boolean,
-  term_answer_time_stamp: Number,
+  term_answer_timestamp: Number,
 });
 
 export default TermSchema;
