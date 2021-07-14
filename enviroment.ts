@@ -1,4 +1,4 @@
-let { development, uat, production, yaba, ...global } = {
+const { development, uat, production, yaba, ...global } = {
   development: {
     database_metadata: {
       connection_object: {
@@ -108,13 +108,21 @@ let { development, uat, production, yaba, ...global } = {
           numberOfConsumers: 6,
           consumerGroup: "thebes.sphinx.group",
         },
+        // {
+        //   // TODO Review gaia env metadata
+        //   topic: "gaia_persephone.topic",
+        //   numPartitions: 0,
+        //   partitionsConsumedConcurrently: 1,
+        //   numberOfConsumers: 0,
+        //   consumerGroup: "gaia.group",
+        // },
       ],
     },
   },
 };
 
 function getEnv() {
-  let envName = process.env.NODE_ENV;
+  const envName = process.env.NODE_ENV;
 
   const propsByEnv = {
     development,
@@ -123,7 +131,7 @@ function getEnv() {
     yaba,
   };
 
-  const teste = { env: envName, ...global, ...propsByEnv[envName] };
+  // const test = { env: envName, ...global, ...propsByEnv[envName] };
   return { env: envName, ...global, ...propsByEnv[envName] };
 }
 

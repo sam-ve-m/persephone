@@ -36,7 +36,6 @@ export module PartitionHandlers {
         ) => {
           thebasSphinxService.handleDtvmUpdateUserQueue(messageBatch);
         },
-
         "kyc.table.queue": (
           thebasSphinxService: IThebasSphinxService,
           messageBatch: KafkaMessage[]
@@ -44,6 +43,7 @@ export module PartitionHandlers {
           thebasSphinxService.handleKycTableQueue(messageBatch);
         },
       },
+      "gaia_persephone.topic": {}
     };
 
     return topicPartitionToService;
@@ -58,11 +58,14 @@ export module PartitionHandlers {
       4: "dtvm.update.user.queue",
       5: "kyc.table.queue",
     },
+    "gaia_persephone.topic": {
+
+    }
   };
 
   const getPartitionTopicName = function (
     topic: string,
-    partition: Number
+    partition: number
   ): string {
     const nameOfTopicPartitions = topicsPartitionsEnum[topic];
     const partitionName = nameOfTopicPartitions[partition];
@@ -72,7 +75,7 @@ export module PartitionHandlers {
 
   export const getPartitionHandleCallback = (
     topic: string,
-    partition: Number,
+    partition: number,
     partitionHandleCallbacks: Object
   ) => {
     const partitionName = getPartitionTopicName(topic, partition);

@@ -1,6 +1,7 @@
 import { ThebasSphinxService } from "@service/thebas-sphinx-service";
-
 import { ThebasSphinxRepository } from "@repository/thebas-sphinx-repository";
+import { GaiaService } from "@service/gaia-service";
+import { GaiaRepository } from "@repository/gaia-repository";
 
 export module TopicServiceFactory {
   export const registerTopicFactoriesService = () => {
@@ -11,6 +12,13 @@ export module TopicServiceFactory {
           thebasSphinxRepository
         );
         return thebasSphinxService;
+      },
+      "gaia_persephone.topic": () => {
+        const gaiaRepository = new GaiaRepository();
+        const gaiaService = new GaiaService(
+            gaiaRepository
+        );
+        return gaiaService;
       },
     };
 
