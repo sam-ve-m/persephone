@@ -1,9 +1,7 @@
-import { Connection, connect, connection, disconnect } from "mongoose";
-
 import { env } from "@root/enviroment";
-
+import Logger from "@infraestructure/logger/logger";
+import { Connection, connect, connection, disconnect } from "mongoose";
 import { IDatabaseConnectionFactory } from "@core/infraestructure/database";
-
 import { MongoConnectionHandlers } from "@infraestructure/database/mongo-connection-handlers";
 
 export class MongoConnectionFactory implements IDatabaseConnectionFactory {
@@ -37,8 +35,7 @@ export class MongoConnectionFactory implements IDatabaseConnectionFactory {
 
   disconnect(): void {
     if (!MongoConnectionFactory.databaseConnection) {
-      // TODO Check if method is executed
-      disconnect();
+      disconnect().then(err => Logger.error(err));
     }
   }
 }
