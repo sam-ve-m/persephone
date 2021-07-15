@@ -57,10 +57,10 @@ export default %sSchema;
 
 
 BUILDERS = {
-    # "static": build_static_base,
-    # "types": build_types_base,
-    # "model": build_model_base,
-    # "methods": build_methods_base,
+    "static": build_static_base,
+    "types": build_types_base,
+    "model": build_model_base,
+    "methods": build_methods_base,
     "schema": build_schema_base
 }
 
