@@ -1,6 +1,6 @@
 // export * from "./admin.methods";
 // export * from "./admin.model";
-// export * from "./admin.schema";
+// export * from "./admin.";
 export * from "./admin.types";
 // export * from "./admin.statics";
 //
