@@ -108,14 +108,14 @@ const { development, uat, production, yaba, ...global } = {
           numberOfConsumers: 6,
           consumerGroup: "thebes.sphinx.group",
         },
-        // {
-        //   // TODO Review gaia env metadata
-        //   topic: "gaia_persephone.topic",
-        //   numPartitions: 0,
-        //   partitionsConsumedConcurrently: 1,
-        //   numberOfConsumers: 0,
-        //   consumerGroup: "gaia.group",
-        // },
+        {
+          // TODO Review gaia env metadata
+          // topic: "gaia_persephone.topic",
+          // numPartitions: 6,
+          // partitionsConsumedConcurrently: 3,
+          // numberOfConsumers: 6,
+          // consumerGroup: "gaia.group",
+        },
       ],
     },
   },

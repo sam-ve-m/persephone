@@ -15,3 +15,7 @@ export interface IThebasSphinxRepository {
   saveDtvmUpdateUsers(dtvmUsers: IDtvmUpdateUser[]): Promise<any>;
   saveKycTables(kycTables: IKycTable[]): Promise<any>;
 }
+
+
+
+

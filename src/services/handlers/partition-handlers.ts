@@ -1,6 +1,7 @@
 import { KafkaMessage } from "kafkajs";
 
 import { IThebasSphinxService } from "@core/services/ithebas-sphinx-service";
+import {IGaiaService} from "@core/services";
 
 export module PartitionHandlers {
   export const registerPartitionsHandleCallbacks = () => {
@@ -43,7 +44,44 @@ export module PartitionHandlers {
           thebasSphinxService.handleKycTableQueue(messageBatch);
         },
       },
-      "gaia_persephone.topic": {}
+      "gaia_persephone.topic": {
+        "admin.queue": (
+            gaiaService: IGaiaService,
+            messageBatch: KafkaMessage[]
+        ) => {
+          console.log("admin")
+        },
+        "newOrderSingle.queue": (
+            gaiaService: IGaiaService,
+            messageBatch: KafkaMessage[]
+        ) => {
+          console.log("order")
+        },
+        "orderCancelReplaceRequest.queue": (
+            gaiaService: IGaiaService,
+            messageBatch: KafkaMessage[]
+        ) => {
+          console.log("newOrderSingle")
+        },
+        "orderCancelRequest.queue": (
+            gaiaService: IGaiaService,
+            messageBatch: KafkaMessage[]
+        ) => {
+          console.log("orderCancelReplaceRequest")
+        },
+        "executionReport.queue": (
+            gaiaService: IGaiaService,
+            messageBatch: KafkaMessage[]
+        ) => {
+          console.log("orderCancelRequest")
+        },
+        "orderCancelReject.queue": (
+            gaiaService: IGaiaService,
+            messageBatch: KafkaMessage[]
+        ) => {
+          console.log("executionReport")
+        }
+      }
     };
 
     return topicPartitionToService;
@@ -59,7 +97,12 @@ export module PartitionHandlers {
       5: "kyc.table.queue",
     },
     "gaia_persephone.topic": {
-
+      0: "admin.queue",
+      1: "newOrderSingle.queue",
+      2: "orderCancelReplaceRequest.queue",
+      3: "orderCancelRequest.queue",
+      4: "executionReport.queue",
+      5: "orderCancelReject.queue",
     }
   };
 
