@@ -49,37 +49,37 @@ export module PartitionHandlers {
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
-          console.log("admin")
+          gaiaService.handlerAdminQueue(messageBatch);
         },
         "newOrderSingle.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
-          console.log("order")
+          gaiaService.handlerNewOrderSingleQueue(messageBatch);
         },
         "orderCancelReplaceRequest.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
-          console.log("newOrderSingle")
+          gaiaService.handlerOrderCancelReplaceRequestQueue(messageBatch);
         },
         "orderCancelRequest.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
-          console.log("orderCancelReplaceRequest")
+          gaiaService.handlerOrderCancelRequestQueue(messageBatch);
         },
         "executionReport.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
-          console.log("orderCancelRequest")
+          gaiaService.handlerExecutionReportQueue(messageBatch);
         },
         "orderCancelReject.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
-          console.log("executionReport")
+          gaiaService.handlerOrderCancelRejectQueue(messageBatch);
         }
       }
     };
