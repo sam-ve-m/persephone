@@ -51,31 +51,31 @@ export module PartitionHandlers {
         ) => {
           gaiaService.handlerAdminQueue(messageBatch);
         },
-        "newOrderSingle.queue": (
+        "new.order.single.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
           gaiaService.handlerNewOrderSingleQueue(messageBatch);
         },
-        "orderCancelReplaceRequest.queue": (
+        "order.cancel.replace.request.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
           gaiaService.handlerOrderCancelReplaceRequestQueue(messageBatch);
         },
-        "orderCancelRequest.queue": (
+        "order.cancel.request.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
           gaiaService.handlerOrderCancelRequestQueue(messageBatch);
         },
-        "executionReport.queue": (
+        "execution.report.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
           gaiaService.handlerExecutionReportQueue(messageBatch);
         },
-        "orderCancelReject.queue": (
+        "order.cancel.reject.queue": (
             gaiaService: IGaiaService,
             messageBatch: KafkaMessage[]
         ) => {
@@ -98,11 +98,11 @@ export module PartitionHandlers {
     },
     "gaia_persephone.topic": {
       0: "admin.queue",
-      1: "newOrderSingle.queue",
-      2: "orderCancelReplaceRequest.queue",
-      3: "orderCancelRequest.queue",
-      4: "executionReport.queue",
-      5: "orderCancelReject.queue",
+      1: "new.order.single.queue",
+      2: "order.cancel.replace.request.queue",
+      3: "order.cancel.request.queue",
+      4: "execution.report.queue",
+      5: "order.cancel.reject.queue",
     }
   };
 
