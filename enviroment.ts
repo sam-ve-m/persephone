@@ -131,7 +131,6 @@ function getEnv() {
     yaba,
   };
 
-  // const test = { env: envName, ...global, ...propsByEnv[envName] };
   return { env: envName, ...global, ...propsByEnv[envName] };
 }
 
