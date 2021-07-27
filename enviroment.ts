@@ -1,12 +1,14 @@
-const { development, uat, production, yaba, ...global } = {
-  development: {
+require('dotenv').config()
+
+const { localhost, sit, uat, prod, yaba, ...global } = {
+  localhost: {
     database_metadata: {
       connection_object: {
-        uri: "mongodb://localhost:27017",
+        uri: process.env.MONG_URI,
         options: {
-          dbName: "persephone",
-          user: "root",
-          pass: "ea3ca9a9-568b-4c85-9419-778c335ca232",
+          dbName: process.env.MONGO_DB_NAME,
+          user: process.env.MONGO_USER,
+          pass: process.env.MONGO_PASSWORD,
           useNewUrlParser: true,
           useUnifiedTopology: true,
           autoCreate: true,
@@ -14,8 +16,36 @@ const { development, uat, production, yaba, ...global } = {
       },
     },
     kafka_metadata: {
-      clientId: "persephone.lionx.com.br",
-      brokers: ["localhost:9092"],
+      clientId: process.env.KAFKA_CLIENT_ID,
+      brokers: process.env.KAKFA_BROKERS.split(";"),
+      topics_properties: [
+        {
+          topic: "thebes.sphinx_persephone.topic",
+          numPartitions: 6,
+          partitionsConsumedConcurrently: 3,
+          numberOfConsumers: 6,
+          consumerGroup: "thebes.sphinx.group",
+        },
+      ],
+    },
+  },
+  sit: {
+    database_metadata: {
+      connection_object: {
+        uri: process.env.MONG_URI,
+        options: {
+          dbName: process.env.MONGO_DB_NAME,
+          user: process.env.MONGO_USER,
+          pass: process.env.MONGO_PASSWORD,
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          autoCreate: true,
+        },
+      },
+    },
+    kafka_metadata: {
+      clientId: process.env.KAFKA_CLIENT_ID,
+      brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
         {
           topic: "thebes.sphinx_persephone.topic",
@@ -30,11 +60,11 @@ const { development, uat, production, yaba, ...global } = {
   uat: {
     database_metadata: {
       connection_object: {
-        uri: "mongodb://localhost:27017",
+        uri: process.env.MONG_URI,
         options: {
-          dbName: "persephone",
-          user: "root",
-          pass: "ea3ca9a9-568b-4c85-9419-778c335ca232",
+          dbName: process.env.MONGO_DB_NAME,
+          user: process.env.MONGO_USER,
+          pass: process.env.MONGO_PASSWORD,
           useNewUrlParser: true,
           useUnifiedTopology: true,
           autoCreate: true,
@@ -42,8 +72,8 @@ const { development, uat, production, yaba, ...global } = {
       },
     },
     kafka_metadata: {
-      clientId: "persephone.lionx.com.br",
-      brokers: ["localhost:9092"],
+      clientId: process.env.KAFKA_CLIENT_ID,
+      brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
         {
           topic: "thebes.sphinx_persephone.topic",
@@ -55,14 +85,14 @@ const { development, uat, production, yaba, ...global } = {
       ],
     },
   },
-  production: {
+  prod: {
     database_metadata: {
       connection_object: {
-        uri: "mongodb://localhost:27017",
+        uri: process.env.MONG_URI,
         options: {
-          dbName: "persephone",
-          user: "root",
-          pass: "ea3ca9a9-568b-4c85-9419-778c335ca232",
+          dbName: process.env.MONGO_DB_NAME,
+          user: process.env.MONGO_USER,
+          pass: process.env.MONGO_PASSWORD,
           useNewUrlParser: true,
           useUnifiedTopology: true,
           autoCreate: true,
@@ -70,8 +100,8 @@ const { development, uat, production, yaba, ...global } = {
       },
     },
     kafka_metadata: {
-      clientId: "persephone.lionx.com.br",
-      brokers: ["localhost:9092"],
+      clientId: process.env.KAFKA_CLIENT_ID,
+      brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
         {
           topic: "thebes.sphinx_persephone.topic",
@@ -86,11 +116,11 @@ const { development, uat, production, yaba, ...global } = {
   yaba: {
     database_metadata: {
       connection_object: {
-        uri: "mongodb://10.42.0.35:27017",
+        uri: process.env.MONG_URI,
         options: {
-          dbName: "persephone",
-          user: "root",
-          pass: "ea3ca9a9-568b-4c85-9419-778c335ca232",
+          dbName: process.env.MONGO_DB_NAME,
+          user: process.env.MONGO_USER,
+          pass: process.env.MONGO_PASSWORD,
           useNewUrlParser: true,
           useUnifiedTopology: true,
           autoCreate: true,
@@ -98,8 +128,8 @@ const { development, uat, production, yaba, ...global } = {
       },
     },
     kafka_metadata: {
-      clientId: "persephone.lionx.com.br",
-      brokers: ["10.42.0.35:9092"],
+      clientId: process.env.KAFKA_CLIENT_ID,
+      brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
         {
           topic: "thebes.sphinx_persephone.topic",
@@ -123,11 +153,13 @@ const { development, uat, production, yaba, ...global } = {
 
 function getEnv() {
   const envName = process.env.NODE_ENV;
+  
 
   const propsByEnv = {
-    development,
+    localhost,
+    sit,
     uat,
-    production,
+    prod,
     yaba,
   };
 
