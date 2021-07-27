@@ -4,7 +4,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
   localhost: {
     database_metadata: {
       connection_object: {
-        uri: process.env.MONG_URI,
+        uri: process.env.MONGO_URI,
         options: {
           dbName: process.env.MONGO_DB_NAME,
           user: process.env.MONGO_USER,
@@ -32,7 +32,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
   sit: {
     database_metadata: {
       connection_object: {
-        uri: process.env.MONG_URI,
+        uri: process.env.MONGO_URI,
         options: {
           dbName: process.env.MONGO_DB_NAME,
           user: process.env.MONGO_USER,
@@ -60,7 +60,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
   uat: {
     database_metadata: {
       connection_object: {
-        uri: process.env.MONG_URI,
+        uri: process.env.MONGO_URI,
         options: {
           dbName: process.env.MONGO_DB_NAME,
           user: process.env.MONGO_USER,
@@ -88,7 +88,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
   prod: {
     database_metadata: {
       connection_object: {
-        uri: process.env.MONG_URI,
+        uri: process.env.MONGO_URI,
         options: {
           dbName: process.env.MONGO_DB_NAME,
           user: process.env.MONGO_USER,
@@ -116,7 +116,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
   yaba: {
     database_metadata: {
       connection_object: {
-        uri: process.env.MONG_URI,
+        uri: process.env.MONGO_URI,
         options: {
           dbName: process.env.MONGO_DB_NAME,
           user: process.env.MONGO_USER,
