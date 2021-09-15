@@ -1,0 +1,7 @@
+{
+  "project": "example",
+  "relational_objects": {
+    "TestName1": "test-name-1",
+    "TestName2": "test-name-2"
+  }
+}
