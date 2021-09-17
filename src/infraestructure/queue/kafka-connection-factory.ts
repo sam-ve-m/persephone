@@ -36,8 +36,7 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
     const connectSubscribePromises: Promise<any>[] = [];
 
     for (const topicProperties of env.kafka_metadata.topics_properties) {
-      let i;
-      for (i = 0; i <= topicProperties.numberOfConsumers; i++) {
+      for (let i = 0; i <= topicProperties.numberOfConsumers; i++) {
         const consumer = kafka.consumer({
           groupId: topicProperties.consumerGroup,
         });

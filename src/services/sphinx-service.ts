@@ -1,0 +1,267 @@
+import { KafkaMessage } from "kafkajs";
+
+import { ISphinxService } from "@core/services";
+import { ISphinxRepository } from "@core/repository";
+import { RepositoriesSucessHandlers } from "./handlers";
+
+export class SphinxService implements ISphinxService {
+  _sphinxRepository: ISphinxRepository;
+
+  constructor(sphinxRepository: ISphinxRepository) {
+    this._sphinxRepository = sphinxRepository;
+  }
+
+  handleProspectUserQueue(prospectUserMessages: KafkaMessage[]): void {
+    const formattedData = prospectUserMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveResponses(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleSignedTermQueue(signedTermsMessages: KafkaMessage[]): void {
+    const formattedData = signedTermsMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveSignedTerms(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleSuitabilityQueue(suitabilitiesMessages: KafkaMessage[]): void {
+    const formattedData = suitabilitiesMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .sui(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserBureauCallbackQueue(bureauCallbacks: KafkaMessage[]): void {
+    const formattedData = bureauCallbacks.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserBureauCallbacks(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserIdentifierDataQueue(userIdentifierData: KafkaMessage[]): void {
+    const formattedData = userIdentifierData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserIdentifierData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserSelfieQueue(userSelfies: KafkaMessage[]): void {
+    const formattedData = userSelfies.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserSelfies(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserComplementaryDataQueue(
+    usersComplementaryData: KafkaMessage[]
+  ): void {
+    const formattedData = usersComplementaryData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserComplementaryData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserGetQuizFromStoneageQueue(
+    userGetQuizzesFromStoneAge: KafkaMessage[]
+  ): void {
+    const formattedData = userGetQuizzesFromStoneAge.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserGetQuizFromStoneage(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserSendQuizFromStoneageQueue(
+    userSendQuizzesFromStoneAge: KafkaMessage[]
+  ): void {
+    const formattedData = userSendQuizzesFromStoneAge.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserSendQuizFromStoneage(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserSetElectronicSignatureQueue(
+    usersElectronicSignatures: KafkaMessage[]
+  ): void {
+    const formattedData = usersElectronicSignatures.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserSetElectronicSignatures(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserChangeOrResetElectronicSignatureQueue(
+    usersChangeOrResetElectronicSignatures: KafkaMessage[]
+  ): void {
+    const formattedData = usersChangeOrResetElectronicSignatures.map(
+      (message) => {
+        const messageString = message.value.toString();
+        return JSON.parse(messageString);
+      }
+    );
+
+    this._sphinxRepository
+      .saveUserChangeOrResetElectronicSignatures(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleCreateElectronicSignatureSessionQueue(
+    createElectronicSignatureSessions: KafkaMessage[]
+  ): void {
+    const formattedData = createElectronicSignatureSessions.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveCreateElectronicSignatureSessions(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void {
+    const formattedData = saveUsersThebesHall.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserThebesHall(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void {
+    const formattedData = saveUserAuthentications.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserAuthentications(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+  handleUserLogoutQueue(saveUserLogouts: KafkaMessage[]): void {
+    const formattedData = saveUserLogouts.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserLogouts(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+}

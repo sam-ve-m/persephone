@@ -1,35 +1,16 @@
+import { IGaiaOrder, IGaiaResponse, IGaiaSessionMessage } from "@domain/gaia";
 import { IGaiaRepository } from "@core/repository/igaia-repository";
-import { IAdmin, AdminModel } from "@domain/gaia";
-import { IExecutionReport, ExecutionReportModel } from "@domain/gaia";
-import { INewOrderSingle, NewOrderSingleModel } from "@domain/gaia";
-import { IOrderCancelReject, OrderCancelRejectModel } from "@domain/gaia";
-import { IOrderCancelReplaceRequest, OrderCancelReplaceRequestModel } from "@domain/gaia";
-import { IOrderCancelRequest, OrderCancelRequestModel } from "@domain/gaia";
-
 
 export class GaiaRepository implements IGaiaRepository {
-    saveAdmin(admin: IAdmin[]): Promise<any> {
-        return AdminModel.insertMany(admin)
-    }
+  saveOrders(orders: IGaiaOrder[]): Promise<any> {
+    throw new Error("Method not implemented.");
+  }
 
-    saveExecutionReport(executionReport: IExecutionReport[]): Promise<any> {
-        return ExecutionReportModel.insertMany(executionReport)
-    }
+  saveResponses(responses: IGaiaResponse[]): Promise<any> {
+    throw new Error("Method not implemented.");
+  }
 
-    saveNewOrderSingle(newOrderSingle: INewOrderSingle[]): Promise<any> {
-        return NewOrderSingleModel.insertMany(newOrderSingle)
-    }
-
-    saveOrderCancelReject(orderCancelReject: IOrderCancelReject[]): Promise<any> {
-        return OrderCancelRejectModel.insertMany(orderCancelReject)
-    }
-
-    saveOrderCancelReplaceRequest(orderCancelReplaceRequest: IOrderCancelReplaceRequest[]): Promise<any> {
-        return OrderCancelReplaceRequestModel.insertMany(orderCancelReplaceRequest)
-    }
-
-    saveOrderCancelRequest(orderCancelRequest: IOrderCancelRequest[]): Promise<any> {
-        return OrderCancelRequestModel.insertMany(orderCancelRequest)
-    }
-
+  saveSessionMessages(sessionMessages: IGaiaSessionMessage[]): Promise<any> {
+    throw new Error("Method not implemented.");
+  }
 }

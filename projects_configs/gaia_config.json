@@ -1,12 +1,8 @@
 {
   "project": "gaia",
-  "relational_objects":{
-    "Admin": "admin",
-    "NewOrderSingle": "new-order-single",
-    "OrderCancelReplaceRequest": "order-cancel-replace-request",
-    "OrderCancelRequest": "order-cancel-request",
-    "ExecutionReport": "execution-report",
-    "OrderCancelReject": "order-cancel-reject"
+  "relational_objects": {
+    "GaiaOrder": "gaia-order",
+    "GaiaResponse": "gaia-response",
+    "GaiaSessionMessage": "gaia-session-message"
   }
 }
-

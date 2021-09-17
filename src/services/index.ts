@@ -1,3 +1,3 @@
-export * from "./thebas-sphinx-service";
+export * from "./sphinx-service";
 
 export * from "./gaia-service";

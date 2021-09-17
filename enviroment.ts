@@ -1,4 +1,8 @@
-require('dotenv').config()
+require("dotenv").config();
+
+import { sphinxScope, aetherScope } from "./enviroment.kafka.metadata";
+import { gaiaScope, hyperionScope } from "./enviroment.kafka.metadata";
+import { hermesScope } from "./enviroment.kafka.metadata";
 
 const { localhost, sit, uat, prod, yaba, ...global } = {
   localhost: {
@@ -19,13 +23,11 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
       clientId: process.env.KAFKA_CLIENT_ID,
       brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
-        {
-          topic: "thebes.sphinx_persephone.topic",
-          numPartitions: 6,
-          partitionsConsumedConcurrently: 3,
-          numberOfConsumers: 6,
-          consumerGroup: "thebes.sphinx.group",
-        },
+        ...aetherScope,
+        ...gaiaScope,
+        ...hermesScope,
+        ...hyperionScope,
+        ...sphinxScope,
       ],
     },
   },
@@ -47,13 +49,11 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
       clientId: process.env.KAFKA_CLIENT_ID,
       brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
-        {
-          topic: "thebes.sphinx_persephone.topic",
-          numPartitions: 6,
-          partitionsConsumedConcurrently: 3,
-          numberOfConsumers: 6,
-          consumerGroup: "thebes.sphinx.group",
-        },
+        ...aetherScope,
+        ...gaiaScope,
+        ...hermesScope,
+        ...hyperionScope,
+        ...sphinxScope,
       ],
     },
   },
@@ -75,13 +75,11 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
       clientId: process.env.KAFKA_CLIENT_ID,
       brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
-        {
-          topic: "thebes.sphinx_persephone.topic",
-          numPartitions: 6,
-          partitionsConsumedConcurrently: 3,
-          numberOfConsumers: 6,
-          consumerGroup: "thebes.sphinx.group",
-        },
+        ...aetherScope,
+        ...gaiaScope,
+        ...hermesScope,
+        ...hyperionScope,
+        ...sphinxScope,
       ],
     },
   },
@@ -103,13 +101,11 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
       clientId: process.env.KAFKA_CLIENT_ID,
       brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
-        {
-          topic: "thebes.sphinx_persephone.topic",
-          numPartitions: 6,
-          partitionsConsumedConcurrently: 3,
-          numberOfConsumers: 6,
-          consumerGroup: "thebes.sphinx.group",
-        },
+        ...aetherScope,
+        ...gaiaScope,
+        ...hermesScope,
+        ...hyperionScope,
+        ...sphinxScope,
       ],
     },
   },
@@ -131,21 +127,11 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
       clientId: process.env.KAFKA_CLIENT_ID,
       brokers: process.env.KAKFA_BROKERS.split(";"),
       topics_properties: [
-        {
-          topic: "thebes.sphinx_persephone.topic",
-          numPartitions: 6,
-          partitionsConsumedConcurrently: 3,
-          numberOfConsumers: 6,
-          consumerGroup: "thebes.sphinx.group",
-        },
-        {
-          // TODO Review gaia env metadata
-          // topic: "gaia_persephone.topic",
-          // numPartitions: 6,
-          // partitionsConsumedConcurrently: 3,
-          // numberOfConsumers: 6,
-          // consumerGroup: "gaia.group",
-        },
+        ...aetherScope,
+        ...gaiaScope,
+        ...hermesScope,
+        ...hyperionScope,
+        ...sphinxScope,
       ],
     },
   },
@@ -153,7 +139,6 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
 
 function getEnv() {
   const envName = process.env.NODE_ENV;
-  
 
   const propsByEnv = {
     localhost,

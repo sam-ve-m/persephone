@@ -25,10 +25,10 @@ import { I%sDocument } from "@domain/%s/%s.types";
 def build_model_base(name, project: str, _file):
     return """
 import { model } from "mongoose";
-      
+
 import { I%s } from "@domain/%s/%s.types";
 import %sSchema from "@domain/%s/%s.schema";
-      
+
 export const %sModel = model<I%s>(
     "%s",
     %sSchema

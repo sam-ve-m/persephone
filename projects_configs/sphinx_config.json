@@ -1,0 +1,18 @@
+{
+  "project": "sphinx",
+  "relational_objects": {
+    "SignedTerm": "signed-term",
+    "BureauCallback": "bureau-callback",
+    "UserIdentifierData": "user-identifier-data",
+    "UserSelfie": "user-selfie",
+    "UserComplementaryData": "user-complementary-data",
+    "UserGetQuizzesFromStoneAge": "user-get-quizzes-from-stone-age",
+    "UserSendQuizzesFromStoneAge": "user-send-quizzes-from-stone-age",
+    "UserElectronicSignature": "user-electronic-signature",
+    "UserChangeOrResetElectronicSignature": "user-change-or-reset-electronic-signature",
+    "CreateElectronicSignatureSession": "create-electronic-signature-session",
+    "SaveUserThebesHall": "save-user-thebes-hall",
+    "SaveUserAuthentication": "save-user-authentication",
+    "SaveUserLogout": "save-user-logout"
+  }
+}

@@ -53,7 +53,7 @@ const main = async () => {
 
   while (i < 30000) {
     // producer.send({
-    //   topic: "gaia.topic",
+    //   topic: "gaia",
     //   messages: [
     //     { value: "GAIA.0!", partition: 0 },
     //     { value: "GAIA.1!", partition: 1 },
@@ -63,7 +63,7 @@ const main = async () => {
     // });
 
     producer.send({
-      topic: "thebes.sphinx_persephone.topic",
+      topic: "thebes.sphinx_persephone",
       messages: [
         { value: prospectUser, partition: 0 },
         { value: prospectUser, partition: 0 },
