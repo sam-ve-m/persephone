@@ -1,6 +1,8 @@
 {
   "project": "sphinx",
   "relational_objects": {
+    "ProspectUser": "prospect-user",
+    "Suitability": "suitability",
     "SignedTerm": "signed-term",
     "BureauCallback": "bureau-callback",
     "UserIdentifierData": "user-identifier-data",

@@ -1,6 +1,6 @@
 import { aetherScope, gaiaScope } from "./partition-handlers.metadata";
 import { hermesScope, hyperionScope } from "./partition-handlers.metadata";
-import { thebesSphinxScope } from "./partition-handlers.metadata";
+import { sphinxScope } from "./partition-handlers.metadata";
 import { topicsPartitionsEnum } from "./partition-handlers.metadata";
 
 export module PartitionHandlers {
@@ -9,7 +9,7 @@ export module PartitionHandlers {
     ...gaiaScope,
     ...hermesScope,
     ...hyperionScope,
-    ...thebesSphinxScope,
+    ...sphinxScope,
   });
 
   const getPartitionTopicName = function (

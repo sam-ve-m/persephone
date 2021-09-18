@@ -18,7 +18,7 @@ export class SphinxService implements ISphinxService {
     });
 
     this._sphinxRepository
-      .saveResponses(formattedData)
+      .saveProspectUser(formattedData)
       .then((data) => {
         RepositoriesSucessHandlers.handleGeneralSucess(data);
       })
@@ -50,7 +50,7 @@ export class SphinxService implements ISphinxService {
     });
 
     this._sphinxRepository
-      .sui(formattedData)
+      .saveSuitability(formattedData)
       .then((data) => {
         RepositoriesSucessHandlers.handleGeneralSucess(data);
       })

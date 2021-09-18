@@ -221,23 +221,39 @@ const topicsPartitionsEnum = {
   "gaia_persephone.session_messages": { 0: "session_messages.queue" },
 
   "hermes_persephone.order_session.authenticity": {
-    0: "order_session.authenticity",
+    0: "order_session.authenticity.queue",
   },
-  "hermes_persephone.order_session.integrity": { 0: "order_session.integrity" },
-  "hermes_persephone.trade_sessions.create": { 0: "trade_sessions.create" },
+  "hermes_persephone.order_session.integrity": {
+    0: "order_session.integrity.queue",
+  },
+  "hermes_persephone.trade_sessions.create": {
+    0: "trade_sessions.create.queue",
+  },
   "hermes_persephone.received_orders": { 0: "received_orders.queue" },
   "hermes_persephone.sent_orders": { 0: "sent_orders.queue" },
   "hermes_persephone.report_orders": { 0: "report_orders.queue" },
 
   "hyperion_persephone.responses": { 0: "responses.queue" },
 
-  "thebes.sphinx_persephone": {
-    0: "prospect.user.queue",
-    1: "term.queue",
+  "sphinx_persephone.user.crud": {
+    0: "prospect_user.queue",
+    1: "signed_term.queue",
     2: "suitability.queue",
-    3: "dtvm.user.queue",
-    4: "dtvm.update.user.queue",
-    5: "kyc.table.queue",
+    3: "user_bureau_callback.queue",
+    4: "user_identifier_data.queue",
+    5: "user_selfie.queue",
+    6: "user_complementary_data.queue",
+    7: "user_get_quiz_from_stoneage.queue",
+    8: "user_send_quiz_from_stoneage.queue",
+    9: "user_set_electronic_signature.queue",
+    10: "user_change_or_reset_electronic_signature.queue",
+    11: "create_electronic_signature_session.queue",
+  },
+
+  "sphinx_persephone.user.authentication": {
+    0: "user_thebes_hall.queue",
+    1: "user_authentication.queue",
+    2: "user_logout.queue",
   },
 };
 

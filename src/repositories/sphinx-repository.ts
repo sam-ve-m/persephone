@@ -1,87 +1,128 @@
+import { IProspectUser, ProspectUserModel } from "@domain/sphinx";
+import { ISignedTerm, SignedTermModel } from "@domain/sphinx";
+import { IBureauCallback, BureauCallbackModel } from "@domain/sphinx";
+import { IUserIdentifierData, UserIdentifierDataModel } from "@domain/sphinx";
+import { IUserSelfie, UserSelfieModel } from "@domain/sphinx";
+
 import {
-  ISignedTerm,
-  IBureauCallback,
-  IUserIdentifierData,
-  IUserSelfie,
   IUserComplementaryData,
-  IUserGetQuizzesFromStoneAge,
-  IUserSendQuizzesFromStoneAge,
-  IUserElectronicSignature,
-  IUserChangeOrResetElectronicSignature,
-  ICreateElectronicSignatureSession,
-  ISaveUserThebesHall,
-  ISaveUserAuthentication,
-  ISaveUserLogout,
+  UserComplementaryDataModel,
 } from "@domain/sphinx";
+import {
+  IUserGetQuizzesFromStoneAge,
+  UserGetQuizzesFromStoneAgeModel,
+} from "@domain/sphinx";
+import {
+  IUserSendQuizzesFromStoneAge,
+  UserSendQuizzesFromStoneAgeModel,
+} from "@domain/sphinx";
+import {
+  IUserElectronicSignature,
+  UserElectronicSignatureModel,
+} from "@domain/sphinx";
+import {
+  IUserChangeOrResetElectronicSignature,
+  UserChangeOrResetElectronicSignatureModel,
+} from "@domain/sphinx";
+import {
+  ICreateElectronicSignatureSession,
+  CreateElectronicSignatureSessionModel,
+} from "@domain/sphinx";
+
+import { ISaveUserThebesHall, SaveUserThebesHallModel } from "@domain/sphinx";
+
+import {
+  ISaveUserAuthentication,
+  SaveUserAuthenticationModel,
+} from "@domain/sphinx";
+
+import { ISaveUserLogout, SaveUserLogoutModel } from "@domain/sphinx";
+import { ISuitability, SuitabilityModel } from "@domain/sphinx";
 
 import { ISphinxRepository } from "@core/repository";
 
 export class SphinxRepository implements ISphinxRepository {
   saveSignedTerms(signedTerms: ISignedTerm[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return SignedTermModel.insertMany(signedTerms);
   }
 
   saveUserBureauCallbacks(bureauCallbacks: IBureauCallback[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return BureauCallbackModel.insertMany(bureauCallbacks);
   }
 
   saveUserIdentifierData(
     userIdentifierData: IUserIdentifierData[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserIdentifierDataModel.insertMany(userIdentifierData);
   }
 
   saveUserSelfies(userSelfies: IUserSelfie[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserSelfieModel.insertMany(userSelfies);
   }
 
   saveUserComplementaryData(
     usersComplementaryData: IUserComplementaryData[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserComplementaryDataModel.insertMany(usersComplementaryData);
   }
 
   saveUserGetQuizFromStoneage(
     userGetQuizzesFromStoneAge: IUserGetQuizzesFromStoneAge[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserGetQuizzesFromStoneAgeModel.insertMany(
+      userGetQuizzesFromStoneAge
+    );
   }
 
   saveUserSendQuizFromStoneage(
     userSendQuizzesFromStoneAge: IUserSendQuizzesFromStoneAge[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserSendQuizzesFromStoneAgeModel.insertMany(
+      userSendQuizzesFromStoneAge
+    );
   }
 
   saveUserSetElectronicSignatures(
     usersElectronicSignatures: IUserElectronicSignature[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserElectronicSignatureModel.insertMany(usersElectronicSignatures);
   }
 
   saveUserChangeOrResetElectronicSignatures(
     usersChangeOrResetElectronicSignatures: IUserChangeOrResetElectronicSignature[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return UserChangeOrResetElectronicSignatureModel.insertMany(
+      usersChangeOrResetElectronicSignatures
+    );
   }
 
   saveCreateElectronicSignatureSessions(
     createElectronicSignatureSessions: ICreateElectronicSignatureSession[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return CreateElectronicSignatureSessionModel.insertMany(
+      createElectronicSignatureSessions
+    );
   }
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return SaveUserThebesHallModel.insertMany(saveUsersThebesHall);
   }
 
   saveUserAuthentications(
     saveUserAuthentications: ISaveUserAuthentication[]
   ): Promise<any> {
-    throw new Error("Method not implemented.");
+    return SaveUserAuthenticationModel.insertMany(saveUserAuthentications);
   }
 
   saveUserLogouts(saveUserLogouts: ISaveUserLogout[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return SaveUserLogoutModel.insertMany(saveUserLogouts);
+  }
+
+  saveSuitability(suitabilities: ISuitability[]): Promise<any> {
+    return SuitabilityModel.insertMany(suitabilities);
+  }
+
+  saveProspectUser(prospectUsers: IProspectUser[]): Promise<any> {
+    return ProspectUserModel.insertMany(prospectUsers);
   }
 }

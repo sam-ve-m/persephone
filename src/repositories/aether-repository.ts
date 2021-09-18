@@ -1,12 +1,14 @@
-import { IAetherOrder, IAetherInvalidOrder } from "@domain/aether";
+import { IAetherOrder, AetherOrderModel } from "@domain/aether";
+import { IAetherInvalidOrder, AetherInvalidOrderModel } from "@domain/aether";
+
 import { IAetherRepository } from "@core/repository/iaether-repository";
 
 export class AetherRepository implements IAetherRepository {
   saveOrders(orders: IAetherOrder[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return AetherOrderModel.insertMany(orders);
   }
 
   saveInvalidOrders(invalidOrders: IAetherInvalidOrder[]): Promise<any> {
-    throw new Error("Method not implemented.");
+    return AetherInvalidOrderModel.insertMany(invalidOrders);
   }
 }

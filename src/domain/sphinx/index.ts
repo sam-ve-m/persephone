@@ -1,3 +1,15 @@
+export * from "./prospect-user.methods";
+export * from "./prospect-user.model";
+export * from "./prospect-user.schema";
+export * from "./prospect-user.static";
+export * from "./prospect-user.types";
+
+export * from "./suitability.methods";
+export * from "./suitability.model";
+export * from "./suitability.schema";
+export * from "./suitability.static";
+export * from "./suitability.types";
+
 export * from "./bureau-callback.methods";
 export * from "./bureau-callback.model";
 export * from "./bureau-callback.schema";
