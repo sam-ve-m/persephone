@@ -5,7 +5,7 @@ const AetherOrderSchema = new Schema({
      clOrdID: String,
      json: Object,
      fix: String,
-     created_at: Number
+     createdAt: Number
 });
 
 export default AetherOrderSchema;

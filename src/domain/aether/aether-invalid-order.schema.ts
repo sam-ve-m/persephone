@@ -5,7 +5,7 @@ const AetherInvalidOrderSchema = new Schema({
     clOrdID: String,
     json: Object,
     validationMessage: String,
-    created_at: Number
+    createdAt: Number
 });
 
 export default AetherInvalidOrderSchema;

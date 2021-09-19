@@ -5,7 +5,7 @@ export interface IAetherInvalidOrder {
     clOrdID: String;
     json: Object;
     validationMessage: String;
-    created_at: Number;
+    createdAt: Number
 }
 
 export interface IAetherInvalidOrderDocument extends IAetherInvalidOrder, Document {}

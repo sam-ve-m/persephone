@@ -5,7 +5,7 @@ export interface IAetherOrder {
     clOrdID: String;
     json: Object;
     fix: String;
-    created_at: Number;
+    createdAt: Number;
 }
 
 export interface IAetherOrderDocument extends IAetherOrder, Document {}
