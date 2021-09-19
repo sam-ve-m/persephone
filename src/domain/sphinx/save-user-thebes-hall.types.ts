@@ -4,6 +4,7 @@ export interface ISaveUserThebesHall {
     user_email: String;
     jwt: Object;
     has_trade_allowed: Object;
+    device_information: Object,
     created_at: Number;
 }
 
