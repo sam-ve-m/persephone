@@ -1,6 +1,13 @@
 import { Document, Model } from "mongoose";
 
-export interface IUserComplementaryData { }
+export interface IUserComplementaryData {
+    user_email: String;
+    is_us_person: Boolean;
+    us_tin: String;
+    is_cvm_qualified_investor: Boolean;
+    marital: JSON;
+    created_at: Number;
+}
 
 export interface IUserComplementaryDataDocument extends IUserComplementaryData, Document {}
 export interface IUserComplementaryDataModel extends Model<IUserComplementaryDataDocument> {}

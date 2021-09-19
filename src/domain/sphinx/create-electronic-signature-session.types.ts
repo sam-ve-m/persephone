@@ -1,11 +1,9 @@
 import { Document, Model } from "mongoose";
 
-export interface ICreateElectronicSignatureSession { 
-    ip: String;
-    jwt: String;
-    is_integrity: Boolean;
-    jwt_missing_fields: String;
-    connection_unique_id: String;
+export interface ICreateElectronicSignatureSession {
+    user_email: String;
+    mist_session: String;
+    allowed: Boolean;
     created_at: Number;
 }
 
