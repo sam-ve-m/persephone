@@ -189,6 +189,12 @@ const sphinxScope = {
     ) => {
       sphinxService.handleCreateElectronicSignatureSessionQueue(messageBatch);
     },
+    "user_update_register_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleUserUpdateRegisterDataQueue(messageBatch);
+    },
   },
   "sphinx_persephone.user.authentication": {
     "user_thebes_hall.queue": (
@@ -248,6 +254,7 @@ const topicsPartitionsEnum = {
     9: "user_set_electronic_signature.queue",
     10: "user_change_or_reset_electronic_signature.queue",
     11: "create_electronic_signature_session.queue",
+    12: "user_update_register_data.queue",
   },
 
   "sphinx_persephone.user.authentication": {

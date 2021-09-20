@@ -26,6 +26,9 @@ export interface ISphinxService {
   handleCreateElectronicSignatureSessionQueue(
     createElectronicSignatureSessions: KafkaMessage[]
   ): void;
+  handleUserUpdateRegisterDataQueue(
+    userUpdatesRegisterData: KafkaMessage[]
+  ): void;
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;
   handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void;

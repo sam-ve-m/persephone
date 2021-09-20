@@ -28,6 +28,10 @@ import {
   ICreateElectronicSignatureSession,
   CreateElectronicSignatureSessionModel,
 } from "@domain/sphinx";
+import {
+  IUserUpdateRegisterData,
+  UserUpdateRegisterDataModel,
+} from "@domain/sphinx";
 
 import { ISaveUserThebesHall, SaveUserThebesHallModel } from "@domain/sphinx";
 
@@ -102,6 +106,12 @@ export class SphinxRepository implements ISphinxRepository {
     return CreateElectronicSignatureSessionModel.insertMany(
       createElectronicSignatureSessions
     );
+  }
+
+  saveUserUpdatesRegisterData(
+    userUpdatesRegisterData: IUserUpdateRegisterData[]
+  ): Promise<any> {
+    return UserUpdateRegisterDataModel.insertMany(userUpdatesRegisterData);
   }
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any> {

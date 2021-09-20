@@ -22,6 +22,12 @@ export * from "./create-electronic-signature-session.schema";
 export * from "./create-electronic-signature-session.static";
 export * from "./create-electronic-signature-session.types";
 
+export * from "./user-update-register-data.methods";
+export * from "./user-update-register-data.model";
+export * from "./user-update-register-data.schema";
+export * from "./user-update-register-data.static";
+export * from "./user-update-register-data.types";
+
 export * from "./save-user-authentication.methods";
 export * from "./save-user-authentication.model";
 export * from "./save-user-authentication.schema";

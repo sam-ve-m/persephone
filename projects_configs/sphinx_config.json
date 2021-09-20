@@ -13,6 +13,7 @@
     "UserElectronicSignature": "user-electronic-signature",
     "UserChangeOrResetElectronicSignature": "user-change-or-reset-electronic-signature",
     "CreateElectronicSignatureSession": "create-electronic-signature-session",
+    "UserUpdateRegisterData": "user-update-register-data",
     "SaveUserThebesHall": "save-user-thebes-hall",
     "SaveUserAuthentication": "save-user-authentication",
     "SaveUserLogout": "save-user-logout"

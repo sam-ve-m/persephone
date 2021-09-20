@@ -9,6 +9,7 @@ import {
   IUserElectronicSignature,
   IUserChangeOrResetElectronicSignature,
   ICreateElectronicSignatureSession,
+  IUserUpdateRegisterData,
   ISaveUserThebesHall,
   ISaveUserAuthentication,
   ISaveUserLogout,
@@ -47,6 +48,9 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveCreateElectronicSignatureSessions(
     createElectronicSignatureSessions: ICreateElectronicSignatureSession[]
+  ): Promise<any>;
+  saveUserUpdatesRegisterData(
+    userUpdatesRegisterData: IUserUpdateRegisterData[]
   ): Promise<any>;
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any>;
