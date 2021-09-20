@@ -1,0 +1,11 @@
+{
+  "project": "hermes",
+  "relational_objects": {
+    "HermesOrderSessionAuthenticity": "hermes-order-session-authenticity",
+    "HermesOrderSessionIntegrity": "hermes-order-session-integrity",
+    "HermesReceivedOrder": "hermes-received-order",
+    "HermesSentOrder": "hermes-sent-order",
+    "HermesTradeSessionCreate": "hermes-trade-session-create",
+    "HermesReportOrder": "hermes-report-order"
+  }
+}

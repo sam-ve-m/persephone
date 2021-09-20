@@ -1,0 +1,7 @@
+{
+  "project": "aether",
+  "relational_objects": {
+    "AetherOrder": "aether-order",
+    "AetherInvalidOrder": "aether-invalid-order"
+  }
+}

@@ -25,6 +25,7 @@ const main = async () => {
 
   const topicPartitionToService =
     TopicServiceFactory.registerTopicFactoriesService();
+
   const partitionHandleCallbacks =
     PartitionHandlers.registerPartitionsHandleCallbacks();
 

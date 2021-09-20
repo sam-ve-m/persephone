@@ -1,0 +1,6 @@
+{
+  "project": "hyperion",
+  "relational_objects": {
+    "HyperionResponse": "hyperion-response"
+  }
+}
