@@ -3,7 +3,7 @@ import Logger from "@infraestructure/logger/logger";
 export module MongoConnectionHandlers {
   export const handleConnectionOpenWithSuccess = (data: any) => {
     const message = `MongoDBConnectionFactory: Coonnection sucess with MongoDB server ${data}`;
-    Logger.info(message);
+    Logger.debug(message);
   };
 
   export const handleConnectionOpenError = (error: any) => {

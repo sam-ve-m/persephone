@@ -16,21 +16,21 @@ export module KafkaRegisterConsumerEvents {
   const onConsumerConnectToBroker = (consumer: Consumer) => {
     consumer.on(consumer.events.CONNECT, async ({ payload }) => {
       const message = `Consumer conected to broker: ${JSON.stringify(payload)}`;
-      Logger.info(message);
+      Logger.debug(message);
     });
   };
 
   const onStartBatchMessagesProcess = (consumer: Consumer) => {
     consumer.on(consumer.events.START_BATCH_PROCESS, async ({ payload }) => {
       const message = `Start batch: ${JSON.stringify(payload)}`;
-      Logger.info(message);
+      Logger.debug(message);
     });
   };
 
   const onEndBatchMessagesProcess = (consumer: Consumer) => {
     consumer.on(consumer.events.END_BATCH_PROCESS, async ({ payload }) => {
       const message = `End batch: ${JSON.stringify(payload)}`;
-      Logger.info(message);
+      Logger.debug(message);
     });
   };
 
@@ -39,7 +39,7 @@ export module KafkaRegisterConsumerEvents {
       const message = `Consumer has joined the group: ${JSON.stringify(
         payload
       )}`;
-      Logger.info(message);
+      Logger.debug(message);
     });
   };
 
@@ -47,7 +47,7 @@ export module KafkaRegisterConsumerEvents {
     consumer.on(consumer.events.STOP, async ({ payload }) => {
       const message = `Consumer has stopped:
       : ${JSON.stringify(payload)}`;
-      Logger.info(message);
+      Logger.debug(message);
     });
   };
 
@@ -55,7 +55,7 @@ export module KafkaRegisterConsumerEvents {
     consumer.on(consumer.events.REQUEST_TIMEOUT, async ({ payload }) => {
       const message = `Request to a broker has timed out:
         : ${JSON.stringify(payload)}`;
-      Logger.info(message);
+      Logger.debug(message);
     });
   };
 
@@ -66,7 +66,7 @@ export module KafkaRegisterConsumerEvents {
         const message = `Consumer group unsubscribe topic: ${JSON.stringify(
           payload
         )}`;
-        Logger.info(message);
+        Logger.debug(message);
       }
     );
   };

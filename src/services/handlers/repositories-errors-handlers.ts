@@ -71,7 +71,7 @@ export module RepositoriesErrorsHandlers {
     const message = `handlerOrderCancelReplaceRequest: Inserted with error. Errors: ${JSON.stringify(
         error
     )}`;
-    Logger.error(message);
+    Logger.error(message);''
   }
   export const handlerOrderCancelRequestErrors = (error: any) => {
     const message = `handlerOrderCancelRequest: Inserted with error. Errors: ${JSON.stringify(
