@@ -2,6 +2,9 @@
 node_modules/
 dist/
 
+# Yarn
+yarn.lock
+
 # Compiled Java class files
 *.class
 
@@ -46,3 +49,6 @@ Thumbs.db
 # Env file
 .env
 .env.example
+
+# VsCode
+.vscode
