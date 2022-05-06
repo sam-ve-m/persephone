@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
 const GetUserCompanyDirectorSchemaTemplateWithDataData = new Schema({
-    company_director: String,
-    company_director_from: Boolean,
+    company_director: Boolean,
+    company_director_from: String,
     unique_id: String
 });
 
