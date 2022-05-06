@@ -11,11 +11,11 @@ export interface ISphinxService {
   handleUserComplementaryDataQueue(
     usersComplementaryData: KafkaMessage[]
   ): void;
-  handleUserGetQuizFromStoneageQueue(
-    userGetQuizzesFromStoneAge: KafkaMessage[]
+  handleUserDocumentQueue(
+    userDocument: KafkaMessage[]
   ): void;
-  handleUserSendQuizFromStoneageQueue(
-    userSendQuizzesFromStoneAge: KafkaMessage[]
+  handleUserPoliticallyExposedUSQueue(
+    userPoliticallyExposedUS: KafkaMessage[]
   ): void;
   handleUserSetElectronicSignatureQueue(
     usersElectronicSignatures: KafkaMessage[]

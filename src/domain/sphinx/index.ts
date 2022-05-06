@@ -70,11 +70,11 @@ export * from "./user-electronic-signature.schema";
 export * from "./user-electronic-signature.static";
 export * from "./user-electronic-signature.types";
 
-export * from "./user-get-quizzes-from-stone-age.methods";
-export * from "./user-get-quizzes-from-stone-age.model";
-export * from "./user-get-quizzes-from-stone-age.schema";
-export * from "./user-get-quizzes-from-stone-age.static";
-export * from "./user-get-quizzes-from-stone-age.types";
+export * from "./user_document.methods";
+export * from "./user_document.model";
+export * from "./user_document.schema";
+export * from "./user_document.static";
+export * from "./user_document.types";
 
 export * from "./user-identifier-data.methods";
 export * from "./user-identifier-data.model";
@@ -88,11 +88,11 @@ export * from "./user-selfie.schema";
 export * from "./user-selfie.static";
 export * from "./user-selfie.types";
 
-export * from "./user-send-quizzes-from-stone-age.methods";
-export * from "./user-send-quizzes-from-stone-age.model";
-export * from "./user-send-quizzes-from-stone-age.schema";
-export * from "./user-send-quizzes-from-stone-age.static";
-export * from "./user-send-quizzes-from-stone-age.types";
+export * from "./user_politically_exposed_us.methods";
+export * from "./user_politically_exposed_us.model";
+export * from "./user_politically_exposed_us.schema";
+export * from "./user_politically_exposed_us.static";
+export * from "./user_politically_exposed_us.types";
 
 export * from "./user-exchange-member-us.methods";
 export * from "./user-exchange-member-us.model";

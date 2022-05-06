@@ -157,17 +157,17 @@ const sphinxScope = {
     ) => {
       sphinxService.handleUserComplementaryDataQueue(messageBatch);
     },
-    "user_get_quiz_from_stoneage.queue": (
+    "user_document.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
     ) => {
-      sphinxService.handleUserGetQuizFromStoneageQueue(messageBatch);
+      sphinxService.handleUserDocumentQueue(messageBatch);
     },
-    "user_send_quiz_from_stoneage.queue": (
+    "user_politically_exposed_us.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
     ) => {
-      sphinxService.handleUserSendQuizFromStoneageQueue(messageBatch);
+      sphinxService.handleUserPoliticallyExposedUSQueue(messageBatch);
     },
     "user_set_electronic_signature.queue": (
       sphinxService: ISphinxService,
@@ -285,8 +285,8 @@ const topicsPartitionsEnum = {
     4: "user_identifier_data.queue",
     5: "user_selfie.queue",
     6: "user_complementary_data.queue",
-    7: "user_get_quiz_from_stoneage.queue",
-    8: "user_send_quiz_from_stoneage.queue",
+    7: "user_document.queue",
+    8: "user_politically_exposed_us.queue",
     9: "user_set_electronic_signature.queue",
     10: "user_change_or_reset_electronic_signature.queue",
     11: "create_electronic_signature_session.queue",

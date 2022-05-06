@@ -9,12 +9,12 @@ import {
   UserComplementaryDataModel,
 } from "@domain/sphinx";
 import {
-  IUserGetQuizzesFromStoneAge,
-  UserGetQuizzesFromStoneAgeModel,
+  IUserDocument,
+  UserDocumentModel,
 } from "@domain/sphinx";
 import {
-  IUserSendQuizzesFromStoneAge,
-  UserSendQuizzesFromStoneAgeModel,
+  IUserPoliticallyExposedUS,
+  UserPoliticallyExposedUSModel,
 } from "@domain/sphinx";
 import {
   IUserElectronicSignature,
@@ -95,19 +95,19 @@ export class SphinxRepository implements ISphinxRepository {
     return UserComplementaryDataModel.insertMany(usersComplementaryData);
   }
 
-  saveUserGetQuizFromStoneage(
-    userGetQuizzesFromStoneAge: IUserGetQuizzesFromStoneAge[]
+  saveUserDocument(
+    userDocument: IUserDocument[]
   ): Promise<any> {
-    return UserGetQuizzesFromStoneAgeModel.insertMany(
-      userGetQuizzesFromStoneAge
+    return UserDocumentModel.insertMany(
+      userDocument
     );
   }
 
-  saveUserSendQuizFromStoneage(
-    userSendQuizzesFromStoneAge: IUserSendQuizzesFromStoneAge[]
+  saveUserPoliticallyExposedUS(
+    userPoliticallyExposedUS: IUserPoliticallyExposedUS[]
   ): Promise<any> {
-    return UserSendQuizzesFromStoneAgeModel.insertMany(
-      userSendQuizzesFromStoneAge
+    return UserPoliticallyExposedUSModel.insertMany(
+      userPoliticallyExposedUS
     );
   }
 

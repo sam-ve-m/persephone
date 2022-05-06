@@ -125,16 +125,16 @@ export class SphinxService implements ISphinxService {
       });
   }
 
-  handleUserGetQuizFromStoneageQueue(
-    userGetQuizzesFromStoneAge: KafkaMessage[]
+  handleUserDocumentQueue(
+    userDocument: KafkaMessage[]
   ): void {
-    const formattedData = userGetQuizzesFromStoneAge.map((message) => {
+    const formattedData = userDocument.map((message) => {
       const messageString = message.value.toString();
       return JSON.parse(messageString);
     });
 
     this._sphinxRepository
-      .saveUserGetQuizFromStoneage(formattedData)
+      .saveUserDocument(formattedData)
       .then((data) => {
         RepositoriesSucessHandlers.handleGeneralSucess(data);
       })
@@ -143,16 +143,16 @@ export class SphinxService implements ISphinxService {
       });
   }
 
-  handleUserSendQuizFromStoneageQueue(
-    userSendQuizzesFromStoneAge: KafkaMessage[]
+  handleUserPoliticallyExposedUSQueue(
+    userPoliticallyExposedUS: KafkaMessage[]
   ): void {
-    const formattedData = userSendQuizzesFromStoneAge.map((message) => {
+    const formattedData = userPoliticallyExposedUS.map((message) => {
       const messageString = message.value.toString();
       return JSON.parse(messageString);
     });
 
     this._sphinxRepository
-      .saveUserSendQuizFromStoneage(formattedData)
+      .saveUserPoliticallyExposedUS(formattedData)
       .then((data) => {
         RepositoriesSucessHandlers.handleGeneralSucess(data);
       })

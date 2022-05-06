@@ -4,8 +4,8 @@ import {
   IUserIdentifierData,
   IUserSelfie,
   IUserComplementaryData,
-  IUserGetQuizzesFromStoneAge,
-  IUserSendQuizzesFromStoneAge,
+  IUserDocument,
+  IUserPoliticallyExposedUS,
   IUserElectronicSignature,
   IUserChangeOrResetElectronicSignature,
   ICreateElectronicSignatureSession,
@@ -40,11 +40,11 @@ export interface ISphinxRepository {
   saveProspectUser(prospectUsers: IProspectUser[]): Promise<any>;
   saveSuitability(suitabilities: ISuitability[]): Promise<any>;
 
-  saveUserGetQuizFromStoneage(
-    userGetQuizzesFromStoneAge: IUserGetQuizzesFromStoneAge[]
+  saveUserDocument(
+    userDocument: IUserDocument[]
   ): Promise<any>;
-  saveUserSendQuizFromStoneage(
-    userSendQuizzesFromStoneAge: IUserSendQuizzesFromStoneAge[]
+  saveUserPoliticallyExposedUS(
+    userPoliticallyExposedUS: IUserPoliticallyExposedUS[]
   ): Promise<any>;
   saveUserSetElectronicSignatures(
     usersElectronicSignatures: IUserElectronicSignature[]
