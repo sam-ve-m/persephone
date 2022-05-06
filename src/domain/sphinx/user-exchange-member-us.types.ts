@@ -1,9 +1,9 @@
 import { Document, Model } from "mongoose";
 
-export interface IUserExchangeMemberUsSchemaData {
+export interface IUserExchangeMemberUsData {
     exchange_member: Boolean;
     unique_id: String;
 }
 
-export interface IUserExchangeMemberUsSchemaDataDocument extends IUserExchangeMemberUsSchemaData, Document {}
-export interface IUserExchangeMemberUsSchemaDataModel extends Model<IUserExchangeMemberUsSchemaDataDocument> {}
+export interface IUserExchangeMemberUsDataDocument extends IUserExchangeMemberUsData, Document {}
+export interface IUserExchangeMemberUsDataModel extends Model<IUserExchangeMemberUsDataDocument> {}

@@ -236,15 +236,15 @@ export class SphinxService implements ISphinxService {
   }
 
   handleUserExchangeMemberUsSchemaQueue(
-    userExchangeMemberUsSchemaData: KafkaMessage[]
+    UserExchangeMemberUsData: KafkaMessage[]
     ): void {
-      const formattedData = userExchangeMemberUsSchemaData.map((message) => {
+      const formattedData = UserExchangeMemberUsData.map((message) => {
       const messageString = message.value.toString();
       return JSON.parse(messageString);
     });
 
     this._sphinxRepository
-      .saveUserExchangeMemberUsSchemaData(formattedData)
+      .saveUserExchangeMemberUsData(formattedData)
       .then((data) => {
         RepositoriesSucessHandlers.handleGeneralSucess(data);
       })
@@ -253,15 +253,15 @@ export class SphinxService implements ISphinxService {
       });
   }
   handleUserTimeExperienceUsSchemaQueue(
-    userTimeExperienceUsSchemaData: KafkaMessage[]
+    UserTimeExperienceUsData: KafkaMessage[]
     ): void {
-      const formattedData = userTimeExperienceUsSchemaData.map((message) => {
+      const formattedData = UserTimeExperienceUsData.map((message) => {
       const messageString = message.value.toString();
       return JSON.parse(messageString);
     });
 
     this._sphinxRepository
-      .saveUserTimeExperienceUsSchemaData(formattedData)
+      .saveUserTimeExperienceUsData(formattedData)
       .then((data) => {
         RepositoriesSucessHandlers.handleGeneralSucess(data);
       })

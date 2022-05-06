@@ -32,10 +32,10 @@ export interface ISphinxService {
 
 
   handleUserExchangeMemberUsSchemaQueue(
-    userExchangeMemberUsSchemaData: KafkaMessage[]
+    UserExchangeMemberUsData: KafkaMessage[]
   ): void;
   handleUserTimeExperienceUsSchemaQueue(
-    userTimeExperienceUsSchemaData: KafkaMessage[]
+    UserTimeExperienceUsData: KafkaMessage[]
   ): void;
   handleGetUserCompanyDirectorSchemaTemplateWithDataQueue(
     getUserCompanyDirectorSchemaTemplateWithDataData: KafkaMessage[]

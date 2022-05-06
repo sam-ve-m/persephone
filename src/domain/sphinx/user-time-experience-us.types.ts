@@ -1,9 +1,9 @@
 import { Document, Model } from "mongoose";
 
-export interface IUserTimeExperienceUsSchemaData {
+export interface IUserTimeExperienceUsData {
     time_experience: String;
     unique_id: String;
 }
 
-export interface IUserTimeExperienceUsSchemaDataDocument extends IUserTimeExperienceUsSchemaData, Document {}
-export interface IUserTimeExperienceUsSchemaDataModel extends Model<IUserTimeExperienceUsSchemaDataDocument> {}
+export interface IUserTimeExperienceUsDataDocument extends IUserTimeExperienceUsData, Document {}
+export interface IUserTimeExperienceUsDataModel extends Model<IUserTimeExperienceUsDataDocument> {}

@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
-const UserExchangeMemberUsSchemaData = new Schema({
+const UserExchangeMemberUsSchema = new Schema({
     exchange_member: Boolean,
     unique_id: String
 });
 
-export default UserExchangeMemberUsSchemaData;
+export default UserExchangeMemberUsSchema;

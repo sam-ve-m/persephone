@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
-const UserTimeExperienceUsSchemaData = new Schema({
+const UserTimeExperienceUsDataSchema = new Schema({
     time_experience: String,
     unique_id: String,
 });
 
-export default UserTimeExperienceUsSchemaData;
+export default UserTimeExperienceUsDataSchema;

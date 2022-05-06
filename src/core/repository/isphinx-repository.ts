@@ -15,8 +15,8 @@ import {
   ISaveUserLogout,
   IProspectUser,
   ISuitability,
-  IUserExchangeMemberUsSchemaData,
-  IUserTimeExperienceUsSchemaData,
+  IUserExchangeMemberUsData,
+  IUserTimeExperienceUsData,
   IGetUserCompanyDirectorSchemaTemplateWithDataData,
   IGetUserTaxResidencesSchemaTemplateWithDataData,
   IGetW8FormConfirmationSchemaTemplateWithDataData,
@@ -59,11 +59,11 @@ export interface ISphinxRepository {
     userUpdatesRegisterData: IUserUpdateRegisterData[]
   ): Promise<any>;
 
-  saveUserExchangeMemberUsSchemaData(
-    userExchangeMemberUsSchemaData: IUserExchangeMemberUsSchemaData[]
+  saveUserExchangeMemberUsData(
+    UserExchangeMemberUsData: IUserExchangeMemberUsData[]
   ): Promise<any>;
-  saveUserTimeExperienceUsSchemaData(
-    userTimeExperienceUsSchemaData: IUserTimeExperienceUsSchemaData[]
+  saveUserTimeExperienceUsData(
+    UserTimeExperienceUsData: IUserTimeExperienceUsData[]
   ): Promise<any>;
   saveGetUserCompanyDirectorSchemaTemplateWithDataData(
     getUserCompanyDirectorSchemaTemplateWithDataData: IGetUserCompanyDirectorSchemaTemplateWithDataData[]

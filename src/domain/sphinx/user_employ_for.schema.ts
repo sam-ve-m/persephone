@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-const GetUserEmployForSchemaTemplateWithDataData = new Schema({
+const GetUserEmployForSchemaTemplateWithDataDataSchema = new Schema({
     employ_status: String,
     employ_type: String,
     employ_position: String,
@@ -8,4 +8,4 @@ const GetUserEmployForSchemaTemplateWithDataData = new Schema({
     unique_id: String,
 });
 
-export default GetUserEmployForSchemaTemplateWithDataData;
+export default GetUserEmployForSchemaTemplateWithDataDataSchema;

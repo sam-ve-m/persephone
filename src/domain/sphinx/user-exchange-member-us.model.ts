@@ -1,9 +1,9 @@
 import { model } from "mongoose";
 
-import { IUserExchangeMemberUsSchemaData } from "@domain/sphinx/user-exchange-member-us.types";
-import UserExchangeMemberUsSchemaData from "@domain/sphinx/user-exchange-member-us.schema";
+import { IUserExchangeMemberUsData } from "@domain/sphinx/user-exchange-member-us.types";
+import UserExchangeMemberUsSchema from "@domain/sphinx/user-exchange-member-us.schema";
 
-export const UserExchangeMemberUsSchemaDataModel = model<IUserExchangeMemberUsSchemaData>(
+export const UserExchangeMemberUsDataModel = model<IUserExchangeMemberUsData>(
     "user-exchange-member-us",
-    UserExchangeMemberUsSchemaData
+    UserExchangeMemberUsSchema
 );

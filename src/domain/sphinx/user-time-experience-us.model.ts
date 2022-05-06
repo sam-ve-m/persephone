@@ -1,9 +1,9 @@
 import { model } from "mongoose";
 
-import { IUserTimeExperienceUsSchemaData } from "@domain/sphinx/user-time-experience-us.types";
-import UserTimeExperienceUsSchemaData from "@domain/sphinx/user-time-experience-us.schema";
+import { IUserTimeExperienceUsData } from "@domain/sphinx/user-time-experience-us.types";
+import UserTimeExperienceUsDataSchema from "@domain/sphinx/user-time-experience-us.schema";
 
-export const UserTimeExperienceUsSchemaDataModel = model<IUserTimeExperienceUsSchemaData>(
+export const UserTimeExperienceUsDataModel = model<IUserTimeExperienceUsData>(
     "user-time-experience-us",
-    UserTimeExperienceUsSchemaData
+    UserTimeExperienceUsDataSchema
 );

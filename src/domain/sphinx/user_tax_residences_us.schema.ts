@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
-const GetUserTaxResidencesSchemaTemplateWithDataData = new Schema({
+const GetUserTaxResidencesSchemaTemplateWithDataDataSchema = new Schema({
     tax_residences: Array,
     unique_id: String,
 });
 
-export default GetUserTaxResidencesSchemaTemplateWithDataData;
+export default GetUserTaxResidencesSchemaTemplateWithDataDataSchema;

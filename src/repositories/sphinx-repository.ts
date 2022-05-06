@@ -44,12 +44,12 @@ import { ISaveUserLogout, SaveUserLogoutModel } from "@domain/sphinx";
 import { ISuitability, SuitabilityModel } from "@domain/sphinx";
 
 import { 
-  IUserExchangeMemberUsSchemaData,
-  UserExchangeMemberUsSchemaDataModel,
+  IUserExchangeMemberUsData,
+  UserExchangeMemberUsDataModel,
 } from "@domain/sphinx";
 import { 
-  IUserTimeExperienceUsSchemaData,
-  UserTimeExperienceUsSchemaDataModel,
+  IUserTimeExperienceUsData,
+  UserTimeExperienceUsDataModel,
 } from "@domain/sphinx";
 import { 
   IGetUserCompanyDirectorSchemaTemplateWithDataData,
@@ -161,11 +161,11 @@ export class SphinxRepository implements ISphinxRepository {
     return ProspectUserModel.insertMany(prospectUsers);
   }
 
-  saveUserExchangeMemberUsSchemaData(userExchangeMemberUsSchemaData: IUserExchangeMemberUsSchemaData[]): Promise<any> {
-    return UserExchangeMemberUsSchemaDataModel.insertMany(userExchangeMemberUsSchemaData);
+  saveUserExchangeMemberUsData(UserExchangeMemberUsData: IUserExchangeMemberUsData[]): Promise<any> {
+    return UserExchangeMemberUsDataModel.insertMany(UserExchangeMemberUsData);
   }
-  saveUserTimeExperienceUsSchemaData(userTimeExperienceUsSchemaData: IUserTimeExperienceUsSchemaData[]): Promise<any> {
-    return UserTimeExperienceUsSchemaDataModel.insertMany(userTimeExperienceUsSchemaData);
+  saveUserTimeExperienceUsData(UserTimeExperienceUsData: IUserTimeExperienceUsData[]): Promise<any> {
+    return UserTimeExperienceUsDataModel.insertMany(UserTimeExperienceUsData);
   }
   saveGetUserCompanyDirectorSchemaTemplateWithDataData(getUserCompanyDirectorSchemaTemplateWithDataData: IGetUserCompanyDirectorSchemaTemplateWithDataData[]): Promise<any> {
     return GetUserCompanyDirectorSchemaTemplateWithDataDataModel.insertMany(getUserCompanyDirectorSchemaTemplateWithDataData);
