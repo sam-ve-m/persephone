@@ -93,3 +93,39 @@ export * from "./user-send-quizzes-from-stone-age.model";
 export * from "./user-send-quizzes-from-stone-age.schema";
 export * from "./user-send-quizzes-from-stone-age.static";
 export * from "./user-send-quizzes-from-stone-age.types";
+
+export * from "./user-exchange-member-us.methods";
+export * from "./user-exchange-member-us.model";
+export * from "./user-exchange-member-us.schema";
+export * from "./user-exchange-member-us.static";
+export * from "./user-exchange-member-us.types";
+
+export * from "./user-time-experience-us.methods";
+export * from "./user-time-experience-us.model";
+export * from "./user-time-experience-us.schema";
+export * from "./user-time-experience-us.static";
+export * from "./user-time-experience-us.types";
+
+export * from "./user_company_director_us.methods";
+export * from "./user_company_director_us.model";
+export * from "./user_company_director_us.schema";
+export * from "./user_company_director_us.static";
+export * from "./user_company_director_us.types";
+
+export * from "./user_tax_residences_us.methods";
+export * from "./user_tax_residences_us.model";
+export * from "./user_tax_residences_us.schema";
+export * from "./user_tax_residences_us.static";
+export * from "./user_tax_residences_us.types";
+
+export * from "./user_w8_form_confirmation_us.methods";
+export * from "./user_w8_form_confirmation_us.model";
+export * from "./user_w8_form_confirmation_us.schema";
+export * from "./user_w8_form_confirmation_us.static";
+export * from "./user_w8_form_confirmation_us.types";
+
+export * from "./user_employ_for.methods";
+export * from "./user_employ_for.model";
+export * from "./user_employ_for.schema";
+export * from "./user_employ_for.static";
+export * from "./user_employ_for.types";

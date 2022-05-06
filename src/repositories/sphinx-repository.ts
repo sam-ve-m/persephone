@@ -43,6 +43,31 @@ import {
 import { ISaveUserLogout, SaveUserLogoutModel } from "@domain/sphinx";
 import { ISuitability, SuitabilityModel } from "@domain/sphinx";
 
+import { 
+  IUserExchangeMemberUsSchemaData,
+  UserExchangeMemberUsSchemaDataModel,
+} from "@domain/sphinx";
+import { 
+  IUserTimeExperienceUsSchemaData,
+  UserTimeExperienceUsSchemaDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetUserCompanyDirectorSchemaTemplateWithDataData,
+  GetUserCompanyDirectorSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetUserTaxResidencesSchemaTemplateWithDataData,
+  GetUserTaxResidencesSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetW8FormConfirmationSchemaTemplateWithDataData,
+  GetW8FormConfirmationSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetUserEmployForSchemaTemplateWithDataData,
+  GetUserEmployForSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+
 import { ISphinxRepository } from "@core/repository";
 
 export class SphinxRepository implements ISphinxRepository {
@@ -135,4 +160,24 @@ export class SphinxRepository implements ISphinxRepository {
   saveProspectUser(prospectUsers: IProspectUser[]): Promise<any> {
     return ProspectUserModel.insertMany(prospectUsers);
   }
+
+  saveUserExchangeMemberUsSchemaData(userExchangeMemberUsSchemaData: IUserExchangeMemberUsSchemaData[]): Promise<any> {
+    return UserExchangeMemberUsSchemaDataModel.insertMany(userExchangeMemberUsSchemaData);
+  }
+  saveUserTimeExperienceUsSchemaData(userTimeExperienceUsSchemaData: IUserTimeExperienceUsSchemaData[]): Promise<any> {
+    return UserTimeExperienceUsSchemaDataModel.insertMany(userTimeExperienceUsSchemaData);
+  }
+  saveGetUserCompanyDirectorSchemaTemplateWithDataData(getUserCompanyDirectorSchemaTemplateWithDataData: IGetUserCompanyDirectorSchemaTemplateWithDataData[]): Promise<any> {
+    return GetUserCompanyDirectorSchemaTemplateWithDataDataModel.insertMany(getUserCompanyDirectorSchemaTemplateWithDataData);
+  }
+  saveGetUserTaxResidencesSchemaTemplateWithDataData(getUserTaxResidencesSchemaTemplateWithDataData: IGetUserTaxResidencesSchemaTemplateWithDataData[]): Promise<any> {
+    return GetUserTaxResidencesSchemaTemplateWithDataDataModel.insertMany(getUserTaxResidencesSchemaTemplateWithDataData);
+  }
+  saveGetW8FormConfirmationSchemaTemplateWithDataData(getW8FormConfirmationSchemaTemplateWithDataData: IGetW8FormConfirmationSchemaTemplateWithDataData[]): Promise<any> {
+    return GetW8FormConfirmationSchemaTemplateWithDataDataModel.insertMany(getW8FormConfirmationSchemaTemplateWithDataData);
+  }
+  saveGetUserEmployForSchemaTemplateWithDataData(getUserEmployForSchemaTemplateWithDataData: IGetUserEmployForSchemaTemplateWithDataData[]): Promise<any> {
+    return GetUserEmployForSchemaTemplateWithDataDataModel.insertMany(getUserEmployForSchemaTemplateWithDataData);
+  }
+
 }

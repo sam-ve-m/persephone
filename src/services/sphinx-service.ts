@@ -235,6 +235,109 @@ export class SphinxService implements ISphinxService {
       });
   }
 
+  handleUserExchangeMemberUsSchemaQueue(
+    userExchangeMemberUsSchemaData: KafkaMessage[]
+    ): void {
+      const formattedData = userExchangeMemberUsSchemaData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserExchangeMemberUsSchemaData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleUserTimeExperienceUsSchemaQueue(
+    userTimeExperienceUsSchemaData: KafkaMessage[]
+    ): void {
+      const formattedData = userTimeExperienceUsSchemaData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveUserTimeExperienceUsSchemaData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleGetUserCompanyDirectorSchemaTemplateWithDataQueue(
+    getUserCompanyDirectorSchemaTemplateWithDataData: KafkaMessage[]
+    ): void {
+      const formattedData = getUserCompanyDirectorSchemaTemplateWithDataData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveGetUserCompanyDirectorSchemaTemplateWithDataData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleGetUserTaxResidencesSchemaTemplateWithDataQueue(
+    getUserTaxResidencesSchemaTemplateWithDataData: KafkaMessage[]
+    ): void {
+      const formattedData = getUserTaxResidencesSchemaTemplateWithDataData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveGetUserTaxResidencesSchemaTemplateWithDataData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleGetW8FormConfirmationSchemaTemplateWithDataQueue(
+    getW8FormConfirmationSchemaTemplateWithDataData: KafkaMessage[]
+    ): void {
+      const formattedData = getW8FormConfirmationSchemaTemplateWithDataData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveGetW8FormConfirmationSchemaTemplateWithDataData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleGetUserEmployForSchemaTemplateWithDataQueue(
+    getUserEmployForSchemaTemplateWithDataData: KafkaMessage[]
+    ): void {
+      const formattedData = getUserEmployForSchemaTemplateWithDataData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveGetUserEmployForSchemaTemplateWithDataData(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void {
     const formattedData = saveUsersThebesHall.map((message) => {
       const messageString = message.value.toString();

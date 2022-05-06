@@ -30,6 +30,26 @@ export interface ISphinxService {
     userUpdatesRegisterData: KafkaMessage[]
   ): void;
 
+
+  handleUserExchangeMemberUsSchemaQueue(
+    userExchangeMemberUsSchemaData: KafkaMessage[]
+  ): void;
+  handleUserTimeExperienceUsSchemaQueue(
+    userTimeExperienceUsSchemaData: KafkaMessage[]
+  ): void;
+  handleGetUserCompanyDirectorSchemaTemplateWithDataQueue(
+    getUserCompanyDirectorSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+  handleGetUserTaxResidencesSchemaTemplateWithDataQueue(
+    getUserTaxResidencesSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+  handleGetW8FormConfirmationSchemaTemplateWithDataQueue(
+    getW8FormConfirmationSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+  handleGetUserEmployForSchemaTemplateWithDataQueue(
+    getUserEmployForSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;
   handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void;
   handleUserLogoutQueue(saveUserLogouts: KafkaMessage[]): void;

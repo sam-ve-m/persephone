@@ -15,6 +15,12 @@ import {
   ISaveUserLogout,
   IProspectUser,
   ISuitability,
+  IUserExchangeMemberUsSchemaData,
+  IUserTimeExperienceUsSchemaData,
+  IGetUserCompanyDirectorSchemaTemplateWithDataData,
+  IGetUserTaxResidencesSchemaTemplateWithDataData,
+  IGetW8FormConfirmationSchemaTemplateWithDataData,
+  IGetUserEmployForSchemaTemplateWithDataData,
 } from "@domain/sphinx";
 
 export interface ISphinxRepository {
@@ -51,6 +57,25 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveUserUpdatesRegisterData(
     userUpdatesRegisterData: IUserUpdateRegisterData[]
+  ): Promise<any>;
+
+  saveUserExchangeMemberUsSchemaData(
+    userExchangeMemberUsSchemaData: IUserExchangeMemberUsSchemaData[]
+  ): Promise<any>;
+  saveUserTimeExperienceUsSchemaData(
+    userTimeExperienceUsSchemaData: IUserTimeExperienceUsSchemaData[]
+  ): Promise<any>;
+  saveGetUserCompanyDirectorSchemaTemplateWithDataData(
+    getUserCompanyDirectorSchemaTemplateWithDataData: IGetUserCompanyDirectorSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveGetUserTaxResidencesSchemaTemplateWithDataData(
+    getUserTaxResidencesSchemaTemplateWithDataData: IGetUserTaxResidencesSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveGetW8FormConfirmationSchemaTemplateWithDataData(
+    getW8FormConfirmationSchemaTemplateWithDataData: IGetW8FormConfirmationSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveGetUserEmployForSchemaTemplateWithDataData(
+    getUserEmployForSchemaTemplateWithDataData: IGetUserEmployForSchemaTemplateWithDataData[]
   ): Promise<any>;
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any>;
