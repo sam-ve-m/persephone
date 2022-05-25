@@ -35,7 +35,7 @@ export class HermesService implements IHermesService {
       const messageString = message.value.toString();
       return JSON.parse(messageString);
     });
-
+  
     this._hermesRepository
       .saveOrderSessionIntegrity(formattedData)
       .then((data) => {
