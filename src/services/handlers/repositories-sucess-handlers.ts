@@ -6,9 +6,9 @@ export module RepositoriesSucessHandlers {
     Logger.info(message);
   };
 
-  export const handleGeneralError = (data: Array<any>) => {
-    const message = `Error. Number of insetions: ${data.length}`;
-    Logger.info(message);
+  export const handleGeneralError = (data: any) => {
+    const message = `Error. Message: ${data}`;
+    Logger.error(message);
   };
 
   export const handleInsertProspectUsersSucess = (data: Array<any>) => {
