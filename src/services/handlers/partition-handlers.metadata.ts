@@ -157,17 +157,17 @@ const sphinxScope = {
     ) => {
       sphinxService.handleUserComplementaryDataQueue(messageBatch);
     },
-    "user_get_quiz_from_stoneage.queue": (
+    "user_document.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
     ) => {
-      sphinxService.handleUserGetQuizFromStoneageQueue(messageBatch);
+      sphinxService.handleUserDocumentQueue(messageBatch);
     },
-    "user_send_quiz_from_stoneage.queue": (
+    "user_politically_exposed_us.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
     ) => {
-      sphinxService.handleUserSendQuizFromStoneageQueue(messageBatch);
+      sphinxService.handleUserPoliticallyExposedUSQueue(messageBatch);
     },
     "user_set_electronic_signature.queue": (
       sphinxService: ISphinxService,
@@ -194,6 +194,42 @@ const sphinxScope = {
       messageBatch: KafkaMessage[]
     ) => {
       sphinxService.handleUserUpdateRegisterDataQueue(messageBatch);
+    },
+    "user_exchange_member_us_schema.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleUserExchangeMemberUsSchemaQueue(messageBatch);
+    },
+    "user_time_experience_us_schema.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleUserTimeExperienceUsSchemaQueue(messageBatch);
+    },
+    "get_user_company_director_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetUserCompanyDirectorSchemaTemplateWithDataQueue(messageBatch);
+    },
+    "get_user_tax_residences_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetUserTaxResidencesSchemaTemplateWithDataQueue(messageBatch);
+    },
+    "get_w8_form_confirmation_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetW8FormConfirmationSchemaTemplateWithDataQueue(messageBatch);
+    },
+    "get_user_employ_for_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetUserEmployForSchemaTemplateWithDataQueue(messageBatch);
     },
   },
   "sphinx_persephone.user.authentication": {
@@ -249,12 +285,18 @@ const topicsPartitionsEnum = {
     4: "user_identifier_data.queue",
     5: "user_selfie.queue",
     6: "user_complementary_data.queue",
-    7: "user_get_quiz_from_stoneage.queue",
-    8: "user_send_quiz_from_stoneage.queue",
+    7: "user_document.queue",
+    8: "user_politically_exposed_us.queue",
     9: "user_set_electronic_signature.queue",
     10: "user_change_or_reset_electronic_signature.queue",
     11: "create_electronic_signature_session.queue",
     12: "user_update_register_data.queue",
+    13: "user_exchange_member_us_schema.queue",
+    14: "user_time_experience_us_schema.queue",
+    15: "get_user_company_director_schema_template_with_data.queue",
+    16: "get_user_tax_residences_schema_template_with_data.queue",
+    17: "get_w8_form_confirmation_schema_template_with_data.queue",
+    18: "get_user_employ_for_schema_template_with_data.queue",
   },
 
   "sphinx_persephone.user.authentication": {

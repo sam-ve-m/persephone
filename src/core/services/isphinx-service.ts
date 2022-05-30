@@ -11,11 +11,11 @@ export interface ISphinxService {
   handleUserComplementaryDataQueue(
     usersComplementaryData: KafkaMessage[]
   ): void;
-  handleUserGetQuizFromStoneageQueue(
-    userGetQuizzesFromStoneAge: KafkaMessage[]
+  handleUserDocumentQueue(
+    userDocument: KafkaMessage[]
   ): void;
-  handleUserSendQuizFromStoneageQueue(
-    userSendQuizzesFromStoneAge: KafkaMessage[]
+  handleUserPoliticallyExposedUSQueue(
+    userPoliticallyExposedUS: KafkaMessage[]
   ): void;
   handleUserSetElectronicSignatureQueue(
     usersElectronicSignatures: KafkaMessage[]
@@ -28,6 +28,26 @@ export interface ISphinxService {
   ): void;
   handleUserUpdateRegisterDataQueue(
     userUpdatesRegisterData: KafkaMessage[]
+  ): void;
+
+
+  handleUserExchangeMemberUsSchemaQueue(
+    UserExchangeMemberUsData: KafkaMessage[]
+  ): void;
+  handleUserTimeExperienceUsSchemaQueue(
+    UserTimeExperienceUsData: KafkaMessage[]
+  ): void;
+  handleGetUserCompanyDirectorSchemaTemplateWithDataQueue(
+    getUserCompanyDirectorSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+  handleGetUserTaxResidencesSchemaTemplateWithDataQueue(
+    getUserTaxResidencesSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+  handleGetW8FormConfirmationSchemaTemplateWithDataQueue(
+    getW8FormConfirmationSchemaTemplateWithDataData: KafkaMessage[]
+  ): void;
+  handleGetUserEmployForSchemaTemplateWithDataQueue(
+    getUserEmployForSchemaTemplateWithDataData: KafkaMessage[]
   ): void;
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;

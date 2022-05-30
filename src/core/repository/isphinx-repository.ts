@@ -4,8 +4,8 @@ import {
   IUserIdentifierData,
   IUserSelfie,
   IUserComplementaryData,
-  IUserGetQuizzesFromStoneAge,
-  IUserSendQuizzesFromStoneAge,
+  IUserDocument,
+  IUserPoliticallyExposedUS,
   IUserElectronicSignature,
   IUserChangeOrResetElectronicSignature,
   ICreateElectronicSignatureSession,
@@ -15,6 +15,12 @@ import {
   ISaveUserLogout,
   IProspectUser,
   ISuitability,
+  IUserExchangeMemberUsData,
+  IUserTimeExperienceUsData,
+  IGetUserCompanyDirectorSchemaTemplateWithDataData,
+  IGetUserTaxResidencesSchemaTemplateWithDataData,
+  IGetW8FormConfirmationSchemaTemplateWithDataData,
+  IGetUserEmployForSchemaTemplateWithDataData,
 } from "@domain/sphinx";
 
 export interface ISphinxRepository {
@@ -34,11 +40,11 @@ export interface ISphinxRepository {
   saveProspectUser(prospectUsers: IProspectUser[]): Promise<any>;
   saveSuitability(suitabilities: ISuitability[]): Promise<any>;
 
-  saveUserGetQuizFromStoneage(
-    userGetQuizzesFromStoneAge: IUserGetQuizzesFromStoneAge[]
+  saveUserDocument(
+    userDocument: IUserDocument[]
   ): Promise<any>;
-  saveUserSendQuizFromStoneage(
-    userSendQuizzesFromStoneAge: IUserSendQuizzesFromStoneAge[]
+  saveUserPoliticallyExposedUS(
+    userPoliticallyExposedUS: IUserPoliticallyExposedUS[]
   ): Promise<any>;
   saveUserSetElectronicSignatures(
     usersElectronicSignatures: IUserElectronicSignature[]
@@ -51,6 +57,25 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveUserUpdatesRegisterData(
     userUpdatesRegisterData: IUserUpdateRegisterData[]
+  ): Promise<any>;
+
+  saveUserExchangeMemberUsData(
+    UserExchangeMemberUsData: IUserExchangeMemberUsData[]
+  ): Promise<any>;
+  saveUserTimeExperienceUsData(
+    UserTimeExperienceUsData: IUserTimeExperienceUsData[]
+  ): Promise<any>;
+  saveGetUserCompanyDirectorSchemaTemplateWithDataData(
+    getUserCompanyDirectorSchemaTemplateWithDataData: IGetUserCompanyDirectorSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveGetUserTaxResidencesSchemaTemplateWithDataData(
+    getUserTaxResidencesSchemaTemplateWithDataData: IGetUserTaxResidencesSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveGetW8FormConfirmationSchemaTemplateWithDataData(
+    getW8FormConfirmationSchemaTemplateWithDataData: IGetW8FormConfirmationSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveGetUserEmployForSchemaTemplateWithDataData(
+    getUserEmployForSchemaTemplateWithDataData: IGetUserEmployForSchemaTemplateWithDataData[]
   ): Promise<any>;
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any>;
