@@ -1,37 +1,37 @@
 const aetherScope = [
   {
-    topic: "aether_persephone.orders",
+    topic: "aether-persephone.orders",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
     consumerGroup: "aether.orders.group",
   },
   {
-    topic: "aether_persephone.invalid_orders",
+    topic: "aether-persephone.invalid-orders",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "aether.invalid_orders.group",
+    consumerGroup: "aether.invalid-orders.group",
   },
 ];
 
 const gaiaScope = [
   {
-    topic: "gaia_persephone.session_messages",
+    topic: "gaia-persephone.session-messages",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "gaia.session_messages.group",
+    consumerGroup: "gaia.session-messages.group",
   },
   {
-    topic: "gaia_persephone.orders",
+    topic: "gaia-persephone.orders",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
     consumerGroup: "gaia.orders.group",
   },
   {
-    topic: "gaia_persephone.responses",
+    topic: "gaia-persephone.responses",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
@@ -41,52 +41,52 @@ const gaiaScope = [
 
 const hermesScope = [
   {
-    topic: "hermes_persephone.order_session.authenticity",
+    topic: "hermes-persephone.order-session.authenticity",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "hermes.order_session.authenticity.group",
+    consumerGroup: "hermes.order-session.authenticity.group",
   },
   {
-    topic: "hermes_persephone.order_session.integrity",
+    topic: "hermes-persephone.order-session.integrity",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "hermes.order_session.integrity.group",
+    consumerGroup: "hermes.order-session.integrity.group",
   },
   {
-    topic: "hermes_persephone.trade_sessions.create",
+    topic: "hermes-persephone.trade-sessions.create",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "hermes.trade_sessions.create.group",
+    consumerGroup: "hermes.trade-sessions.create.group",
   },
   {
-    topic: "hermes_persephone.received_orders",
+    topic: "hermes-persephone.received-orders",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "hermes.received_orders.group",
+    consumerGroup: "hermes.received-orders.group",
   },
   {
-    topic: "hermes_persephone.sent_orders",
+    topic: "hermes-persephone.sent-orders",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "hermes.sent_orders.group",
+    consumerGroup: "hermes.sent-orders.group",
   },
   {
-    topic: "hermes_persephone.report_orders",
+    topic: "hermes-persephone.report-orders",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "hermes.report_orders.group",
+    consumerGroup: "hermes.report-orders.group",
   },
 ];
 
 const hyperionScope = [
   {
-    topic: "hyperion_persephone.responses",
+    topic: "hyperion-persephone.responses",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
@@ -96,14 +96,14 @@ const hyperionScope = [
 
 const sphinxScope = [
   {
-    topic: "sphinx_persephone.user.crud",
+    topic: "sphinx-persephone.user.crud",
     numPartitions: 19,
     partitionsConsumedConcurrently: 6,
     numberOfConsumers: 19,
     consumerGroup: "sphinx.user.crud.group",
   },
   {
-    topic: "sphinx_persephone.user.authentication",
+    topic: "sphinx-persephone.user.authentication",
     numPartitions: 3,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 3,
