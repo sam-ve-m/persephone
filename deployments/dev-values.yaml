@@ -13,9 +13,9 @@ containers:
     - name: MONGO_DB_NAME
       value: "persephone"
     - name: MONGO_USER
-      value: "bnd"
+      value: "persephone"
     - name: MONGO_PASSWORD
-      value: "jkl321pqr"
+      value: "BBSFini25jpidFSDADf"
     - name: KAFKA_CLIENT_ID
       value: "persephone.lionx.com.br"
     - name: KAKFA_BROKERS
