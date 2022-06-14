@@ -16,59 +16,59 @@ import { SphinxRepository } from "@repository/sphinx-repository";
 export module TopicServiceFactory {
   export const registerTopicFactoriesService = () => {
     const topicPartitionToService = {
-      "aether_persephone.orders": () => {
+      "aether-persephone.orders": () => {
         const aetherRepository = new AetherRepository();
         return new AetherService(aetherRepository);
       },
-      "aether_persephone.invalid_orders": () => {
+      "aether-persephone.invalid-orders": () => {
         const aetherRepository = new AetherRepository();
         return new AetherService(aetherRepository);
       },
-      "gaia_persephone.orders": () => {
+      "gaia-persephone.orders": () => {
         const gaiaRepository = new GaiaRepository();
         return new GaiaService(gaiaRepository);
       },
-      "gaia_persephone.responses": () => {
+      "gaia-persephone.responses": () => {
         const gaiaRepository = new GaiaRepository();
         return new GaiaService(gaiaRepository);
       },
-      "gaia_persephone.session_messages": () => {
+      "gaia-persephone.session-messages": () => {
         const gaiaRepository = new GaiaRepository();
         return new GaiaService(gaiaRepository);
       },
-      "hermes_persephone.order_session.authenticity": () => {
+      "hermes-persephone.order-session.authenticity": () => {
         const hermesRepository = new HermesRepository();
         return new HermesService(hermesRepository);
       },
-      "hermes_persephone.order_session.integrity": () => {
+      "hermes-persephone.order-session.integrity": () => {
         const hermesRepository = new HermesRepository();
         return new HermesService(hermesRepository);
       },
-      "hermes_persephone.trade_sessions.create": () => {
+      "hermes-persephone.trade-sessions.create": () => {
         const hermesRepository = new HermesRepository();
         return new HermesService(hermesRepository);
       },
-      "hermes_persephone.received_orders": () => {
+      "hermes-persephone.received-orders": () => {
         const hermesRepository = new HermesRepository();
         return new HermesService(hermesRepository);
       },
-      "hermes_persephone.sent_orders": () => {
+      "hermes-persephone.sent-orders": () => {
         const hermesRepository = new HermesRepository();
         return new HermesService(hermesRepository);
       },
-      "hermes_persephone.report_orders": () => {
+      "hermes-persephone.report-orders": () => {
         const hermesRepository = new HermesRepository();
         return new HermesService(hermesRepository);
       },
-      "hyperion_persephone.responses": () => {
+      "hyperion-persephone.responses": () => {
         const hyperionRepository = new HyperionRepository();
         return new HyperionService(hyperionRepository);
       },
-      "sphinx_persephone.user.crud": () => {
+      "sphinx-persephone.user.crud": () => {
         const sphinxRepository = new SphinxRepository();
         return new SphinxService(sphinxRepository);
       },
-      "sphinx_persephone.user.authentication": () => {
+      "sphinx-persephone.user.authentication": () => {
         const sphinxRepository = new SphinxRepository();
         return new SphinxService(sphinxRepository);
       },
