@@ -1,0 +1,65 @@
+replicaCount: 1
+name: persephone
+namespace: production
+
+containers:
+  - name: persephone
+    image: nexus.sigame.com.br/persephone:0.1.1
+    env:
+    - name: NODE_ENV
+      value: "prod"
+    - name: MONGO_URI
+      value: "mongodb://172.30.18.149:27017,172.30.19.155:27017,172.20.28.76:27017,172.20.28.238:27017,172.20.28.239:27017"
+    - name: MONGO_DB_NAME
+      value: "persephone"
+    - name: MONGO_USER
+      value: "persephone"
+    - name: MONGO_PASSWORD
+      value: "CDmkmok413Ljfan132"
+    - name: KAFKA_CLIENT_ID
+      value: "persephone.lionx.com.br"
+    - name: KAKFA_BROKERS
+      value: "172.20.29.159:9092;172.20.29.33:9092;172.20.28.206:9092"
+    - name: PERSEPHONE_LOG_LEVEL
+      value: "info"
+    - name: KAFKA_LOG_LEVEL
+      value: "0"
+
+imagePullSecrets:
+  - name: nexus-v3
+  
+labels:
+  app: persephone
+
+podAnnotations: {}
+
+# securityContext:
+#   capabilities:
+#     drop:
+#     - AUDIT_WRITE
+#     - MKNOD
+#     - SETFCAP
+#     - SETPCAP
+#     - KILL
+#   # runAsNonRoot: true
+#   # runAsUser: 1000
+resources:
+  requests: #Amount of resources kube-scheduler will look into nodes to alocate the given POD
+    cpu: 512m
+    memory: 256Mi
+  limits: #Amount of resources limited by kubelet (will not exceed)
+    cpu: 1
+    memory: 512Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

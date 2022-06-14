@@ -9,12 +9,12 @@ import {
   UserComplementaryDataModel,
 } from "@domain/sphinx";
 import {
-  IUserGetQuizzesFromStoneAge,
-  UserGetQuizzesFromStoneAgeModel,
+  IUserDocument,
+  UserDocumentModel,
 } from "@domain/sphinx";
 import {
-  IUserSendQuizzesFromStoneAge,
-  UserSendQuizzesFromStoneAgeModel,
+  IUserPoliticallyExposedUS,
+  UserPoliticallyExposedUSModel,
 } from "@domain/sphinx";
 import {
   IUserElectronicSignature,
@@ -43,6 +43,31 @@ import {
 import { ISaveUserLogout, SaveUserLogoutModel } from "@domain/sphinx";
 import { ISuitability, SuitabilityModel } from "@domain/sphinx";
 
+import { 
+  IUserExchangeMemberUsData,
+  UserExchangeMemberUsDataModel,
+} from "@domain/sphinx";
+import { 
+  IUserTimeExperienceUsData,
+  UserTimeExperienceUsDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetUserCompanyDirectorSchemaTemplateWithDataData,
+  GetUserCompanyDirectorSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetUserTaxResidencesSchemaTemplateWithDataData,
+  GetUserTaxResidencesSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetW8FormConfirmationSchemaTemplateWithDataData,
+  GetW8FormConfirmationSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+import { 
+  IGetUserEmployForSchemaTemplateWithDataData,
+  GetUserEmployForSchemaTemplateWithDataDataModel,
+} from "@domain/sphinx";
+
 import { ISphinxRepository } from "@core/repository";
 
 export class SphinxRepository implements ISphinxRepository {
@@ -70,19 +95,19 @@ export class SphinxRepository implements ISphinxRepository {
     return UserComplementaryDataModel.insertMany(usersComplementaryData);
   }
 
-  saveUserGetQuizFromStoneage(
-    userGetQuizzesFromStoneAge: IUserGetQuizzesFromStoneAge[]
+  saveUserDocument(
+    userDocument: IUserDocument[]
   ): Promise<any> {
-    return UserGetQuizzesFromStoneAgeModel.insertMany(
-      userGetQuizzesFromStoneAge
+    return UserDocumentModel.insertMany(
+      userDocument
     );
   }
 
-  saveUserSendQuizFromStoneage(
-    userSendQuizzesFromStoneAge: IUserSendQuizzesFromStoneAge[]
+  saveUserPoliticallyExposedUS(
+    userPoliticallyExposedUS: IUserPoliticallyExposedUS[]
   ): Promise<any> {
-    return UserSendQuizzesFromStoneAgeModel.insertMany(
-      userSendQuizzesFromStoneAge
+    return UserPoliticallyExposedUSModel.insertMany(
+      userPoliticallyExposedUS
     );
   }
 
@@ -135,4 +160,24 @@ export class SphinxRepository implements ISphinxRepository {
   saveProspectUser(prospectUsers: IProspectUser[]): Promise<any> {
     return ProspectUserModel.insertMany(prospectUsers);
   }
+
+  saveUserExchangeMemberUsData(UserExchangeMemberUsData: IUserExchangeMemberUsData[]): Promise<any> {
+    return UserExchangeMemberUsDataModel.insertMany(UserExchangeMemberUsData);
+  }
+  saveUserTimeExperienceUsData(UserTimeExperienceUsData: IUserTimeExperienceUsData[]): Promise<any> {
+    return UserTimeExperienceUsDataModel.insertMany(UserTimeExperienceUsData);
+  }
+  saveGetUserCompanyDirectorSchemaTemplateWithDataData(getUserCompanyDirectorSchemaTemplateWithDataData: IGetUserCompanyDirectorSchemaTemplateWithDataData[]): Promise<any> {
+    return GetUserCompanyDirectorSchemaTemplateWithDataDataModel.insertMany(getUserCompanyDirectorSchemaTemplateWithDataData);
+  }
+  saveGetUserTaxResidencesSchemaTemplateWithDataData(getUserTaxResidencesSchemaTemplateWithDataData: IGetUserTaxResidencesSchemaTemplateWithDataData[]): Promise<any> {
+    return GetUserTaxResidencesSchemaTemplateWithDataDataModel.insertMany(getUserTaxResidencesSchemaTemplateWithDataData);
+  }
+  saveGetW8FormConfirmationSchemaTemplateWithDataData(getW8FormConfirmationSchemaTemplateWithDataData: IGetW8FormConfirmationSchemaTemplateWithDataData[]): Promise<any> {
+    return GetW8FormConfirmationSchemaTemplateWithDataDataModel.insertMany(getW8FormConfirmationSchemaTemplateWithDataData);
+  }
+  saveGetUserEmployForSchemaTemplateWithDataData(getUserEmployForSchemaTemplateWithDataData: IGetUserEmployForSchemaTemplateWithDataData[]): Promise<any> {
+    return GetUserEmployForSchemaTemplateWithDataDataModel.insertMany(getUserEmployForSchemaTemplateWithDataData);
+  }
+
 }

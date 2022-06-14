@@ -6,7 +6,7 @@ import { ISphinxService } from "@root/src/core/services/isphinx-service";
 import { KafkaMessage } from "kafkajs";
 
 const aetherScope = {
-  "aether_persephone.orders": {
+  "aether-persephone.orders": {
     "orders.queue": (
       aetherService: IAetherService,
       messageBatch: KafkaMessage[]
@@ -14,7 +14,7 @@ const aetherScope = {
       aetherService.handleOrdersQueue(messageBatch);
     },
   },
-  "aether_persephone.invalid_orders": {
+  "aether-persephone.invalid-orders": {
     "invalid_orders.queue": (
       aetherService: IAetherService,
       messageBatch: KafkaMessage[]
@@ -25,7 +25,7 @@ const aetherScope = {
 };
 
 const gaiaScope = {
-  "gaia_persephone.orders": {
+  "gaia-persephone.orders": {
     "orders.queue": (
       gaiaService: IGaiaService,
       messageBatch: KafkaMessage[]
@@ -33,7 +33,7 @@ const gaiaScope = {
       gaiaService.handleOrdersQueue(messageBatch);
     },
   },
-  "gaia_persephone.responses": {
+  "gaia-persephone.responses": {
     "responses.queue": (
       gaiaService: IGaiaService,
       messageBatch: KafkaMessage[]
@@ -41,7 +41,7 @@ const gaiaScope = {
       gaiaService.handleResponsesQueue(messageBatch);
     },
   },
-  "gaia_persephone.session_messages": {
+  "gaia-persephone.session-messages": {
     "session_messages.queue": (
       gaiaService: IGaiaService,
       messageBatch: KafkaMessage[]
@@ -52,7 +52,7 @@ const gaiaScope = {
 };
 
 const hermesScope = {
-  "hermes_persephone.order_session.authenticity": {
+  "hermes-persephone.order-session.authenticity": {
     "order_session.authenticity.queue": (
       hermesService: IHermesService,
       messageBatch: KafkaMessage[]
@@ -60,7 +60,7 @@ const hermesScope = {
       hermesService.handleOrderSessionAuthenticityQueue(messageBatch);
     },
   },
-  "hermes_persephone.order_session.integrity": {
+  "hermes-persephone.order-session.integrity": {
     "order_session.integrity.queue": (
       hermesService: IHermesService,
       messageBatch: KafkaMessage[]
@@ -68,7 +68,7 @@ const hermesScope = {
       hermesService.handleOrderSessionIntegrityQueue(messageBatch);
     },
   },
-  "hermes_persephone.trade_sessions.create": {
+  "hermes-persephone.trade-sessions.create": {
     "trade_sessions.create.queue": (
       hermesService: IHermesService,
       messageBatch: KafkaMessage[]
@@ -76,7 +76,7 @@ const hermesScope = {
       hermesService.handleTradeSessionCreateQueue(messageBatch);
     },
   },
-  "hermes_persephone.received_orders": {
+  "hermes-persephone.received-orders": {
     "received_orders.queue": (
       hermesService: IHermesService,
       messageBatch: KafkaMessage[]
@@ -84,7 +84,7 @@ const hermesScope = {
       hermesService.handleReceivedOrdersQueue(messageBatch);
     },
   },
-  "hermes_persephone.sent_orders": {
+  "hermes-persephone.sent-orders": {
     "sent_orders.queue": (
       hermesService: IHermesService,
       messageBatch: KafkaMessage[]
@@ -92,7 +92,7 @@ const hermesScope = {
       hermesService.handleSentOrdersQueue(messageBatch);
     },
   },
-  "hermes_persephone.report_orders": {
+  "hermes-persephone.report-orders": {
     "report_orders.queue": (
       hermesService: IHermesService,
       messageBatch: KafkaMessage[]
@@ -103,7 +103,7 @@ const hermesScope = {
 };
 
 const hyperionScope = {
-  "hyperion_persephone.responses": {
+  "hyperion-persephone.responses": {
     "responses.queue": (
       hyperionService: IHyperionService,
       messageBatch: KafkaMessage[]
@@ -114,7 +114,7 @@ const hyperionScope = {
 };
 
 const sphinxScope = {
-  "sphinx_persephone.user.crud": {
+  "sphinx-persephone.user.crud": {
     "prospect_user.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
@@ -157,17 +157,17 @@ const sphinxScope = {
     ) => {
       sphinxService.handleUserComplementaryDataQueue(messageBatch);
     },
-    "user_get_quiz_from_stoneage.queue": (
+    "user_document.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
     ) => {
-      sphinxService.handleUserGetQuizFromStoneageQueue(messageBatch);
+      sphinxService.handleUserDocumentQueue(messageBatch);
     },
-    "user_send_quiz_from_stoneage.queue": (
+    "user_politically_exposed_us.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
     ) => {
-      sphinxService.handleUserSendQuizFromStoneageQueue(messageBatch);
+      sphinxService.handleUserPoliticallyExposedUSQueue(messageBatch);
     },
     "user_set_electronic_signature.queue": (
       sphinxService: ISphinxService,
@@ -195,8 +195,44 @@ const sphinxScope = {
     ) => {
       sphinxService.handleUserUpdateRegisterDataQueue(messageBatch);
     },
+    "user_exchange_member_us_schema.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleUserExchangeMemberUsSchemaQueue(messageBatch);
+    },
+    "user_time_experience_us_schema.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleUserTimeExperienceUsSchemaQueue(messageBatch);
+    },
+    "get_user_company_director_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetUserCompanyDirectorSchemaTemplateWithDataQueue(messageBatch);
+    },
+    "get_user_tax_residences_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetUserTaxResidencesSchemaTemplateWithDataQueue(messageBatch);
+    },
+    "get_w8_form_confirmation_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetW8FormConfirmationSchemaTemplateWithDataQueue(messageBatch);
+    },
+    "get_user_employ_for_schema_template_with_data.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleGetUserEmployForSchemaTemplateWithDataQueue(messageBatch);
+    },
   },
-  "sphinx_persephone.user.authentication": {
+  "sphinx-persephone.user.authentication": {
     "user_thebes_hall.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
@@ -219,29 +255,29 @@ const sphinxScope = {
 };
 
 const topicsPartitionsEnum = {
-  "aether_persephone.orders": { 0: "orders.queue" },
-  "aether_persephone.invalid_orders": { 0: "invalid_orders.queue" },
+  "aether-persephone.orders": { 0: "orders.queue" },
+  "aether-persephone.invalid-orders": { 0: "invalid_orders.queue" },
 
-  "gaia_persephone.orders": { 0: "orders.queue" },
-  "gaia_persephone.responses": { 0: "responses.queue" },
-  "gaia_persephone.session_messages": { 0: "session_messages.queue" },
+  "gaia-persephone.orders": { 0: "orders.queue" },
+  "gaia-persephone.responses": { 0: "responses.queue" },
+  "gaia-persephone.session-messages": { 0: "session_messages.queue" },
 
-  "hermes_persephone.order_session.authenticity": {
+  "hermes-persephone.order-session.authenticity": {
     0: "order_session.authenticity.queue",
   },
-  "hermes_persephone.order_session.integrity": {
+  "hermes-persephone.order-session.integrity": {
     0: "order_session.integrity.queue",
   },
-  "hermes_persephone.trade_sessions.create": {
+  "hermes-persephone.trade-sessions.create": {
     0: "trade_sessions.create.queue",
   },
-  "hermes_persephone.received_orders": { 0: "received_orders.queue" },
-  "hermes_persephone.sent_orders": { 0: "sent_orders.queue" },
-  "hermes_persephone.report_orders": { 0: "report_orders.queue" },
+  "hermes-persephone.received-orders": { 0: "received_orders.queue" },
+  "hermes-persephone.sent-orders": { 0: "sent_orders.queue" },
+  "hermes-persephone.report-orders": { 0: "report_orders.queue" },
 
-  "hyperion_persephone.responses": { 0: "responses.queue" },
+  "hyperion-persephone.responses": { 0: "responses.queue" },
 
-  "sphinx_persephone.user.crud": {
+  "sphinx-persephone.user.crud": {
     0: "prospect_user.queue",
     1: "signed_term.queue",
     2: "suitability.queue",
@@ -249,15 +285,21 @@ const topicsPartitionsEnum = {
     4: "user_identifier_data.queue",
     5: "user_selfie.queue",
     6: "user_complementary_data.queue",
-    7: "user_get_quiz_from_stoneage.queue",
-    8: "user_send_quiz_from_stoneage.queue",
+    7: "user_document.queue",
+    8: "user_politically_exposed_us.queue",
     9: "user_set_electronic_signature.queue",
     10: "user_change_or_reset_electronic_signature.queue",
     11: "create_electronic_signature_session.queue",
     12: "user_update_register_data.queue",
+    13: "user_exchange_member_us_schema.queue",
+    14: "user_time_experience_us_schema.queue",
+    15: "get_user_company_director_schema_template_with_data.queue",
+    16: "get_user_tax_residences_schema_template_with_data.queue",
+    17: "get_w8_form_confirmation_schema_template_with_data.queue",
+    18: "get_user_employ_for_schema_template_with_data.queue",
   },
 
-  "sphinx_persephone.user.authentication": {
+  "sphinx-persephone.user.authentication": {
     0: "user_thebes_hall.queue",
     1: "user_authentication.queue",
     2: "user_logout.queue",
