@@ -12,7 +12,7 @@ export class KafkaConnectionFactory implements IKafkaConnectionFactory {
       const kafka = new Kafka({
         clientId: env.kafka_metadata.clientId,
         brokers: env.kafka_metadata.brokers,
-        logLevel: parseInt(process.env.KAFKA_LOG_LEVEL),
+        logLevel: parseInt("0"),
       });
 
       KafkaConnectionFactory.kafkaInstance = kafka;

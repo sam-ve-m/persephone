@@ -29,7 +29,7 @@ const transports = [
 ];
 
 const Logger = winston.createLogger({
-  level: process.env.PERSEPHONE_LOG_LEVEL,
+  level: "info",
   levels,
   format,
   transports,

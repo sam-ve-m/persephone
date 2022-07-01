@@ -13,6 +13,9 @@ import { HyperionService } from "@service/hyperion-service";
 import { SphinxService } from "@service/sphinx-service";
 import { SphinxRepository } from "@repository/sphinx-repository";
 
+import { EbisuService } from "@service/ebisu-service"
+import { EbisuRepository } from "@repository/ebisu-repository"
+
 export module TopicServiceFactory {
   export const registerTopicFactoriesService = () => {
     const topicPartitionToService = {
@@ -71,6 +74,10 @@ export module TopicServiceFactory {
       "sphinx-persephone.user.authentication": () => {
         const sphinxRepository = new SphinxRepository();
         return new SphinxService(sphinxRepository);
+      },
+      "ebisu-persephone.client.bank_account": () => {
+        const ebisuRepository = new EbisuRepository();
+        return new EbisuService(ebisuRepository);
       },
     };
 
