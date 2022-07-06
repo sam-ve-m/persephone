@@ -3,6 +3,7 @@ import { IGaiaService } from "@core/services";
 import { IHermesService } from "@root/src/core/services/ihermes-service";
 import { IHyperionService } from "@root/src/core/services/ihyperion-service";
 import { ISphinxService } from "@root/src/core/services/isphinx-service";
+import { IEbisuService } from "@root/src/core/services/iebisu-service";
 import { KafkaMessage } from "kafkajs";
 
 const aetherScope = {
@@ -254,6 +255,29 @@ const sphinxScope = {
   },
 };
 
+const ebisuScope = {
+  "ebisu-persephone.client.bank_account": {
+    "register_client_bank_account.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleBankAccountRegisters(messageBatch);
+    },
+    "update_client_bank_account.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleBankAccountUpdates(messageBatch);
+    },
+    "delete_client_bank_account.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleBankAccountDeletions(messageBatch);
+    },
+  },
+};
+
 const topicsPartitionsEnum = {
   "aether-persephone.orders": { 0: "orders.queue" },
   "aether-persephone.invalid-orders": { 0: "invalid_orders.queue" },
@@ -304,6 +328,13 @@ const topicsPartitionsEnum = {
     1: "user_authentication.queue",
     2: "user_logout.queue",
   },
+
+  "ebisu-persephone.client.bank_account": {
+    0: "register_client_bank_account.queue",
+    1: "update_client_bank_account.queue",
+    2: "delete_client_bank_account.queue",
+  },
+
 };
 
 export {
@@ -312,5 +343,6 @@ export {
   hermesScope,
   hyperionScope,
   sphinxScope,
+  ebisuScope,
   topicsPartitionsEnum,
 };
