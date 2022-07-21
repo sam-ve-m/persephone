@@ -4,7 +4,7 @@ namespace: homolog
 
 containers:
   - name: persephone
-    image: nexus.sigame.com.br/persephone:0.1.1
+    image: nexus.sigame.com.br/persephone:1.0.0
     env:
     - name: NODE_ENV
       value: "sit"
@@ -19,7 +19,7 @@ containers:
     - name: KAFKA_CLIENT_ID
       value: "persephone.lionx.com.br"
     - name: KAKFA_BROKERS
-      value: "sigbrvnlkafka-uat.subpriv.vcnuat.oraclevcn.com:9092"
+      value: "cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
     - name: PERSEPHONE_LOG_LEVEL
       value: "info"
     - name: KAFKA_LOG_LEVEL
