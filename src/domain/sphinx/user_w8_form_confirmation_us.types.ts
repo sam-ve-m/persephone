@@ -3,6 +3,7 @@ import { Document, Model } from "mongoose";
 export interface IGetW8FormConfirmationSchemaTemplateWithDataData {
     w8_form_confirmation: String;
     unique_id: String;
+    created_at: Number;
 }
 
 export interface IGetW8FormConfirmationSchemaTemplateWithDataDataDocument extends IGetW8FormConfirmationSchemaTemplateWithDataData, Document {}
