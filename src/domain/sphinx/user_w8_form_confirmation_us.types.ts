@@ -1,7 +1,7 @@
 import { Document, Model } from "mongoose";
 
 export interface IGetW8FormConfirmationSchemaTemplateWithDataData {
-    w8_form_confirmation: String;
+    w8_form_confirmation: Boolean;
     unique_id: String;
     created_at: Number;
 }
