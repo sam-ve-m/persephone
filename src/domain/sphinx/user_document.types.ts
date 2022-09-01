@@ -4,6 +4,7 @@ export interface IUserDocument {
     path_document_front: String;
     path_document_back: String;
     unique_id: String;
+    created_at: Number;
 }
 
 export interface IUserDocumentDocument extends IUserDocument, Document {}

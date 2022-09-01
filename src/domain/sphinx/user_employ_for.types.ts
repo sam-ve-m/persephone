@@ -6,6 +6,7 @@ export interface IGetUserEmployForSchemaTemplateWithDataData {
     employ_position: String;
     employ_company_name: String;
     unique_id: String;
+    created_at: Number;
 }
 
 export interface IGetUserEmployForSchemaTemplateWithDataDataDocument extends IGetUserEmployForSchemaTemplateWithDataData, Document {}

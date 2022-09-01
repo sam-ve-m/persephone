@@ -4,6 +4,7 @@ export interface IGetUserCompanyDirectorSchemaTemplateWithDataData {
     company_director: String;
     company_director_from: Boolean;
     unique_id: String;
+    created_at: Number;
 }
 
 export interface IGetUserCompanyDirectorSchemaTemplateWithDataDataDocument extends IGetUserCompanyDirectorSchemaTemplateWithDataData, Document {}

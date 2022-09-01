@@ -3,6 +3,7 @@ import { Document, Model } from "mongoose";
 export interface IUserExchangeMemberUsData {
     exchange_member: Boolean;
     unique_id: String;
+    created_at: Number;
 }
 
 export interface IUserExchangeMemberUsDataDocument extends IUserExchangeMemberUsData, Document {}

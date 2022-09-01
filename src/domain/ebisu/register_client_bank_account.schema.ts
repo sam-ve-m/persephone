@@ -4,7 +4,7 @@ const RegisterBankAccountSchema = new Schema({
     unique_id: String,
     device_info: Object,
     bank_account: Object,
-    _created_at: Date,
+    created_at: Number
  });
 
 export default RegisterBankAccountSchema;
