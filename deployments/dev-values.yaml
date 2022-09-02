@@ -4,7 +4,7 @@ namespace: develop
 
 containers:
   - name: persephone
-    image: nexus.sigame.com.br/persephone:1.0.0-0
+    image: nexus.sigame.com.br/persephone:1.1.0-0
     env:
     - name: NODE_ENV
       value: "sit"
