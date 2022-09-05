@@ -2,7 +2,7 @@ require("dotenv").config();
 
 import { sphinxScope, aetherScope } from "./enviroment.kafka.metadata";
 import { gaiaScope, hyperionScope } from "./enviroment.kafka.metadata";
-import { hermesScope } from "./enviroment.kafka.metadata";
+import { hermesScope, ebisuScope } from "./enviroment.kafka.metadata";
 
 const { localhost, sit, uat, prod, yaba, ...global } = {
   localhost: {
@@ -28,6 +28,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
         ...hermesScope,
         ...hyperionScope,
         ...sphinxScope,
+        ...ebisuScope,
       ],
     },
   },
@@ -54,6 +55,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
         ...hermesScope,
         ...hyperionScope,
         ...sphinxScope,
+        ...ebisuScope,
       ],
     },
   },
@@ -80,6 +82,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
         ...hermesScope,
         ...hyperionScope,
         ...sphinxScope,
+        ...ebisuScope,
       ],
     },
   },
@@ -106,6 +109,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
         ...hermesScope,
         ...hyperionScope,
         ...sphinxScope,
+        ...ebisuScope,
       ],
     },
   },
@@ -132,6 +136,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
         ...hermesScope,
         ...hyperionScope,
         ...sphinxScope,
+        ...ebisuScope,
       ],
     },
   },
