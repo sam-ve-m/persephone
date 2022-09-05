@@ -111,4 +111,15 @@ const sphinxScope = [
   },
 ];
 
-export { aetherScope, gaiaScope, hermesScope, hyperionScope, sphinxScope };
+const ebisuScope = [
+  {
+    topic: "ebisu-persephone.client.bank_account",
+    numPartitions: 3,
+    partitionsConsumedConcurrently: 1,
+    numberOfConsumers: 3,
+    consumerGroup: "ebisu.client.bank_account.group",
+  },
+];
+
+
+export { aetherScope, gaiaScope, hermesScope, hyperionScope, sphinxScope, ebisuScope };
