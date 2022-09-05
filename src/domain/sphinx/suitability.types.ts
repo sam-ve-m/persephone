@@ -1,12 +1,11 @@
 import { Document, Model } from "mongoose";
 
 export interface ISuitability {
-    user_email: String;
+    unique_id: String;
     form: JSON;
     version: Number;
     score: Number;
-    profile: Number;
-    create_suitability_time_stamp: Number;
+    profile: String;
     created_at: Number;
 }
 

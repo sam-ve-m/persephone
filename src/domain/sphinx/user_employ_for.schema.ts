@@ -5,6 +5,7 @@ const GetUserEmployForSchemaTemplateWithDataDataSchema = new Schema({
     employ_type: String,
     employ_position: String,
     employ_company_name: String,
+    created_at: Number,
     unique_id: String,
 });
 

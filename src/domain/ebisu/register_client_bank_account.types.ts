@@ -4,7 +4,7 @@ export interface IRegisterBankAccount {
     unique_id: String;
     device_info: Object;
     bank_account: Object;
-    _created_at: Date;
+    created_at: Number;
  }
 
 export interface IRegisterBankAccountDocument extends IRegisterBankAccount, Document {}

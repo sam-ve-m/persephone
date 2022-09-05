@@ -4,7 +4,7 @@ export interface IDeleteBankAccount {
     unique_id: String;
     device_info: Object;
     bank_account: Object;
-    _created_at: Date;
+    created_at: Number;
  }
 
 export interface IDeleteBankAccountDocument extends IDeleteBankAccount, Document {}
