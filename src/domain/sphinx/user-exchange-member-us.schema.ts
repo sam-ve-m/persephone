@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
 const UserExchangeMemberUsSchema = new Schema({
-    exchange_member: Boolean,
     unique_id: String,
+    exchange_member: Boolean,
     created_at: Number
 });
 

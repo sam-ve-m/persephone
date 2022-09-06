@@ -1,9 +1,10 @@
 import { Document, Model } from "mongoose";
 
 export interface IUserIdentifierData {
-    user_email: String,
+    unique_id: String,
     cpf: String,
     cel_phone: String,
+    tax_residences: Array<Object>,
     created_at: Number,
 }
 

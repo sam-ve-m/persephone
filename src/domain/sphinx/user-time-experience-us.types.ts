@@ -1,8 +1,8 @@
 import { Document, Model } from "mongoose";
 
 export interface IUserTimeExperienceUsData {
-    time_experience: String;
     unique_id: String;
+    time_experience: String;
     created_at: Number;
 
 }

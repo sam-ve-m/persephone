@@ -1,9 +1,8 @@
 import { Schema } from "mongoose";
 
 const ProspectUserSchema = new Schema({
-    user_email: String,
+    unique_id: String,
     nick_name: String,
-    create_user_time_stamp: Number,
     created_at: Number
 });
 

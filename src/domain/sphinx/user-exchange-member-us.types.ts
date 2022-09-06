@@ -1,8 +1,8 @@
 import { Document, Model } from "mongoose";
 
 export interface IUserExchangeMemberUsData {
-    exchange_member: Boolean;
     unique_id: String;
+    exchange_member: Boolean;
     created_at: Number;
 }
 

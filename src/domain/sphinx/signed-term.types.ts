@@ -1,7 +1,7 @@
 import { Document, Model } from "mongoose";
 
 export interface ISignedTerm {
-    user_email: String;
+    unique_id: String;
     term_type: String;
     term_version: String;
     user_accept: Boolean;

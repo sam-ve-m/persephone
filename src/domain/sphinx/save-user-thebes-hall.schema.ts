@@ -1,9 +1,9 @@
 import { Schema } from "mongoose";
 
 const SaveUserThebesHallSchema = new Schema({
-    user_email: String,
-    jwt: JSON,
-    has_trade_allowed: JSON,
+    unique_id: String,
+    jwt: String,
+    jwt_payload_data: JSON,
     device_information: JSON,
     created_at: Number
 });

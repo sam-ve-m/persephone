@@ -1,9 +1,9 @@
 import { Document, Model } from "mongoose";
 
 export interface IUserDocument {
+    unique_id: String;
     path_document_front: String;
     path_document_back: String;
-    unique_id: String;
     created_at: Number;
 }
 
