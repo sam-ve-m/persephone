@@ -232,6 +232,12 @@ const sphinxScope = {
     ) => {
       sphinxService.handleGetUserEmployForSchemaTemplateWithDataQueue(messageBatch);
     },
+    "exchange_account.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleSetExchangeAccountQueue(messageBatch);
+    },
   },
   "sphinx-persephone.user.authentication": {
     "user_thebes_hall.queue": (
@@ -321,6 +327,7 @@ const topicsPartitionsEnum = {
     16: "get_user_tax_residences_schema_template_with_data.queue",
     17: "get_w8_form_confirmation_schema_template_with_data.queue",
     18: "get_user_employ_for_schema_template_with_data.queue",
+    19: "exchange_account.queue",
   },
 
   "sphinx-persephone.user.authentication": {
