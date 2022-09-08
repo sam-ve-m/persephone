@@ -1,11 +1,10 @@
 import { Schema } from "mongoose";
 
 const SignedTermSchema = new Schema({
-    user_email: String,
-    term_type: String,
-    term_version: String,
+    unique_id: String,
+    terms_type: Array,
+    terms_update: Object,
     user_accept: Boolean,
-    term_answer_time_stamp: Number,
     created_at: Number
 });
 

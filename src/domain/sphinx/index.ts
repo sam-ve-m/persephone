@@ -129,3 +129,9 @@ export * from "./user_employ_for.model";
 export * from "./user_employ_for.schema";
 export * from "./user_employ_for.static";
 export * from "./user_employ_for.types";
+
+export * from "./exchange_account.methods";
+export * from "./exchange_account.model";
+export * from "./exchange_account.schema";
+export * from "./exchange_account.static";
+export * from "./exchange_account.types";

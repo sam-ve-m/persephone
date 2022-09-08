@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
 
 const BureauCallbackSchema = new Schema({
-    user_email: String,
+    unique_id: String,
     bureau_data: Object,
     created_at: Number
 });

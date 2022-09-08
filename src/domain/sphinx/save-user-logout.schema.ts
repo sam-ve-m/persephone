@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
 
 const SaveUserLogoutSchema = new Schema({
-    user_email: String,
+    unique_id: String,
     jwt: String,
     device_information: Object,
     created_at: Number

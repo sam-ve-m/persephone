@@ -1,9 +1,10 @@
 import { Schema } from "mongoose";
 
 const UserIdentifierDataSchema = new Schema({
-    user_email: String,
+    unique_id: String,
     cpf: String,
     cel_phone: String,
+    tax_residences: Array,
     created_at: Number,
 });
 

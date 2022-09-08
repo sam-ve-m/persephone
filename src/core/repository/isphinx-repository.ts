@@ -21,6 +21,7 @@ import {
   IGetUserTaxResidencesSchemaTemplateWithDataData,
   IGetW8FormConfirmationSchemaTemplateWithDataData,
   IGetUserEmployForSchemaTemplateWithDataData,
+  IExchangeAccountData,
 } from "@domain/sphinx";
 
 export interface ISphinxRepository {
@@ -76,6 +77,9 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveGetUserEmployForSchemaTemplateWithDataData(
     getUserEmployForSchemaTemplateWithDataData: IGetUserEmployForSchemaTemplateWithDataData[]
+  ): Promise<any>;
+  saveExchangeAccountData(
+    getUserEmployForSchemaTemplateWithDataData: IExchangeAccountData[]
   ): Promise<any>;
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any>;

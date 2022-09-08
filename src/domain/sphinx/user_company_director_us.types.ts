@@ -1,9 +1,9 @@
 import { Document, Model } from "mongoose";
 
 export interface IGetUserCompanyDirectorSchemaTemplateWithDataData {
-    company_director: String;
-    company_director_from: Boolean;
     unique_id: String;
+    company_director: String;
+    company_director_of: Boolean;
     created_at: Number;
 }
 

@@ -1,9 +1,9 @@
 import { Document, Model } from "mongoose";
 
 export interface ISaveUserThebesHall {
-    user_email: String;
-    jwt: Object;
-    has_trade_allowed: Object;
+    unique_id: String;
+    jwt: String;
+    jwt_payload_data: Object;
     device_information: Object,
     created_at: Number;
 }

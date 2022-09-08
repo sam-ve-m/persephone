@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
 const UserTimeExperienceUsDataSchema = new Schema({
-    time_experience: String,
     unique_id: String,
+    time_experience: String,
     created_at: Number
 });
 

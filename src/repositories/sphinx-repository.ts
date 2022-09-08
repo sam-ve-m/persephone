@@ -32,6 +32,10 @@ import {
   IUserUpdateRegisterData,
   UserUpdateRegisterDataModel,
 } from "@domain/sphinx";
+import {
+  IExchangeAccountData,
+  ExchangeAccountDataModel,
+} from "@domain/sphinx";
 
 import { ISaveUserThebesHall, SaveUserThebesHallModel } from "@domain/sphinx";
 
@@ -179,5 +183,7 @@ export class SphinxRepository implements ISphinxRepository {
   saveGetUserEmployForSchemaTemplateWithDataData(getUserEmployForSchemaTemplateWithDataData: IGetUserEmployForSchemaTemplateWithDataData[]): Promise<any> {
     return GetUserEmployForSchemaTemplateWithDataDataModel.insertMany(getUserEmployForSchemaTemplateWithDataData);
   }
-
+  saveExchangeAccountData(setExchangeAccountData: IExchangeAccountData[]): Promise<any> {
+    return ExchangeAccountDataModel.insertMany(setExchangeAccountData);
+  }
 }

@@ -1,7 +1,7 @@
 import { Document, Model } from "mongoose";
 
 export interface IUserChangeOrResetElectronicSignature {
-    user_email: String;
+    unique_id: String;
     previous_electronic_signature: String;
     previous_is_blocked_electronic_signature: Boolean;
     previous_electronic_signature_wrong_attempts: Number;

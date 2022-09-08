@@ -1,11 +1,13 @@
 import { Schema } from "mongoose";
 
 const UserComplementaryDataSchema = new Schema({
-    user_email: String,
-    is_us_person: Boolean,
-    us_tin: String,
-    is_cvm_qualified_investor: Boolean,
+    unique_id: String,
     marital: Object,
+
+    is_us_person: Boolean,
+    us_tin: String, // Esse bloco não está sendo passado
+    is_cvm_qualified_investor: Boolean,
+
     created_at: Number
 });
 
