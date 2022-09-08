@@ -1,9 +1,10 @@
 import { Schema } from "mongoose";
 
 const UserPoliticallyExposedUSSchema = new Schema({
+    unique_id: String,
     politically_exposed: Boolean,
+    politically_exposed_names: Array,
     created_at: Number,
-    unique_id: String
 });
 
 export default UserPoliticallyExposedUSSchema;

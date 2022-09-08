@@ -1,7 +1,7 @@
 import { Document, Model } from "mongoose";
 
 export interface ISaveUserLogout {
-    user_email: String;
+    unique_id: String;
     jwt: String;
     device_information: JSON,
     created_at: Number;

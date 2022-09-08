@@ -49,6 +49,9 @@ export interface ISphinxService {
   handleGetUserEmployForSchemaTemplateWithDataQueue(
     getUserEmployForSchemaTemplateWithDataData: KafkaMessage[]
   ): void;
+  handleSetExchangeAccountQueue(
+    setExchangeAccountData: KafkaMessage[]
+  ): void;
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;
   handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void;

@@ -1,7 +1,7 @@
 import { Document, Model } from "mongoose";
 
 export interface IBureauCallback {
-    user_email: String;
+    unique_id: String;
     bureau_data: Object;
     created_at: Number;
 }

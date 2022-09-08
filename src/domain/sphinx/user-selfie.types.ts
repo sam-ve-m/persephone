@@ -1,7 +1,7 @@
 import { Document, Model } from "mongoose";
 
 export interface IUserSelfie {
-    user_email: String;
+    unique_id: String;
     file_path: String;
     created_at: Number;
 }
