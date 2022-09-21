@@ -23,7 +23,6 @@ import {
   IGetUserEmployForSchemaTemplateWithDataData,
   IExchangeAccountData,
   IExchangeAccountStatus,
-  IDwAccountData,
   ICpfValidationStatus,
   ICpfValidation,
   IScoreValidationStatus,
@@ -88,9 +87,6 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveExchangeAccountStatus(
   ExchangeAccountStatus: IExchangeAccountStatus[]
-  ): Promise<any>;
-  saveDwAccountData(
-  DwAccountData: IDwAccountData[]
   ): Promise<any>;
   saveCpfValidationStatus(
   CpfValidationStatus: ICpfValidationStatus[]

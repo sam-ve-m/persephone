@@ -142,12 +142,6 @@ export * from "./status_exchange_account.schema";
 export * from "./status_exchange_account.static";
 export * from "./status_exchange_account.types";
 
-export * from "./dw_account.methods";
-export * from "./dw_account.model";
-export * from "./dw_account.schema";
-export * from "./dw_account.static";
-export * from "./dw_account.types";
-
 export * from "./cpf_validation.methods";
 export * from "./cpf_validation.model";
 export * from "./cpf_validation.schema";

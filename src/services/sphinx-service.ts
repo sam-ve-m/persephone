@@ -371,23 +371,6 @@ export class SphinxService implements ISphinxService {
         RepositoriesSucessHandlers.handleGeneralError(data);
       });
   }
-  handleDwAccountDataQueue(
-    userDwAccountData: KafkaMessage[]
-    ): void {
-      const formattedData = userDwAccountData.map((message) => {
-      const messageString = message.value.toString();
-      return JSON.parse(messageString);
-    });
-
-    this._sphinxRepository
-      .saveDwAccountData(formattedData)
-      .then((data) => {
-        RepositoriesSucessHandlers.handleGeneralSucess(data);
-      })
-      .catch((data) => {
-        RepositoriesSucessHandlers.handleGeneralError(data);
-      });
-  }
   handleCpfValidationStatusQueue(
     userCpfValidationStatus: KafkaMessage[]
     ): void {

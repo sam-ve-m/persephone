@@ -78,10 +78,6 @@ import {
     ExchangeAccountStatusModel,
 } from "@domain/sphinx";
 import {
-    IDwAccountData,
-    DwAccountDataModel,
-} from "@domain/sphinx";
-import {
     ICpfValidationStatus,
     CpfValidationStatusModel,
 } from "@domain/sphinx";
@@ -161,9 +157,6 @@ export class SphinxRepository implements ISphinxRepository {
 
   saveExchangeAccountStatus(saveExchangeAccountStatus: IExchangeAccountStatus[]): Promise<any> {
     return ExchangeAccountStatusModel.insertMany(saveExchangeAccountStatus);
-  }
-  saveDwAccountData(saveDwAccountData: IDwAccountData[]): Promise<any> {
-    return DwAccountDataModel.insertMany(saveDwAccountData);
   }
   saveCpfValidationStatus(saveCpfValidationStatus: ICpfValidationStatus[]): Promise<any> {
     return CpfValidationStatusModel.insertMany(saveCpfValidationStatus);

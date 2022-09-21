@@ -55,9 +55,6 @@ export interface ISphinxService {
   handleExchangeAccountStatusQueue(
     userExchangeAccountStatus: KafkaMessage[]
   ): void;
-  handleDwAccountDataQueue(
-    userDwAccountData: KafkaMessage[]
-  ): void;
   handleCpfValidationStatusQueue(
     userCpfValidationStatus: KafkaMessage[]
   ): void;
