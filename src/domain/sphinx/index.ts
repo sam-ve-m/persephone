@@ -135,3 +135,27 @@ export * from "./exchange_account.model";
 export * from "./exchange_account.schema";
 export * from "./exchange_account.static";
 export * from "./exchange_account.types";
+
+export * from "./status_exchange_account.methods";
+export * from "./status_exchange_account.model";
+export * from "./status_exchange_account.schema";
+export * from "./status_exchange_account.static";
+export * from "./status_exchange_account.types";
+
+export * from "./cpf_validation.methods";
+export * from "./cpf_validation.model";
+export * from "./cpf_validation.schema";
+export * from "./cpf_validation.static";
+export * from "./cpf_validation.types";
+
+export * from "./status_cpf_validation.methods";
+export * from "./status_cpf_validation.model";
+export * from "./status_cpf_validation.schema";
+export * from "./status_cpf_validation.static";
+export * from "./status_cpf_validation.types";
+
+export * from "./status_score_validation.methods";
+export * from "./status_score_validation.model";
+export * from "./status_score_validation.schema";
+export * from "./status_score_validation.static";
+export * from "./status_score_validation.types";

@@ -22,6 +22,10 @@ import {
   IGetW8FormConfirmationSchemaTemplateWithDataData,
   IGetUserEmployForSchemaTemplateWithDataData,
   IExchangeAccountData,
+  IExchangeAccountStatus,
+  ICpfValidationStatus,
+  ICpfValidation,
+  IScoreValidationStatus,
 } from "@domain/sphinx";
 
 export interface ISphinxRepository {
@@ -80,6 +84,18 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveExchangeAccountData(
     getUserEmployForSchemaTemplateWithDataData: IExchangeAccountData[]
+  ): Promise<any>;
+  saveExchangeAccountStatus(
+  ExchangeAccountStatus: IExchangeAccountStatus[]
+  ): Promise<any>;
+  saveCpfValidationStatus(
+  CpfValidationStatus: ICpfValidationStatus[]
+  ): Promise<any>;
+  saveCpfValidation(
+  CpfValidation: ICpfValidation[]
+  ): Promise<any>;
+  saveScoreValidationStatus(
+  ScoreValidationStatus: IScoreValidationStatus[]
   ): Promise<any>;
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any>;
