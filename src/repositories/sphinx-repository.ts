@@ -86,6 +86,10 @@ import {
     CpfValidationModel,
 } from "@domain/sphinx";
 import {
+    IScoreValidation,
+    ScoreValidationModel,
+} from "@domain/sphinx";
+import {
     IScoreValidationStatus,
     ScoreValidationStatusModel,
 } from "@domain/sphinx";
@@ -163,6 +167,9 @@ export class SphinxRepository implements ISphinxRepository {
   }
   saveCpfValidation(saveCpfValidation: ICpfValidation[]): Promise<any> {
     return CpfValidationModel.insertMany(saveCpfValidation);
+  }
+    saveScoreValidation(saveScoreValidation: IScoreValidation[]): Promise<any> {
+    return ScoreValidationModel.insertMany(saveScoreValidation);
   }
   saveScoreValidationStatus(saveScoreValidationStatus: IScoreValidationStatus[]): Promise<any> {
     return ScoreValidationStatusModel.insertMany(saveScoreValidationStatus);

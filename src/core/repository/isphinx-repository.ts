@@ -25,6 +25,7 @@ import {
   IExchangeAccountStatus,
   ICpfValidationStatus,
   ICpfValidation,
+  IScoreValidation,
   IScoreValidationStatus,
 } from "@domain/sphinx";
 
@@ -93,6 +94,9 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveCpfValidation(
   CpfValidation: ICpfValidation[]
+  ): Promise<any>;
+    saveScoreValidation(
+  ScoreValidation: IScoreValidation[]
   ): Promise<any>;
   saveScoreValidationStatus(
   ScoreValidationStatus: IScoreValidationStatus[]

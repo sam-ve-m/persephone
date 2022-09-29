@@ -154,6 +154,12 @@ export * from "./status_cpf_validation.schema";
 export * from "./status_cpf_validation.static";
 export * from "./status_cpf_validation.types";
 
+export * from "./score_validation.methods";
+export * from "./score_validation.model";
+export * from "./score_validation.schema";
+export * from "./score_validation.static";
+export * from "./score_validation.types";
+
 export * from "./status_score_validation.methods";
 export * from "./status_score_validation.model";
 export * from "./status_score_validation.schema";
