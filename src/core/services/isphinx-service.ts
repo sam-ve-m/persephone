@@ -61,6 +61,9 @@ export interface ISphinxService {
   handleCpfValidationQueue(
     userCpfValidation: KafkaMessage[]
   ): void;
+    handleScoreValidationQueue(
+    userScoreValidation: KafkaMessage[]
+  ): void;
   handleScoreValidationStatusQueue(
     userScoreValidationStatus: KafkaMessage[]
   ): void;
