@@ -238,6 +238,43 @@ const sphinxScope = {
     ) => {
       sphinxService.handleSetExchangeAccountQueue(messageBatch);
     },
+    "exchange_account_status.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleExchangeAccountStatusQueue(messageBatch);
+    },
+    "cpf_validation.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleCpfValidationQueue(messageBatch);
+    },
+    "cpf_validation_status.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleCpfValidationStatusQueue(messageBatch);
+    },
+    "score_validation.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleScoreValidationQueue(messageBatch);
+    },
+    "score_validation_status.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleScoreValidationStatusQueue(messageBatch);
+    },
+    "picpay_user_data.queue": (
+        sphinxService: ISphinxService,
+        messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handlePicpayUserDataQueue(messageBatch);
+    },
+
   },
   "sphinx-persephone.user.authentication": {
     "user_thebes_hall.queue": (
@@ -328,6 +365,12 @@ const topicsPartitionsEnum = {
     17: "get_w8_form_confirmation_schema_template_with_data.queue",
     18: "get_user_employ_for_schema_template_with_data.queue",
     19: "exchange_account.queue",
+    20: "exchange_account_status.queue",
+    21: "cpf_validation.queue",
+    22: "cpf_validation_status.queue",
+    23: "score_validation_status.queue",
+    24: "picpay_user_data.queue",
+    25: "score_validation.queue",
   },
 
   "sphinx-persephone.user.authentication": {

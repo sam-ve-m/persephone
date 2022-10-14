@@ -354,6 +354,108 @@ export class SphinxService implements ISphinxService {
         RepositoriesSucessHandlers.handleGeneralError(data);
       });
   }
+  handleExchangeAccountStatusQueue(
+    userExchangeAccountStatus: KafkaMessage[]
+    ): void {
+      const formattedData = userExchangeAccountStatus.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveExchangeAccountStatus(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleCpfValidationStatusQueue(
+    userCpfValidationStatus: KafkaMessage[]
+    ): void {
+      const formattedData = userCpfValidationStatus.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveCpfValidationStatus(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleCpfValidationQueue(
+    userCpfValidation: KafkaMessage[]
+    ): void {
+      const formattedData = userCpfValidation.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveCpfValidation(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+    handleScoreValidationQueue(
+    userScoreValidation: KafkaMessage[]
+    ): void {
+      const formattedData = userScoreValidation.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveScoreValidation(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleScoreValidationStatusQueue(
+    userScoreValidationStatus: KafkaMessage[]
+    ): void {
+      const formattedData = userScoreValidationStatus.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveScoreValidationStatus(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handlePicpayUserDataQueue(
+      userPicpayUserData: KafkaMessage[]
+  ): void {
+    const formattedData = userPicpayUserData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+        .savePicpayUserData(formattedData)
+        .then((data) => {
+          RepositoriesSucessHandlers.handleGeneralSucess(data);
+        })
+        .catch((data) => {
+          RepositoriesSucessHandlers.handleGeneralError(data);
+        });
+  }
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void {
     const formattedData = saveUsersThebesHall.map((message) => {

@@ -52,6 +52,24 @@ export interface ISphinxService {
   handleSetExchangeAccountQueue(
     setExchangeAccountData: KafkaMessage[]
   ): void;
+  handleExchangeAccountStatusQueue(
+    userExchangeAccountStatus: KafkaMessage[]
+  ): void;
+  handleCpfValidationStatusQueue(
+    userCpfValidationStatus: KafkaMessage[]
+  ): void;
+  handleCpfValidationQueue(
+    userCpfValidation: KafkaMessage[]
+  ): void;
+    handleScoreValidationQueue(
+    userScoreValidation: KafkaMessage[]
+  ): void;
+  handleScoreValidationStatusQueue(
+    userScoreValidationStatus: KafkaMessage[]
+  ): void;
+  handlePicpayUserDataQueue(
+      userPicpayUserData: KafkaMessage[]
+  ): void;
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;
   handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void;
