@@ -256,6 +256,12 @@ const sphinxScope = {
     ) => {
       sphinxService.handleCpfValidationStatusQueue(messageBatch);
     },
+    "score_validation.queue": (
+      sphinxService: ISphinxService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handleScoreValidationQueue(messageBatch);
+    },
     "score_validation_status.queue": (
       sphinxService: ISphinxService,
       messageBatch: KafkaMessage[]
@@ -363,7 +369,8 @@ const topicsPartitionsEnum = {
     21: "cpf_validation.queue",
     22: "cpf_validation_status.queue",
     23: "score_validation_status.queue",
-    24: "picpay_user_data.queue",
+    24: "score_validation.queue",
+    25: "picpay_user_data.queue",
   },
 
   "sphinx-persephone.user.authentication": {

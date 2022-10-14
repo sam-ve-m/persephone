@@ -405,6 +405,23 @@ export class SphinxService implements ISphinxService {
         RepositoriesSucessHandlers.handleGeneralError(data);
       });
   }
+    handleScoreValidationQueue(
+    userScoreValidation: KafkaMessage[]
+    ): void {
+      const formattedData = userScoreValidation.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+      .saveScoreValidation(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
   handleScoreValidationStatusQueue(
     userScoreValidationStatus: KafkaMessage[]
     ): void {
