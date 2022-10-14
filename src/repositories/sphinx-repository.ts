@@ -89,6 +89,10 @@ import {
     IScoreValidationStatus,
     ScoreValidationStatusModel,
 } from "@domain/sphinx";
+import {
+  IPicpayUserData,
+  PicpayUserDataModel,
+} from "@domain/sphinx";
 
 import { ISphinxRepository } from "@core/repository";
 
@@ -166,6 +170,9 @@ export class SphinxRepository implements ISphinxRepository {
   }
   saveScoreValidationStatus(saveScoreValidationStatus: IScoreValidationStatus[]): Promise<any> {
     return ScoreValidationStatusModel.insertMany(saveScoreValidationStatus);
+  }
+  savePicpayUserData(savePicpayUserData: IPicpayUserData[]): Promise<any> {
+    return PicpayUserDataModel.insertMany(savePicpayUserData);
   }
 
 

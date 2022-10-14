@@ -422,6 +422,23 @@ export class SphinxService implements ISphinxService {
         RepositoriesSucessHandlers.handleGeneralError(data);
       });
   }
+  handlePicpayUserDataQueue(
+      userPicpayUserData: KafkaMessage[]
+  ): void {
+    const formattedData = userPicpayUserData.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._sphinxRepository
+        .savePicpayUserData(formattedData)
+        .then((data) => {
+          RepositoriesSucessHandlers.handleGeneralSucess(data);
+        })
+        .catch((data) => {
+          RepositoriesSucessHandlers.handleGeneralError(data);
+        });
+  }
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void {
     const formattedData = saveUsersThebesHall.map((message) => {

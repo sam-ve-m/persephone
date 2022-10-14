@@ -26,6 +26,7 @@ import {
   ICpfValidationStatus,
   ICpfValidation,
   IScoreValidationStatus,
+  IPicpayUserData,
 } from "@domain/sphinx";
 
 export interface ISphinxRepository {
@@ -96,6 +97,9 @@ export interface ISphinxRepository {
   ): Promise<any>;
   saveScoreValidationStatus(
   ScoreValidationStatus: IScoreValidationStatus[]
+  ): Promise<any>;
+  savePicpayUserData(
+      PicpayUserData: IPicpayUserData[]
   ): Promise<any>;
 
   saveUserThebesHall(saveUsersThebesHall: ISaveUserThebesHall[]): Promise<any>;

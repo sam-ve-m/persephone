@@ -64,6 +64,9 @@ export interface ISphinxService {
   handleScoreValidationStatusQueue(
     userScoreValidationStatus: KafkaMessage[]
   ): void;
+  handlePicpayUserDataQueue(
+      userPicpayUserData: KafkaMessage[]
+  ): void;
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;
   handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void;

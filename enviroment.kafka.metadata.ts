@@ -97,9 +97,9 @@ const hyperionScope = [
 const sphinxScope = [
   {
     topic: "sphinx-persephone.user.crud",
-    numPartitions: 24,
+    numPartitions: 25,
     partitionsConsumedConcurrently: 6,
-    numberOfConsumers: 24,
+    numberOfConsumers: 25,
     consumerGroup: "sphinx.user.crud.group",
   },
   {

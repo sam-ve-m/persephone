@@ -159,3 +159,9 @@ export * from "./status_score_validation.model";
 export * from "./status_score_validation.schema";
 export * from "./status_score_validation.static";
 export * from "./status_score_validation.types";
+
+export * from "./picpay-user-data.methods";
+export * from "./picpay-user-data.model";
+export * from "./picpay-user-data.schema";
+export * from "./picpay-user-data.static";
+export * from "./picpay-user-data.types";
