@@ -369,8 +369,8 @@ const topicsPartitionsEnum = {
     21: "cpf_validation.queue",
     22: "cpf_validation_status.queue",
     23: "score_validation_status.queue",
-    24: "score_validation.queue",
-    25: "picpay_user_data.queue",
+    24: "picpay_user_data.queue",
+    25: "score_validation.queue",
   },
 
   "sphinx-persephone.user.authentication": {
