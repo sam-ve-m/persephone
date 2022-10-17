@@ -5,7 +5,7 @@ export interface ISuitability {
     form: JSON;
     version: Number;
     score: Number;
-    profile: String;
+    profile: Number;
     created_at: Number;
 }
 
