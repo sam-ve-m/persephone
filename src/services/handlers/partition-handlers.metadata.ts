@@ -274,6 +274,12 @@ const sphinxScope = {
     ) => {
       sphinxService.handlePicpayUserDataQueue(messageBatch);
     },
+    "pld.queue": (
+        sphinxService: ISphinxService,
+        messageBatch: KafkaMessage[]
+    ) => {
+      sphinxService.handlePldQueue(messageBatch);
+    },
 
   },
   "sphinx-persephone.user.authentication": {
@@ -371,6 +377,7 @@ const topicsPartitionsEnum = {
     23: "score_validation_status.queue",
     24: "picpay_user_data.queue",
     25: "score_validation.queue",
+    26: "pld.queue",
   },
 
   "sphinx-persephone.user.authentication": {

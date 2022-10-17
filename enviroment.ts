@@ -8,11 +8,11 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
   localhost: {
     database_metadata: {
       connection_object: {
-        uri: process.env.MONGO_URI,
+        uri: "mongodb://localhost:27018",
         options: {
-          dbName: process.env.MONGO_DB_NAME,
-          user: process.env.MONGO_USER,
-          pass: process.env.MONGO_PASSWORD,
+          dbName: "persephone",
+//           user: process.env.MONGO_USER,
+//           pass: process.env.MONGO_PASSWORD,
           useNewUrlParser: true,
           useUnifiedTopology: true,
           autoCreate: true,
@@ -20,8 +20,8 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
       },
     },
     kafka_metadata: {
-      clientId: process.env.KAFKA_CLIENT_ID,
-      brokers: process.env.KAKFA_BROKERS.split(";"),
+      clientId: "persephone.lionx.com.br",
+      brokers: "127.0.0.1:9092".split(";"),
       topics_properties: [
         ...aetherScope,
         ...gaiaScope,
@@ -48,7 +48,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
     },
     kafka_metadata: {
       clientId: process.env.KAFKA_CLIENT_ID,
-      brokers: process.env.KAKFA_BROKERS.split(";"),
+      brokers: "KAKFA_BROKERS".split(";"),
       topics_properties: [
         ...aetherScope,
         ...gaiaScope,
@@ -75,7 +75,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
     },
     kafka_metadata: {
       clientId: process.env.KAFKA_CLIENT_ID,
-      brokers: process.env.KAKFA_BROKERS.split(";"),
+      brokers: "KAKFA_BROKERS".split(";"),
       topics_properties: [
         ...aetherScope,
         ...gaiaScope,
@@ -102,7 +102,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
     },
     kafka_metadata: {
       clientId: process.env.KAFKA_CLIENT_ID,
-      brokers: process.env.KAKFA_BROKERS.split(";"),
+      brokers: "KAKFA_BROKERS".split(";"),
       topics_properties: [
         ...aetherScope,
         ...gaiaScope,
@@ -129,7 +129,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
     },
     kafka_metadata: {
       clientId: process.env.KAFKA_CLIENT_ID,
-      brokers: process.env.KAKFA_BROKERS.split(";"),
+      brokers: "KAKFA_BROKERS".split(";"),
       topics_properties: [
         ...aetherScope,
         ...gaiaScope,
@@ -143,7 +143,7 @@ const { localhost, sit, uat, prod, yaba, ...global } = {
 };
 
 function getEnv() {
-  const envName = process.env.NODE_ENV;
+  const envName = "localhost";
 
   const propsByEnv = {
     localhost,

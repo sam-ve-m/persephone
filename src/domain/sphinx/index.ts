@@ -171,3 +171,9 @@ export * from "./picpay-user-data.model";
 export * from "./picpay-user-data.schema";
 export * from "./picpay-user-data.static";
 export * from "./picpay-user-data.types";
+
+export * from "./pld.methods";
+export * from "./pld.model";
+export * from "./pld.schema";
+export * from "./pld.static";
+export * from "./pld.types";
