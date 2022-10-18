@@ -5,6 +5,7 @@ const PldSchema = new Schema({
     score: Number,
     rating: String,
     approval: Boolean,
+    user_data: Object,
     validations: Object,
     created_at: Number
 });

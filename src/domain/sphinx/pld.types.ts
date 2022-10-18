@@ -5,6 +5,7 @@ export interface IPld {
     score: Number;
     rating: String;
     approval: Boolean;
+    user_data: Object;
     validations: Object;
     created_at: Number;
 }
