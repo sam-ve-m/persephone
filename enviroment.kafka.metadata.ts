@@ -99,7 +99,7 @@ const sphinxScope = [
     topic: "sphinx-persephone.user.crud",
     numPartitions: 26,
     partitionsConsumedConcurrently: 6,
-    numberOfConsumers: 26
+    numberOfConsumers: 26,
     consumerGroup: "sphinx.user.crud.group",
   },
   {
