@@ -7,6 +7,8 @@ export interface IScoreValidation {
     gender: String;
     mother_name: String;
     nationality: Number;
+    is_politically_exposed_person: Boolean;
+    is_correlated_to_politically_exposed_person: Boolean;
     created_at: Number;
 }
 
