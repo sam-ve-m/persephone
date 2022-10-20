@@ -5,7 +5,7 @@ const SuitabilitySchema = new Schema({
     form: Object,
     version: Number,
     score: Number,
-    profile: String,
+    profile: Number,
     created_at: Number
 });
 

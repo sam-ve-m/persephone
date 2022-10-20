@@ -6,5 +6,5 @@ export interface IPicpayUserData {
     created_at: Number;
 }
 
-export interface IPicpayUserDataDocument extends Ipicay, Document {}
+export interface IPicpayUserDataDocument extends IPicpayUserData, Document {}
 export interface IPicpayUserDataModel extends Model<IPicpayUserDataDocument> {}
