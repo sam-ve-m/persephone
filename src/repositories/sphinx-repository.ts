@@ -97,6 +97,11 @@ import {
   IPicpayUserData,
   PicpayUserDataModel,
 } from "@domain/sphinx";
+import {
+  IPld,
+  PldModel,
+} from "@domain/sphinx";
+
 
 import { ISphinxRepository } from "@core/repository";
 
@@ -180,6 +185,9 @@ export class SphinxRepository implements ISphinxRepository {
   }
   savePicpayUserData(savePicpayUserData: IPicpayUserData[]): Promise<any> {
     return PicpayUserDataModel.insertMany(savePicpayUserData);
+  }
+  savePld(savePld: IPld[]): Promise<any> {
+    return PldModel.insertMany(savePld);
   }
 
 

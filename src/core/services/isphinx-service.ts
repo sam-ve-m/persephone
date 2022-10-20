@@ -70,6 +70,9 @@ export interface ISphinxService {
   handlePicpayUserDataQueue(
       userPicpayUserData: KafkaMessage[]
   ): void;
+  handlePldQueue(
+      userPld: KafkaMessage[]
+  ): void;
 
   handleUserThebesHallQueue(saveUsersThebesHall: KafkaMessage[]): void;
   handleUserAuthenticationQueue(saveUserAuthentications: KafkaMessage[]): void;
