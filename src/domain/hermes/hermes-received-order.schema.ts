@@ -2,6 +2,8 @@ import { Schema } from "mongoose";
 
 const HermesReceivedOrderSchema = new Schema({
     ip: String,
+    device_id: String,
+    device_info: Object,
     jwt: String,
     jwt_token_session: String,
     request: Object,
