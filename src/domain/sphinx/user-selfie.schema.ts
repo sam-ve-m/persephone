@@ -2,6 +2,8 @@ import { Schema } from "mongoose";
 
 const UserSelfieSchema = new Schema({
     unique_id: String,
+    device_id: String,
+    device_info: Object,
     file_path: String,
     geolocation: String,
     ip_address: String,

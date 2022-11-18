@@ -2,6 +2,8 @@ import { Document, Model } from "mongoose";
 
 export interface IGetUserEmployForSchemaTemplateWithDataData {
     unique_id: String;
+    device_id: String;
+    device_info: Object;
     employ_status: String;
     employ_type: String;
     employ_position: String;
