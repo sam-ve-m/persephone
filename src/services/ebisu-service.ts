@@ -56,4 +56,68 @@ export class EbisuService implements IEbisuService {
         RepositoriesSucessHandlers.handleGeneralError(data);
       });
   }
+
+
+  handleExchangeProposalSimulation(responseMessages: KafkaMessage[]): void {
+    const formattedData = responseMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._ebisuRepository
+      .saveExchangeProposalSimulation(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleExchangeProposalPreExecution(responseMessages: KafkaMessage[]): void {
+    const formattedData = responseMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._ebisuRepository
+      .saveExchangeProposalPreExecution(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+  handleExchangeProposalExecution(responseMessages: KafkaMessage[]): void {
+    const formattedData = responseMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._ebisuRepository
+      .saveExchangeProposalExecution(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
+
+
+  handleCashFlowWithdrawToExternalBank(responseMessages: KafkaMessage[]): void {
+    const formattedData = responseMessages.map((message) => {
+      const messageString = message.value.toString();
+      return JSON.parse(messageString);
+    });
+
+    this._ebisuRepository
+      .saveCashFlowWithdrawToExternalBank(formattedData)
+      .then((data) => {
+        RepositoriesSucessHandlers.handleGeneralSucess(data);
+      })
+      .catch((data) => {
+        RepositoriesSucessHandlers.handleGeneralError(data);
+      });
+  }
 }
