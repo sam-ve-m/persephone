@@ -127,11 +127,11 @@ const ebisuScope = [
     consumerGroup: "ebisu.money_movement.exchange_forex.group",
   },
   {
-    topic: "ebisu-persephone.money_movement.normal_flow",
+    topic: "ebisu-persephone.money_movement.transference",
     numPartitions: 1,
     partitionsConsumedConcurrently: 1,
     numberOfConsumers: 1,
-    consumerGroup: "ebisu.money_movement.normal_flow.group",
+    consumerGroup: "ebisu.money_movement.transference.group",
   },
 ];
 

@@ -2,8 +2,7 @@ import { Document, Model } from "mongoose";
 
 export interface IHermesOrderSessionAuthenticity {
   ip: String;
-  ,
-  ,  device_id: String;
+  device_id: String;
   device_info: Object;
   jwt: String;
   is_authentic: Boolean;
