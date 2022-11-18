@@ -2,8 +2,6 @@ import { Schema } from "mongoose";
 
 const ScoreValidationSchema = new Schema({
     unique_id: String,
-    device_id: String,
-    device_info: Object,
     name: String,
     birth_date: Number,
     gender: String,

@@ -5,7 +5,6 @@ const SaveUserLogoutSchema = new Schema({
     device_id: String,
     device_info: Object,
     jwt: String,
-    device_information: Object,
     created_at: Number
 });
 

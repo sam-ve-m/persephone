@@ -2,8 +2,6 @@ import { Document, Model } from "mongoose";
 
 export interface IScoreValidation {
     unique_id: String;
-    device_id: String;
-    device_info: Object;
     name: String;
     birth_date: Number;
     gender: String;
