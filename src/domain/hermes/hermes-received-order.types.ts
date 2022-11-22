@@ -2,6 +2,8 @@ import { Document, Model } from "mongoose";
 
 export interface IHermesReceivedOrder {
     ip: String;
+    device_id: String;
+    device_info: Object;
     jwt: String;
     jwt_token_session: String;
     request: Object;

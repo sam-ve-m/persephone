@@ -2,6 +2,8 @@ import { Document, Model } from "mongoose";
 
 export interface IPld {
     unique_id: String;
+    device_id: String;
+    device_info: Object;
     score: Number;
     rating: String;
     approval: Boolean;

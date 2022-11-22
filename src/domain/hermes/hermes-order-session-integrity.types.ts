@@ -2,6 +2,8 @@ import { Document, Model } from "mongoose";
 
 export interface IHermesOrderSessionIntegrity { 
     ip: String;
+    device_id: String;
+    device_info: Object;
     jwt: String;
     is_integrity: Boolean;
     jwt_missing_fields: String;

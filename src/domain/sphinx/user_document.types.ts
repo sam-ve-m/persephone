@@ -2,6 +2,8 @@ import { Document, Model } from "mongoose";
 
 export interface IUserDocument {
     unique_id: String;
+    device_id: String;
+    device_info: Object;
     path_document_front: String;
     path_document_back: String;
     created_at: Number;

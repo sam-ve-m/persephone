@@ -2,6 +2,8 @@ import { Schema } from "mongoose";
 
 const UserComplementaryDataSchema = new Schema({
     unique_id: String,
+    device_id: String,
+    device_info: Object,
     marital: Object,
 
     is_us_person: Boolean,

@@ -2,6 +2,8 @@ import { Schema } from "mongoose";
 
 const PldSchema = new Schema({
     unique_id: String,
+    device_id: String,
+    device_info: Object,
     score: Number,
     rating: String,
     approval: Boolean,

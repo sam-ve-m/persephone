@@ -325,6 +325,34 @@ const ebisuScope = {
       ebisuService.handleBankAccountDeletions(messageBatch);
     },
   },
+  "ebisu-persephone.money_movement.exchange_forex": {
+    "exchange_proposal_simulation.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleExchangeProposalSimulation(messageBatch);
+    },
+    "exchange_proposal_pre_execution.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleExchangeProposalPreExecution(messageBatch);
+    },
+    "exchange_proposal_execution.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleExchangeProposalExecution(messageBatch);
+    },
+  },
+  "ebisu-persephone.money_movement.transference": {
+    "withdraw_to_external_bank.queue": (
+      ebisuService: IEbisuService,
+      messageBatch: KafkaMessage[]
+    ) => {
+      ebisuService.handleCashFlowWithdrawToExternalBank(messageBatch);
+    },
+  },
 };
 
 const topicsPartitionsEnum = {
@@ -390,6 +418,16 @@ const topicsPartitionsEnum = {
     0: "register_client_bank_account.queue",
     1: "update_client_bank_account.queue",
     2: "delete_client_bank_account.queue",
+  },
+
+  "ebisu-persephone.money_movement.exchange_forex": {
+    0: "exchange_proposal_simulation.queue",
+    1: "exchange_proposal_pre_execution.queue",
+    2: "exchange_proposal_execution.queue",
+  },
+
+  "ebisu-persephone.money_movement.transference": {
+    0: "withdraw_to_external_bank.queue",
   },
 
 };
