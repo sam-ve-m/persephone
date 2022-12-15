@@ -79,6 +79,14 @@ export module TopicServiceFactory {
         const ebisuRepository = new EbisuRepository();
         return new EbisuService(ebisuRepository);
       },
+      "ebisu-persephone.money_movement.exchange_forex": () => {
+        const ebisuRepository = new EbisuRepository();
+        return new EbisuService(ebisuRepository);
+      },
+      "ebisu-persephone.money_movement.transference": () => {
+        const ebisuRepository = new EbisuRepository();
+        return new EbisuService(ebisuRepository);
+      },
     };
 
     return topicPartitionToService;

@@ -119,6 +119,20 @@ const ebisuScope = [
     numberOfConsumers: 3,
     consumerGroup: "ebisu.client.bank_account.group",
   },
+  {
+    topic: "ebisu-persephone.money_movement.exchange_forex",
+    numPartitions: 3,
+    partitionsConsumedConcurrently: 1,
+    numberOfConsumers: 3,
+    consumerGroup: "ebisu.money_movement.exchange_forex.group",
+  },
+  {
+    topic: "ebisu-persephone.money_movement.transference",
+    numPartitions: 1,
+    partitionsConsumedConcurrently: 1,
+    numberOfConsumers: 1,
+    consumerGroup: "ebisu.money_movement.transference.group",
+  },
 ];
 
 

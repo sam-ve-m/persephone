@@ -2,6 +2,8 @@ import { Document, Model } from "mongoose";
 
 export interface ISaveUserAuthentication {
     unique_id: String;
+    device_id: String;
+    device_info: Object;
     is_active_user: Boolean;
     scope: JSON;
     created_at: Number;
