@@ -4,7 +4,7 @@ namespace: homolog
 
 containers:
   - name: persephone
-    image: nexus.sigame.com.br/persephone:2.1.0
+    image: nexus.sigame.com.br/persephone:2.2.0
     env:
     - name: NODE_ENV
       value: "sit"
